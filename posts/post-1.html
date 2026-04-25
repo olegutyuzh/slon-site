@@ -8,7 +8,14 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
 </head>
-
+<script>
+function copyPostLink() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    alert("Link copied");
+  });
+}
+</script>
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -21,8 +28,8 @@
       </div>
 
       <nav class="main-nav">
-        <a href="post-1.html" class="active-lang">UA</a>
-        <a href="post-1-en.html">EN</a>
+        <a href="posts/post-1.html" class="active-lang">UA</a>
+        <a href="posts/post-1-en.html">EN</a>
 
         <a href="index.html">Головна</a>
         <a href="biography.html">Біографія</a>

@@ -8,7 +8,14 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
 </head>
-
+<script>
+function copyPostLink() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    alert("Link copied");
+  });
+}
+</script>
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -21,8 +28,8 @@
       </div>
 
       <nav class="main-nav">
-        <a href="post-1.html">UA</a>
-        <a href="post-1-en.html"  class="active-lang">EN</a>
+        <a href="posts/post-1.html">UA</a>
+        <a href="posts/post-1-en.html"  class="active-lang">EN</a>
 
         <a href="index-en.html">Home</a>
         <a href="biography-en.html">Biography</a>
@@ -100,6 +107,23 @@
             </p>
 
             <a href="blog-en.html" class="back-link">← Back to blog</a>
+            <div class="share-buttons">
+              <a class="share-btn fb" 
+                href="https://www.facebook.com/sharer/sharer.php?u=https://slon-site.netlify.app/post-1-en" 
+                target="_blank" rel="noopener">
+                Share on Facebook
+              </a>
+
+              <a class="share-btn x" 
+                href="https://twitter.com/intent/tweet?url=https://slon-site.netlify.app/post-1-en" 
+                target="_blank" rel="noopener">
+                Share on X
+              </a>
+
+              <button class="share-btn copy" onclick="copyPostLink()">
+                Copy link
+              </button>
+            </div>
 
         </article>
       </div> 

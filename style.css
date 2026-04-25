@@ -637,3 +637,36 @@ body {
   }
 }
 
+.share-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.share-btn.fb {
+  background: #1877f2;
+}
+
+.share-btn.x {
+  background: #000;
+}
+
+.share-btn.copy {
+  background: #555;
+}
+
+.share-btn:hover {
+  opacity: 0.85;
+}
