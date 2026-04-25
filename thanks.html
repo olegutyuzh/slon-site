@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дякуємо — Ігор «Слон» Утюж</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .thanks-symbol {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(212,168,87,0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <img src="img/symbol-elephant.png" alt="Символ Слон" class="logo-elephant" />
+        <div class="logo-text">
+          <div class="logo-title">Ігор «Слон» Утюж</div>
+          <div class="logo-subtitle">1996 — 2023</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="contact.html" class="active-lang">UA</a>
+        <a href="contact-en.html">EN</a>
+
+        <a href="index.html">Головна</a>
+        <a href="biography.html">Біографія</a>
+        <a href="contact.html">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container section-inner fade-in" style="max-width: 560px; text-align: center;">
+
+        <img src="img/symbol-elephant.png" alt="Символ Слон" class="thanks-symbol" />
+
+        <h2>Дякуємо за ваше повідомлення</h2>
+        <p class="section-intro">
+          Ваші слова надіслані родині.  
+          Дякуємо, що поділилися пам’яттю або підтримкою.
+        </p>
+
+        <a href="index.html" class="btn-submit" style="display:inline-block; margin-top: 20px;">
+          Повернутися на головну
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>Пам’яті Ігоря «Слона» Утюжа.</p>
+        <p class="footer-muted">Усі матеріали належать родині Ігоря Утюжа.</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-muted">18.04.1996 — 07.12.2023</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
