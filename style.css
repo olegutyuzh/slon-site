@@ -610,9 +610,8 @@ body {
 
 .post-row {
   display: flex;
+  flex-direction: row-reverse;
   gap: 24px;
-  align-items: flex-start;
-  margin: 40px 0;
 }
 
 .post-image-side img {
@@ -636,3 +635,4 @@ body {
     max-width: 100%;
   }
 }
+
