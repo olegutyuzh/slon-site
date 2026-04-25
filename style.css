@@ -570,3 +570,40 @@ body {
   font-size: 1.1rem;
   opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+  .hero-blog {
+    height: 260px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .hero-blog .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-blog .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-blog {
+    height: 220px;
+    background-position: center 60%;
+  }
+
+  .hero-blog .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-blog .hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-blog {
+    background-image: url('img/hero-blog-mobile.jpg');
+  }
+}
