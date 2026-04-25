@@ -9,10 +9,15 @@
   <link rel="icon" href="favicon.ico" />
 
   <meta name="description" content="Меморіальна сторінка, присвячена Ігорю «Слону» Утюжу — захиснику України." />
-  <meta property="og:title" content="Ігор «Слон» Утюж — In Memoriam" />
-  <meta property="og:description" content="Пам’яті Ігоря Утюжа, захисника України." />
-  <meta property="og:image" content="og-image.jpg" />
+    <meta property="og:title" content="Ігор «Слон» Утюж — In Memoriam" />
+  <meta property="og:description" content="Пам'яті Ігоря Утюжа — захисника України, бійця ДШВ, учасника Революції Гідності. 18.04.1996 — 07.12.2023." />
+  <meta property="og:image" content="https://slon-site.netlify.app/img/hero-portrait.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slon-site.netlify.app/" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
   <header class="site-header">
@@ -24,9 +29,9 @@
           <div class="logo-subtitle">1996 — 2023</div>
         </div>
       </div>
-      <nav class="main-nav">
-        <a href="index.html" class="active-lang">UA</a>
-        <a href="index-en.html">EN</a>        
+      <nav class="main-nav" aria-label="Основна навігація">
+        <a href="index.html" class="active-lang" lang="uk" aria-current="page">UA</a>
+        <a href="index-en.html" lang="en" hreflang="en">EN</a>        
         <a href="#about">Про Ігоря</a>
         <a href="#service">Служба</a>
         <a href="#gallery">Фото</a>
@@ -71,11 +76,11 @@
         </div>
         <div class="about-photo-grid">
           <figure>
-            <img src="img/hero-vyshyvanka.jpg" alt="Ігор у вишиванці" />
+            <img src="img/hero-vyshyvanka.jpg" alt="Ігор у вишиванці"  loading="lazy" />
             <figcaption>Ігор у вишиванці</figcaption>
           </figure>
           <figure>
-            <img src="img/hero-city.jpg" alt="Ігор у місті" />
+            <img src="img/hero-city.jpg" alt="Ігор у місті"  loading="lazy" />
             <figcaption>Місто, яке він любив</figcaption>
           </figure>
         </div>
@@ -100,15 +105,15 @@
         </div>
         <div class="service-photo-grid">
           <figure>
-            <img src="img/war-forest.jpg" alt="Ігор на позиції" />
+            <img src="img/war-forest.jpg" alt="Ігор на позиції"  loading="lazy" />
             <figcaption>Коротка пауза між боями</figcaption>
           </figure>
           <figure>
-            <img src="img/war-trench.jpg" alt="Ігор у бліндажі" />
+            <img src="img/war-trench.jpg" alt="Ігор у бліндажі"  loading="lazy" />
             <figcaption>Робота з дроном на передовій</figcaption>
           </figure>
           <figure>
-            <img src="img/war-maidan.jpg" alt="Майдан, барикади" />
+            <img src="img/war-maidan.jpg" alt="Майдан, барикади"  loading="lazy" />
             <figcaption>Пам’ять про Революцію Гідності</figcaption>
           </figure>
         </div>
@@ -125,19 +130,19 @@
         </p>
         <div class="gallery-grid">
           <figure>
-            <img src="img/hero-chess.jpg" alt="Ігор за шахами" />
+            <img src="img/hero-chess.jpg" alt="Ігор за шахами"  loading="lazy" />
             <figcaption>Зосередженість за шаховою дошкою</figcaption>
           </figure>
           <figure>
-            <img src="img/hero-bricks.jpg" alt="Ігор біля цегляної стіни" />
+            <img src="img/hero-bricks.jpg" alt="Ігор біля цегляної стіни"  loading="lazy" />
             <figcaption>Спокій у міському ритмі</figcaption>
           </figure>
           <figure>
-            <img src="img/hero-stadium-flag.jpg" alt="Ігор з прапором на стадіоні" />
+            <img src="img/hero-stadium-flag.jpg" alt="Ігор з прапором на стадіоні"  loading="lazy" />
             <figcaption>Прапор України на стадіоні</figcaption>
           </figure>
           <figure>
-            <img src="img/hero-stadium-euro.jpg" alt="Ігор на матчі EURO 2020" />
+            <img src="img/hero-stadium-euro.jpg" alt="Ігор на матчі EURO 2020"  loading="lazy" />
             <figcaption>Футбол, емоції, трибуни</figcaption>
           </figure>
         </div>
@@ -160,14 +165,45 @@
         </div>
         <div class="symbols-grid">
           <figure>
-            <img src="img/symbol-shield.png" alt="Щит" />
+            <img src="img/symbol-shield.png" alt="Щит"  loading="lazy" />
             <figcaption>Щит — захист і стійкість</figcaption>
           </figure>
           <figure>
-            <img src="img/symbol-bandera.jpg" alt="Степан Бандера" />
+            <img src="img/symbol-bandera.jpg" alt="Степан Бандера"  loading="lazy" />
             <figcaption>Пам’ять про боротьбу за Україну</figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container section-inner" style="max-width: 560px;">
+        <h2>Написати родині</h2>
+        <p class="section-intro">
+          Якщо ви знали Ігоря або хочете залишити слова пам'яті — напишіть родині.
+          Усі повідомлення читають особисто.
+        </p>
+        <form
+          name="memory"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thanks.html"
+        >
+          <input type="hidden" name="form-name" value="memory" />
+          <p hidden><label>Не заповнювати: <input name="bot-field" /></label></p>
+
+          <div class="form-field">
+            <label for="f-name">Ваше ім'я</label>
+            <input id="f-name" type="text" name="name" required placeholder="Ім'я та прізвище" />
+          </div>
+          <div class="form-field">
+            <label for="f-message">Слова пам'яті</label>
+            <textarea id="f-message" name="message" required rows="5" placeholder="Поділіться спогадом або словами підтримки для родини…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Надіслати</button>
+        </form>
       </div>
     </section>
   </main>
@@ -179,7 +215,7 @@
         <p class="footer-muted">Усі матеріали належать родині Ігоря Утюжа.</p>
       </div>
       <div class="footer-right">
-        <p><span class="footer-label">Повна версія сайту:</span> <a href="https://www.igor-slon-utyuzh.com" target="_blank" rel="noopener">igor-slon-utyuzh.com</a></p>
+        <p class="footer-muted">18.04.1996 — 07.12.2023</p>
       </div>
     </div>
   </footer>
