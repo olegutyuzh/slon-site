@@ -670,3 +670,34 @@ body {
 .share-btn:hover {
   opacity: 0.85;
 }
+
+.share-buttons.minimal-icons {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-buttons.minimal-icons .share-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid #333;
+  transition: 0.2s ease;
+}
+
+.share-buttons.minimal-icons .share-btn:hover {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.share-buttons.minimal-icons .icon {
+  width: 16px;
+  height: 16px;
+}
