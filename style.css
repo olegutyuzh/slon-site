@@ -444,3 +444,24 @@ body {
 .accent-gold {
   color: var(--accent-gold); /* #d4a857 */
 }
+
+.blog-post {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.blog-post h3 a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+.blog-post h3 a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
