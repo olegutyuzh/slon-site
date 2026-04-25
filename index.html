@@ -34,6 +34,7 @@
         <a href="index-en.html" lang="en" hreflang="en">EN</a>
 
         <a href="biography.html">Біографія</a>
+        <a href="contact.html">Контакти</a>        
 
         <a href="#about">Про Ігоря</a>
         <a href="#service">Служба</a>
@@ -179,36 +180,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container section-inner" style="max-width: 560px;">
-        <h2>Написати родині</h2>
-        <p class="section-intro">
-          Якщо ви знали Ігоря або хочете залишити слова пам'яті — напишіть родині.
-          Усі повідомлення читають особисто.
-        </p>
-        <form
-          name="memory"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/thanks.html"
-        >
-          <input type="hidden" name="form-name" value="memory" />
-          <p hidden><label>Не заповнювати: <input name="bot-field" /></label></p>
-
-          <div class="form-field">
-            <label for="f-name">Ваше ім'я</label>
-            <input id="f-name" type="text" name="name" required placeholder="Ім'я та прізвище" />
-          </div>
-          <div class="form-field">
-            <label for="f-message">Слова пам'яті</label>
-            <textarea id="f-message" name="message" required rows="5" placeholder="Поділіться спогадом або словами підтримки для родини…"></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Надіслати</button>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">

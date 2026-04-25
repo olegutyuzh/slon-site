@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Написати родині — Ігор «Слон» Утюж</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <img src="img/symbol-elephant.png" alt="Символ Слон" class="logo-elephant" />
+        <div class="logo-text">
+          <div class="logo-title">Ігор «Слон» Утюж</div>
+          <div class="logo-subtitle">1996 — 2023</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html">Головна</a>
+        <a href="biography.html">Біографія</a>
+        <a href="contact.html" class="active-lang">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="contact" class="section">
+      <div class="container section-inner" style="max-width: 560px;">
+        <h2>Написати родині</h2>
+        <p class="section-intro">
+          Якщо ви знали Ігоря або хочете залишити слова пам'яті — напишіть родині.
+          Усі повідомлення читають особисто.
+        </p>
+
+        <form
+          name="memory"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thanks.html"
+        >
+          <input type="hidden" name="form-name" value="memory" />
+          <p hidden><label>Не заповнювати: <input name="bot-field" /></label></p>
+
+          <div class="form-field">
+            <label for="f-name">Ваше ім'я</label>
+            <input id="f-name" type="text" name="name" required placeholder="Ім'я та прізвище" />
+          </div>
+
+          <div class="form-field">
+            <label for="f-message">Слова пам'яті</label>
+            <textarea id="f-message" name="message" required rows="5" placeholder="Поділіться спогадом або словами підтримки для родини…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Надіслати</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>Пам’яті Ігоря «Слона» Утюжа.</p>
+        <p class="footer-muted">Усі матеріали належать родині Ігоря Утюжа.</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-muted">18.04.1996 — 07.12.2023</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
