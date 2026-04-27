@@ -27,62 +27,91 @@
         <a href="index.html">Головна</a>
         <a href="biography.html">Біографія</a>
         <a href="contact.html" class="active-lang">Контакти</a>
-        <a href="blog.html">Блог</a>   
+        <a href="blog.html">Блог</a>
       </nav>
     </div>
   </header>
 
+  <!-- 1. Hero-секція для узгодженості з іншими сторінками -->
+  <section class="hero hero-blog">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Написати родині</h1>
+      <p>Слова пам'яті та підтримки для родини Ігоря</p>
+    </div>
+  </section>
+
   <main>
     <section id="contact" class="section">
+      <!-- Desktop banner -->
+      <div class="contact-banner desktop-banner">
+        <img src="img/hero-contact.jpg" alt="Зв’язатись з нами — Slon" />
+      </div>
+
+      <!-- Mobile banner -->
+      <div class="contact-banner mobile-banner">
+        <img src="img/hero-contact-mobile.jpg" alt="Зв’язатись з нами — Slon (mobile)" />
+      </div>    
       <div class="container section-inner" style="max-width: 560px;">
-        <h2>Написати родині</h2>
+
         <p class="section-intro">
           Якщо ви знали Ігоря або хочете залишити слова пам'яті — напишіть родині.
           Усі повідомлення читають особисто.
         </p>
 
-        <form id="memory-form">
+        <form id="memory-form" novalidate>
+
+          <!-- 4. Honeypot — прихований для людей, але боти заповнюють -->
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- 8. autocomplete + 9. aria-label -->
           <div class="form-field">
             <label for="f-name">Ваше ім'я</label>
-            <input id="f-name" type="text" name="from_name" required placeholder="Ім'я та прізвище" />
+            <input
+              id="f-name"
+              type="text"
+              name="from_name"
+              required
+              placeholder="Ім'я та прізвище"
+              autocomplete="name"
+              aria-label="Ваше ім'я"
+            />
+          </div>
+
+          <!-- 2. Email поле (необов'язкове) -->
+          <div class="form-field">
+            <label for="f-email">
+              Ваш email
+              <span style="color: var(--text-muted); font-size: 12px;">(необов'язково — якщо хочете отримати відповідь)</span>
+            </label>
+            <input
+              id="f-email"
+              type="email"
+              name="reply_to"
+              placeholder="email@example.com"
+              autocomplete="email"
+              aria-label="Ваш email для зворотного зв'язку"
+            />
           </div>
 
           <div class="form-field">
             <label for="f-message">Слова пам'яті</label>
-            <textarea id="f-message" name="message" required rows="5" placeholder="Поділіться спогадом або словами підтримки для родини…"></textarea>
+            <textarea
+              id="f-message"
+              name="message"
+              required
+              rows="5"
+              placeholder="Поділіться спогадом або словами підтримки для родини…"
+              aria-label="Ваше повідомлення"
+            ></textarea>
           </div>
 
           <button type="submit" class="btn-submit" id="btn-send">Надіслати</button>
-          <p id="form-status" style="margin-top:12px; font-size:14px; min-height:20px;"></p>
+          <p id="form-status" role="status" aria-live="polite" style="margin-top:12px; font-size:14px; min-height:20px;"></p>
         </form>
 
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script>
-          emailjs.init("8yPj0R0j8kKZJis61");
-
-          document.getElementById("memory-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            var btn    = document.getElementById("btn-send");
-            var status = document.getElementById("form-status");
-
-            btn.disabled = true;
-            btn.textContent = "Надсилаємо…";
-            status.style.color = "var(--text-muted)";
-            status.textContent = "";
-
-            emailjs.sendForm("service_m7gn0er", "template_4f5tm9i", this)
-              .then(function() {
-                window.location.href = "/thanks";
-              }, function(error) {
-                btn.disabled = false;
-                btn.textContent = "Надіслати";
-                status.style.color = "#e07070";
-                status.textContent = "Помилка надсилання. Спробуйте ще раз або скористайтесь поштою нижче.";
-                console.error("EmailJS error:", error);
-              });
-          });
-        </script>
       </div>
     </section>
   </main>
@@ -90,7 +119,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <p>Пам’яті Ігоря «Слона» Утюжа.</p>
+        <p>Пам'яті Ігоря «Слона» Утюжа.</p>
         <p class="footer-muted">Усі матеріали належать родині Ігоря Утюжа.</p>
       </div>
       <div class="footer-right">
@@ -98,5 +127,50 @@
       </div>
     </div>
   </footer>
+
+  <!-- 7. Скрипти винесені перед </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("8yPj0R0j8kKZJis61");
+
+    document.getElementById("memory-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var btn    = document.getElementById("btn-send");
+      var status = document.getElementById("form-status");
+
+      // 4. Перевірка honeypot
+      if (document.querySelector("input[name='_honey']").value !== "") {
+        return; // бот — тихо ігноруємо
+      }
+
+      // 6. Підтвердження перед відправкою
+      var confirmed = confirm("Надіслати повідомлення родині Ігоря?");
+      if (!confirmed) return;
+
+      // 5. Стан завантаження
+      btn.disabled = true;
+      btn.textContent = "Надсилаємо…";
+      btn.style.opacity = "0.7";
+      status.style.color = "var(--text-muted)";
+      status.textContent = "Зачекайте, будь ласка…";
+
+      emailjs.sendForm("service_m7gn0er", "template_4f5tm9i", this)
+        .then(function () {
+          // 3. Замість редиректу на /thanks — показуємо повідомлення на місці
+          btn.style.display = "none";
+          status.style.color = "var(--accent-gold)";
+          status.textContent = "✓ Повідомлення надіслано. Дякуємо, що пам'ятаєте Ігоря.";
+          document.getElementById("memory-form").reset();
+        }, function (error) {
+          btn.disabled = false;
+          btn.textContent = "Надіслати";
+          btn.style.opacity = "1";
+          status.style.color = "#e07070";
+          status.textContent = "Помилка надсилання. Спробуйте ще раз або скористайтесь поштою нижче.";
+          console.error("EmailJS error:", error);
+        });
+    });
+  </script>
 </body>
 </html>
