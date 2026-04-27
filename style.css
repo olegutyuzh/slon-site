@@ -828,3 +828,18 @@ body {
   width: 100%;
   height: auto;
 }
+
+.blog-hero-img {
+  display: block;
+  width: 1080px;
+  height: auto;
+}
+
+.blog-hero-wrap {
+    max-width: 1080px;
+    margin: 32px auto 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(212, 168, 87, 0.18);
+    box-shadow: var(--shadow-soft);
+}
