@@ -749,3 +749,53 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+.hero-contact {
+  position: relative;
+  height: 360px;
+  background: url('img/hero-contact.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-contact .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-contact .hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.hero-contact h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.hero-contact p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .hero-contact {
+    height: 260px;
+    background-image: url('img/hero-contact-mobile.png');
+  }
+
+  .hero-contact .hero-content h1 { font-size: 1.8rem; }
+  .hero-contact .hero-content p  { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-contact {
+    height: 220px;
+  }
+
+  .hero-contact .hero-content h1 { font-size: 1.5rem; }
+  .hero-contact .hero-content p  { font-size: 0.9rem; }
+}
