@@ -799,3 +799,32 @@ body {
   .hero-contact .hero-content h1 { font-size: 1.5rem; }
   .hero-contact .hero-content p  { font-size: 0.9rem; }
 }
+.hero-contact {
+  background-position: center 30%; /* підняти фокус вгору, де слон */
+}
+
+.hero-contact {
+  height: 200px;
+  background-position: center 40%;
+}
+
+@media (max-width: 768px) {
+  .hero-contact {
+    height: 130px;
+  }
+}
+
+.contact-hero-wrap {
+  max-width: 560px;
+  margin: 32px auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(212, 168, 87, 0.18);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
