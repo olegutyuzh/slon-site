@@ -1385,3 +1385,97 @@ body {
   .section-inner { padding: 14px 11px 20px; border-radius: 12px; }
   .post-thumb { height: 165px; }
 }
+/* ═══════════════════════════════════════════════
+   BIOGRAPHY MOBILE
+═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* Hero warrior: vertical layout, portrait on top */
+  .hero-conent-warrior {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: unset;
+    padding: 0;
+    gap: 0;
+    background-position: center top;
+  }
+
+  /* Portrait full-width on top */
+  .hero-conent-warrior .hero-photo {
+    order: -1;
+    width: 100%;
+    justify-self: unset;
+  }
+
+  .hero-conent-warrior .hero-photo img {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 0 0 20px 20px;
+    object-fit: cover;
+    object-position: center top;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  /* Text block below portrait */
+  .bio-hero-text {
+    align-self: unset !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    padding: 1.5rem 1.25rem 1.75rem !important;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .bio-hero-text h1 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .bio-hero-text .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Sections single column */
+  .section { padding: 12px 0 20px; }
+
+  .two-columns {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .about-photo-grid img {
+    max-height: 220px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+  }
+
+  .section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-conent-warrior .hero-photo img { height: 220px; }
+  .bio-hero-text h1 { font-size: 1.4rem; }
+}
+
+/* Hide nav-close button on desktop */
+.nav-close { display: none; }
+ 
+@media (max-width: 768px) {
+  .nav-close { display: block; }
+}

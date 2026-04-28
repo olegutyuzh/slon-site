@@ -22,7 +22,12 @@
         </div>
       </div>
 
-      <nav class="main-nav">
+      <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-close" id="navClose" aria-label="Close">✕</button>
         <a href="biography.html">UA</a>
         <a href="biography-en.html" class="active-lang">EN</a>
 
@@ -181,5 +186,18 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mainNav   = document.getElementById('mainNav');
+    const navClose  = document.getElementById('navClose');
+    const openNav  = () => { mainNav.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const closeNav = () => { mainNav.classList.remove('open'); document.body.style.overflow = ''; };
+    hamburger.addEventListener('click', openNav);
+    navClose.addEventListener('click', closeNav);
+    mainNav.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
+    mainNav.addEventListener('click', e => { if (e.target === mainNav) closeNav(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  </script>  
 </body>
 </html>
