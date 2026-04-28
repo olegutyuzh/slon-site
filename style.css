@@ -1146,7 +1146,8 @@ body {
   gap: 2rem;
   min-height: 500px;
   background:
-    url('/img/bg-warrior.png') center/cover no-repeat;
+    /* url('/img/bg-warrior.png') center/cover no-repeat; */
+    url('/img/bg-warrior.png') center 20%/cover no-repeat;
 }
 
 .bio-hero-text {
