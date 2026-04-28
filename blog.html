@@ -72,6 +72,9 @@
           <button class="tag-filter" onclick="filterPosts('update', event)">
             <span class="tag-dot"></span> Оновлення
           </button>
+          <button class="tag-filter" onclick="filterPosts('travel', event)">
+            <span class="tag-dot"></span> Подорожі Слоніка
+          </button>          
           <div class="archive-years">
             <a href="#2026" class="archive-year">2026</a>
             <a href="#2025" class="archive-year">2025</a>
@@ -102,6 +105,27 @@
               </a>
             </div>
           </article>
+          <article class="blog-post" data-tag="travel">
+            <a href="posts/post-2.html" class="post-thumb">
+              <img src="img/posts/post-2.png" alt="Прев'ю поста" />
+            </a>
+            <div class="post-info">
+              <div class="post-meta">
+                <span class="post-tag-badge">Подорожі Слоніка</span>
+                <p class="date">25 червня 2025</p>
+              </div>
+              <h3><a href="posts/post-2.html"><span class="accent-gold">Слонік у Празі</span></a></h3>
+              <p class="post-excerpt">
+                ...Ігор завжди мріяв побачити Прагу. І ось, у 2025 році, ми нарешті здійснили цю мрію за нього. 
+                Ми зі Слоніком гуляли вузькими вуличками, милувалися архітектурою, смакували місцеві страви і 
+                просто насолоджувались кожною миттю в цьому чарівному місті. 
+                Ця поїздка стала для нас справжнім відкриттям і подарувала безліч незабутніх вражень.
+              </p>
+              <a href="posts/post-2.html" class="post-cta">
+                Читати далі <span class="post-cta-arrow">→</span>
+              </a>
+            </div>
+          </article>          
         </div>
 
         <!-- Пости 2025 -->
@@ -164,5 +188,6 @@
       <span>Контакти</span>
     </a>
   </nav>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -43,10 +43,17 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 100;
   backdrop-filter: blur(16px);
+  background-color: var(--bg-color); /* підставте вашу змінну фону */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  /* решта ваших стилів залишається */  
   background: linear-gradient(to bottom, rgba(5, 7, 12, 0.95), rgba(5, 7, 12, 0.7));
   border-bottom: 1px solid rgba(212, 168, 87, 0.2);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .header-inner {
@@ -1543,27 +1550,31 @@ body {
     touch-action: manipulation;
     transition: color 0.18s;
   }
+  main {
+    padding-bottom: 70px; /* приблизно висота bottom-nav */
+  }
   .bottom-nav-item svg {
     width: 22px;
     height: 22px;
   }
-.bottom-nav-item.active {
-  color: var(--accent-gold);
-}
+  .bottom-nav-item.active {
+    color: var(--accent-gold);
+  }
 
-.bottom-nav-item.active svg {
-  stroke: var(--accent-gold);
-}
+  .bottom-nav-item.active svg {
+    stroke: var(--accent-gold);
+  }
 
-.bottom-nav-item.active span::after {
-  content: " ✦";
-  font-size: 8px;
-  vertical-align: 0%;
-  color: var(--accent-gold);
-}
+  .bottom-nav-item.active span::after {
+    content: " ✦";
+    font-size: 8px;
+    vertical-align: 0%;
+    color: var(--accent-gold);
+  }
   .bottom-nav-item:hover {
     stroke: var(--accent-gold);
   }  
+
   body {
     padding-bottom: 70px;
   }
