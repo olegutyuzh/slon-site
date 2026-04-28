@@ -64,8 +64,8 @@ body {
 }
 
 .logo-elephant {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   box-shadow: 0 0 0 2px rgba(212, 168, 87, 0.4);
   object-fit: cover;
@@ -903,6 +903,7 @@ body {
     .tag-filter.active {
       background: rgba(255,255,255,0.12);
       border-color: rgba(255,255,255,0.4);
+      color: var(--accent-gold);
       opacity: 1;
     }
     .tag-dot {
@@ -1185,7 +1186,7 @@ body {
     gap: 8px;
     margin-left: 12px; /* підбери під свій смак */ 
   }
-  .logo-elephant { width: 34px; height: 34px; }
+  .logo-elephant { width: 48px; height: 48px; }
   .logo-title { font-size: 13px; }
   .logo-subtitle { font-size: 11px; }
 
@@ -1481,6 +1482,10 @@ body {
     max-height: 220px;
     object-fit: cover;
     width: 100%;
+  }
+
+  .about-photo-grid img.photo-top {
+    object-position: center 20%;
   }
 
   .section h2 {
