@@ -1181,7 +1181,10 @@ body {
     gap: 0;
   }
 
-  .logo-block { gap: 8px; }
+  .logo-block { 
+    gap: 8px;
+    margin-left: 12px; /* підбери під свій смак */ 
+  }
   .logo-elephant { width: 34px; height: 34px; }
   .logo-title { font-size: 13px; }
   .logo-subtitle { font-size: 11px; }
@@ -1385,6 +1388,29 @@ body {
   .section-inner { padding: 14px 11px 20px; border-radius: 12px; }
   .post-thumb { height: 165px; }
 }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .thanks-symbol {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(212,168,87,0.4);
+  }
+
 /* ═══════════════════════════════════════════════
    BIOGRAPHY MOBILE
 ═══════════════════════════════════════════════ */
@@ -1478,4 +1504,102 @@ body {
  
 @media (max-width: 768px) {
   .nav-close { display: block; }
+}
+
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(5, 7, 12, 0.97);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(212, 168, 87, 0.2);
+    padding: 6px 0 max(8px, env(safe-area-inset-bottom));
+  }
+  .bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    padding: 6px 4px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: color 0.18s;
+  }
+  .bottom-nav-item svg {
+    width: 22px;
+    height: 22px;
+  }
+.bottom-nav-item.active {
+  color: var(--accent-gold);
+}
+
+.bottom-nav-item.active svg {
+  stroke: var(--accent-gold);
+}
+
+.bottom-nav-item.active span::after {
+  content: " ✦";
+  font-size: 8px;
+  vertical-align: 0%;
+  color: var(--accent-gold);
+}
+  .bottom-nav-item:hover {
+    stroke: var(--accent-gold);
+  }  
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+.lang-switch {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .lang-switch {
+    display: flex;
+    gap: 0;
+    border: 1px solid rgba(212, 168, 87, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 12px; /* підбери під свій смак */
+  }
+
+  .lang-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .lang-btn:hover {
+    background: rgba(212, 168, 87, 0.08);
+    color: var(--text-main);
+  }
+
+  .lang-btn.active-lang {
+    background: rgba(212, 168, 87, 0.15);
+    color: var(--accent-gold);
+  }
+
+  .lang-btn + .lang-btn {
+    border-left: 1px solid rgba(212, 168, 87, 0.3);
+  }
 }

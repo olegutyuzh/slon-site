@@ -20,17 +20,16 @@
         </div>
       </div>
 
-      <!-- Hamburger (mobile only) -->
-      <button class="hamburger" id="hamburger" aria-label="Відкрити меню">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- Перемикач мов -->
+      <div class="lang-switch">
+        <a href="blog.html" class="lang-btn active-lang">UA</a>
+        <a href="blog-en.html" class="lang-btn">EN</a>
+      </div>         
 
-      <nav class="main-nav" id="mainNav">
-        <button class="nav-close" id="navClose" aria-label="Закрити">✕</button>
+      <nav class="main-nav">
         <a href="blog.html" class="active-lang">UA</a>
         <a href="blog-en.html">EN</a>
+
         <a href="index.html">Головна</a>
         <a href="biography.html">Біографія</a>
         <a href="contact.html">Контакти</a>
@@ -134,28 +133,36 @@
         post.style.display = (tag === 'all' || post.dataset.tag === tag) ? '' : 'none';
       });
     }
-
-    // Мобільне меню
-    const hamburger = document.getElementById('hamburger');
-    const mainNav   = document.getElementById('mainNav');
-    const navClose  = document.getElementById('navClose');
-
-    const openNav = () => {
-      mainNav.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeNav = () => {
-      mainNav.classList.remove('open');
-      document.body.style.overflow = '';
-    };
-
-    hamburger.addEventListener('click', openNav);
-    navClose.addEventListener('click', closeNav);
-    mainNav.querySelectorAll('a').forEach(l => l.addEventListener('click', closeNav));
-    // Закрити при кліку на backdrop
-    mainNav.addEventListener('click', e => { if (e.target === mainNav) closeNav(); });
-    // Закрити по Escape
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
   </script>
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12L12 4l9 8"/>
+        <path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/>
+      </svg>
+      <span>Головна</span>
+    </a>
+    <a href="biography.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a5 5 0 110 10A5 5 0 0112 2z"/>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span>Біографія</span>
+    </a>
+    <a href="blog.html" class="bottom-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"/>
+        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+      </svg>
+      <span>Блог</span>
+    </a>
+    <a href="contact.html" class="bottom-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+      </svg>
+      <span>Контакти</span>
+    </a>
+  </nav>
 </body>
 </html>
