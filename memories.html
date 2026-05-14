@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="memories.css" />  -->
+  <link rel="stylesheet" href="bottom_menu.css" />   
+  <link rel="stylesheet" href="menu.css" />      
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+
+  <title>Спогади — Ігор «Слон» Утюж</title>
+  <link rel="canonical" href="https://slon.life/memories.html" />
+  <link rel="alternate" hreflang="uk" href="https://slon.life/memories.html" />
+  <link rel="alternate" hreflang="en" href="https://slon.life/memories.html?lang=en" />
+
+  <meta name="description" content="Спогади рідних, побратимів і друзів про Ігоря «Слона» Утюжа." />
+  <meta property="og:title" content="Спогади — Ігор «Слон» Утюж">
+  <meta property="og:description" content="Слова рідних, побратимів і друзів. Те, що про нього хочуть сказати.">
+  <meta property="og:image" content="https://slon.life/img/og-cover.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slon.life/memories.html" />
+  <meta property="og:locale" content="uk_UA" />
+
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- GoatCounter analytics -->
+  <script data-goatcounter="https://slon.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</head>
+
+<body class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
+        <div class="header-logo-mark">
+          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy"/>
+        </div>
+        SLON
+      </a>
+
+      <nav class="header-nav" aria-label="Основна навігація">
+        <a href="memories.html" class="is-active" aria-current="page" data-i18n="menu_memories">Спогади</a>
+        <a href="stories.html" data-i18n="menu_stories">Історії</a>
+        <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
+      </nav>    
+
+      <div class="header-lang">
+        <button type="button" data-lang="uk" class="is-active">UA</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===== MEMORIES PAGE ===== -->
+  <section class="section memories-page">
+    <div class="memories-inner">
+
+      <a href="index.html" class="contact-back" data-i18n="memories_back">← Повернутись на головну</a>
+
+      <div class="section-header memories-header">
+        <div class="section-kicker" data-i18n="memories_kicker">Слова, які залишились</div>
+        <h2 class="section-title" data-i18n="memories_title">Спогади про Ігоря</h2>
+        <p class="section-subtitle" data-i18n="memories_subtitle">Голоси тих, хто його знав. Кожне слово — частина того, ким він був.</p>
+      </div>
+
+      <!-- Фільтри -->
+      <div class="memories-filters" role="tablist" aria-label="Фільтр спогадів">
+        <button type="button" class="memories-filter is-active" data-filter="all" role="tab" aria-selected="true">
+          <span data-i18n="memories_filter_all">Усі</span>
+          <span class="memories-filter-count" data-count="all">0</span>
+        </button>
+        <button type="button" class="memories-filter" data-filter="family" role="tab" aria-selected="false">
+          <span data-i18n="memories_filter_family">Родина</span>
+          <span class="memories-filter-count" data-count="family">0</span>
+        </button>
+        <button type="button" class="memories-filter" data-filter="comrades" role="tab" aria-selected="false">
+          <span data-i18n="memories_filter_comrades">Побратими</span>
+          <span class="memories-filter-count" data-count="comrades">0</span>
+        </button>
+        <button type="button" class="memories-filter" data-filter="friends" role="tab" aria-selected="false">
+          <span data-i18n="memories_filter_friends">Друзі</span>
+          <span class="memories-filter-count" data-count="friends">0</span>
+        </button>
+        <button type="button" class="memories-filter" data-filter="other" role="tab" aria-selected="false">
+          <span data-i18n="memories_filter_other">Інші</span>
+          <span class="memories-filter-count" data-count="other">0</span>
+        </button>
+      </div>
+
+      <!-- Скелетон під час завантаження -->
+      <div id="memoriesSkeleton" class="memories-skeleton" aria-hidden="true">
+        <div class="skeleton-card">
+          <div class="skeleton-line is-mark"></div>
+          <div class="skeleton-line is-long"></div>
+          <div class="skeleton-line is-medium"></div>
+          <div class="skeleton-line is-short"></div>
+          <div class="skeleton-meta">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line is-mark"></div>
+          <div class="skeleton-line is-long"></div>
+          <div class="skeleton-line is-medium"></div>
+          <div class="skeleton-meta">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line is-mark"></div>
+          <div class="skeleton-line is-long"></div>
+          <div class="skeleton-line is-short"></div>
+          <div class="skeleton-meta">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Список -->
+      <div id="memoriesList" class="memories-list" aria-live="polite"></div>
+
+      <!-- Стан "порожньо" -->
+      <div id="memoriesEmpty" class="memories-empty" hidden>
+        <p data-i18n="memories_empty">Тут ще немає слів. Можливо, ваші стануть першими.</p>
+      </div>
+
+      <!-- "Показати ще" -->
+      <div class="memories-load-wrap">
+        <button type="button" id="memoriesLoadMore" class="btn btn-ghost" data-i18n="memories_load_more" hidden>Показати ще</button>
+      </div>
+
+      <!-- CTA -->
+      <div class="memories-cta">
+        <p data-i18n="memories_cta_text">Якщо ви знали Ігоря — поділіться тим, що памʼятаєте.</p>
+        <a href="contact.html" class="btn btn-primary" data-i18n="memories_cta_button">Залишити слова</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-left">
+        <div data-i18n="footer_left_text_1">Сайт-пам'ять про Ігоря «Слона» Утюжа.</div>
+        <div data-i18n="footer_left_text_2">Створено родиною та друзями. 2024 — 2026.</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-lang" data-i18n="footer_right_text">Мова</div>
+        <div class="footer-lang">
+          <span class="is-active" data-lang="uk" role="button" tabindex="0">UA</span>
+          <span data-lang="en" role="button" tabindex="0">EN</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===== НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ ===== -->
+  <nav class="bottom-nav" aria-label="Мобільна навігація">
+    <a href="index.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 11c0-3.3 2.7-6 6-6h3c3.3 0 6 2.7 6 6v4"/>
+        <path d="M4 11v6"/>
+        <path d="M7 17v3"/>
+        <path d="M19 15v5"/>
+        <path d="M16 17v3"/>
+        <path d="M10 11c0 1.5 1 2.5 2 3v4"/>
+        <path d="M12 18l-1 1"/>
+        <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
+      </svg>      
+      <span class="bottom-nav-label" data-i18n="menu_home">Головна</span>
+    </a>
+    
+    <a href="memories.html" class="bottom-nav-item is-active" aria-current="page">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>      
+      <span class="bottom-nav-label" data-i18n="menu_memories">Спогади</span>
+    </a>
+    
+    <a href="stories.html" class="bottom-nav-item">
+    <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 6c2-1 5-1.5 8 0v13c-3-1.5-6-1-8 0z"/>
+      <path d="M22 6c-2-1-5-1.5-8 0v13c3-1.5 6-1 8 0z"/>
+      <path d="M10 6v13"/>
+    </svg>
+      <span class="bottom-nav-label" data-i18n="menu_stories">Історії</span>
+    </a>
+    
+    <a href="biography.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/>
+        <path d="M4 17a3 3 0 0 1 3-3h12"/>
+        <path d="M9 8h6M9 12h4"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
+    </a>
+  </nav>
+
+
+  <!-- Послідовність важлива: спочатку config, потім memories.js -->
+  <script src="supabase-config.js"></script>
+  <script src="lang.js"></script>
+  <script src="memories.js"></script>
+  <script src="bottom_menu.js"></script>
+  <script src="menu.js"></script>    
+</body>
+</html>

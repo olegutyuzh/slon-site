@@ -1,0 +1,276 @@
+/* ====================================================
+   ===== MEMORIES PAGE =====
+   ==================================================== */
+
+.memories-page {
+  padding-top: 140px;     /* щоб не залазило під фіксований header */
+  padding-bottom: 100px;
+}
+
+.memories-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.memories-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* ===== Фільтри ===== */
+
+.memories-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.memories-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: #B3B3B3;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.memories-filter:hover {
+  border-color: rgba(200, 164, 90, 0.5);
+  color: #E6E6E6;
+}
+
+.memories-filter.is-active {
+  background: rgba(200, 164, 90, 0.12);
+  border-color: #C8A45A;
+  color: #C8A45A;
+}
+
+.memories-filter-count {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== Список карток ===== */
+
+.memories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.memory-card {
+  position: relative;
+  padding: 28px 28px 24px 36px;
+  background: transparent;
+  border: none;
+  border-left: 2px solid rgba(200, 164, 90, 0.25);
+  border-radius: 0;
+  animation: memoryFadeIn 0.4s ease both;
+}
+
+@keyframes memoryFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.memory-card-mark {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 110px;
+  line-height: 1;
+  color: rgba(200, 164, 90, 0.12);
+  pointer-events: none;
+  -webkit-user-select: none;  
+  user-select: none;
+  margin: 0;
+}
+
+.memory-card-text {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #D4D4D4;
+  margin: 0 0 18px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.memory-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.memory-card-author {
+  font-size: 14px;
+  color: #C8A45A;
+}
+
+.memory-card-date {
+  font-size: 12px;
+  color: #888780;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ===== Стан "порожньо" і помилка ===== */
+
+.memories-empty,
+.memories-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888780;
+  font-size: 14px;
+}
+
+/* ===== "Показати ще" ===== */
+
+.memories-load-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+/* ===== CTA ===== */
+
+.memories-cta {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.memories-cta p {
+  font-size: 15px;
+  color: #B3B3B3;
+  margin: 0 0 16px;
+}
+
+/* ===== Focus для доступності ===== */
+
+.memories-filter:focus-visible {
+  outline: 2px solid #C8A45A;
+  outline-offset: 3px;
+}
+
+/* ===== Мобільна адаптація ===== */
+
+@media (max-width: 640px) {
+  .memories-page {
+    padding-top: 100px;
+  }
+
+  .memory-card {
+    padding: 22px 20px 20px 26px;
+  }
+
+  .memory-card-mark {
+    font-size: 80px;
+    top: -12px;
+    left: 12px;
+  }
+
+  .memory-card-text {
+    font-size: 14px;
+  }
+
+  .memory-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .memories-filter {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* ===== СКЕЛЕТОН ДЛЯ СПОГАДІВ ===== */
+
+.memories-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px 28px;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(200, 164, 90, 0.10) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.6s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+.skeleton-line.is-mark {
+  width: 24px;
+  height: 28px;
+  margin-bottom: 14px;
+}
+
+.skeleton-line.is-short  { width: 60%; }
+.skeleton-line.is-medium { width: 85%; }
+.skeleton-line.is-long   { width: 95%; }
+
+.skeleton-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skeleton-meta .skeleton-line {
+  margin-bottom: 0;
+  height: 10px;
+}
+
+.skeleton-meta .skeleton-line:first-child { width: 30%; }
+.skeleton-meta .skeleton-line:last-child  { width: 20%; }
+
+@keyframes skeletonShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Плавне зникнення скелетону */
+.memories-skeleton.is-hiding {
+  animation: skeletonFadeOut 0.3s ease forwards;
+}
+
+@keyframes skeletonFadeOut {
+  to { opacity: 0; transform: translateY(-4px); }
+}
+
+@media (max-width: 640px) {
+  .skeleton-card {
+    padding: 20px 20px;
+  }
+}

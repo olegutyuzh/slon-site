@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="candle.css" />
+  <link rel="stylesheet" href="bottom_menu.css" />  
+  <link rel="stylesheet" href="menu.css" />  
+  <link rel="stylesheet" href="sub_menu.css" /> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">  
+  <link rel="alternate" hreflang="uk" href="https://slon.life/" />
+  <link rel="alternate" hreflang="en" href="https://slon.life/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://slon.life/" />
+  
+  <!-- Базові SEO -->
+  <title>Ігор «Слон» Утюж — In Memoriam</title>
+  <link rel="canonical" href="https://slon.life/" />
+
+  <!-- Open Graph (Facebook, Telegram, Viber, LinkedIn) -->
+  <meta name="description" content="Меморіальна сторінка, присвячена Ігорю «Слону» Утюжу — захиснику України. 18.04.1996 — 07.12.2023." />
+  <meta property="og:title" content="Світла пам’ять Ігоря Утюжа — його сила та доброта живуть далі">
+  <meta property="og:description" content="Вшанування життя, сили та спадку Ігоря Утюжа. Його цінності, мужність і пам’ять продовжують надихати всіх, хто його знав.">
+  <meta property="og:image" content="https://slon.life/img/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slon.life/" />
+  <meta property="og:locale" content="uk_UA" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ігор «Слон» Утюж — In Memoriam" />
+  <meta name="twitter:description" content="Пам'яті Ігоря Утюжа — захисника України. 18.04.1996 — 07.12.2023." />
+  <meta name="twitter:image"       content="https://slon.life/img/og-cover.png" />  
+
+  <!-- Optional CTA -->
+  <meta property="og:see_also" content="https://slon.life/thanks.html">   
+
+  <!-- GoatCounter analytics -->
+  <script data-goatcounter="https://slon.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</head>
+
+<body class="page has-subnav">
+  <div class="site-grain" aria-hidden="true"></div>
+  <div class="site-aurora" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
+        <div class="header-logo-mark">
+          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+        </div>
+        SLON
+      </a>
+       
+      <nav class="header-nav" aria-label="Основна навігація">
+        <a href="memories.html" data-i18n="menu_memories">Спогади</a>
+        <a href="stories.html" data-i18n="menu_stories">Історії</a>
+        <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
+      </nav>   
+      
+      <!-- ===== ВТОРИННА НАВІГАЦІЯ — тільки на головній ===== -->
+      <nav class="subnav" aria-label="Розділи сторінки">
+        <div class="subnav-inner">
+          <a href="#about"     data-i18n="menu_about">Про Ігоря</a>
+          <a href="#war-path"  data-i18n="menu_warpath">Шлях воїна</a>
+          <a href="#life"      data-i18n="menu_life">Фрагменти життя</a>
+          <a href="#symbols"   data-i18n="menu_symbols">Символіка</a>
+        </div>
+      </nav>      
+
+    <div class="header-lang">
+      <button type="button" data-lang="uk" class="is-active">UA</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-atmosphere" aria-hidden="true">
+      <span class="hero-glow"></span>
+      <span class="hero-haze hero-haze-one"></span>
+      <span class="hero-haze hero-haze-two"></span>
+      <span class="hero-particles"></span>
+    </div>
+    <div class="hero-inner">
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="img/hero-portrait.jpg" alt="Ігор Утюж, портрет" />
+        </div>
+        <div class="hero-photo-overlay"></div>
+        <div class="hero-photo-mark" data-i18n="hero_photo_mark">СЛОН</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-kicker" data-i18n="hero_kicker">Воїн, друг, син</div>
+        <h1 class="hero-title" data-i18n="hero_title">Ігор «Слон» Утюж</h1>
+        <div class="hero-years" data-i18n="hero_years">18.04.1996 — 07.12.2023</div>
+
+        <p class="hero-text" data-i18n="hero_text">Захисник України, боєць 78-го окремого десантно-штурмового полку, учасник Революції Гідності. Людина, яка двічі зробила вибір йти першим — у 17 років на Майдан, і у 25 — на повномасштабну війну.</p>
+        <p class="hero-text_slogan" data-i18n-html="hero_text_slogan"><em>«Якщо мені врятували життя — значить, я потрібен для чогось більшого»</em></p>
+        <div class="hero-actions">
+          <a href="#war-path" class="btn btn-primary" data-i18n="hero_action_warpath">Його шлях</a>
+          <!-- <a href="#life" class="btn btn-ghost" data-i18n="hero_action_life">Фрагменти життя</a> -->
+          <a href="#gratitude" class="btn btn-ghost" data-i18n="hero_action_gratitude">Подяка</a>
+        </div>
+      </div>
+
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Прокрутити до розділу Про Ігоря">
+      <span>Scroll</span>
+      <i></i>
+    </a>
+  </section>
+
+  <section class="silent-quote" aria-label="Цитата памʼяті">
+    <div class="silent-quote-inner">
+      <p data-i18n-html="hero_text_slogan">«Якщо мені врятували життя — значить, я потрібен для чогось більшого»</p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about">
+    <div class="section-inner about-inner">
+
+      <div class="about-line"></div>
+
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="section_kicker">Про Ігоря</div>
+        <h2 class="section-title" data-i18n="section_title">Хто він був для нас</h2>
+        <p class="section-subtitle" data-i18n="section_subtitle">Коротка історія життя, характеру та шляху Ігоря — людини, яка вміла бути поруч і вміла йти вперед.</p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title" data-i18n="about_block_title_childhood">Дитинство і характер</div>
+        <div class="about-block-text" data-i18n="about_block_text_childhood">Ігор з дитинства був активним, енергійним і допитливим. Батьки згадують його як хлопця, який «завжди знаходив собі заняття» і мав природну наполегливість. Займався єдиноборствами, веслуванням, любив спорт і людей. Його вміння знаходити спільну мову було майже містичним — кілька слів, усмішка, і він уже «свій» серед нових людей.</div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title" data-i18n="about_block_title_before_war">Життя до війни</div>
+        <div class="about-block-text" data-i18n="about_block_text_before_war">До повномасштабного вторгнення Ігор жив звичайним життям молодої людини: навчання, друзі, подорожі, футбол, шахи, плани на майбутнє. Він любив своє місто, любив матчі національної збірної, любив прості радості. Мріяв колись поїхати в Африку — захищати слонів. Слони були його дитячою любов'ю, від якої згодом виріс і його позивний.</div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title" data-i18n="about_block_title_beginning_service">Революція Гідності</div>
+        <div class="about-block-text" data-i18n="about_block_text_beginning_service">У 17 років Ігор зробив вибір, який визначив усе подальше життя. Він став частиною 24-ї сотні самооборони Майдану, чергував на барикадах, допомагав витягувати поранених. 18 лютого 2014 року в Маріїнському парку отримав важке поранення — частина черепа була роздроблена. Лікарі врятували йому життя. Тоді він сказав фразу, яка стала пророчою: «Якщо мені врятували життя — значить, я потрібен для чогось більшого».</div>
+      </div>
+
+      <a href="biography.html" class="link-more" data-i18n="read_full_biography">Повний життєпис</a>
+    </div>
+  </section>
+
+  <!-- ===== WAR PATH ===== -->
+  <section id="war-path" class="section war-path">
+    <div class="war-path-inner">
+
+      <div>
+        <div class="section-header">
+          <div class="section-kicker" data-i18n="section_kicker_warpath">Служба</div>
+          <h2 class="section-title" data-i18n="section_title_warpath">Шлях воїна</h2>
+          <p class="section-subtitle" data-i18n="section_subtitle_warpath">Від Майдану до 78-го окремого десантно-штурмового полку. Ключові віхи військового шляху Ігоря.</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-year" data-i18n="timeline_year_volunteer_decision">2014 — 2016</div>
+            <div class="timeline-title" data-i18n="timeline_title_volunteer_decision">Перша війна. АТО</div>
+            <div class="timeline-text" data-i18n="timeline_text_volunteer_decision">Попри тяжке поранення на Майдані, Ігор пройшов реабілітацію і приєднався до Антитерористичної операції. Отримав медаль «За жертовність і любов до України». Повернувся з фронту, але війна вже не відпускала.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year" data-i18n="timeline_year_first_battles">24.02.2022</div>
+            <div class="timeline-title" data-i18n="timeline_title_first_battles">Повернення</div>
+            <div class="timeline-text" data-i18n="timeline_text_first_battles">Ще до повномасштабного вторгнення Ігор сказав родині: «Якщо почнеться — я піду». 24 лютого 2022 року він був за кордоном — і повернувся в Україну першими ж можливими шляхами. Записався у 78-й окремий десантно-штурмовий полк. Став оператором БПЛА.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year" data-i18n="timeline_year_last_battle">2022 — 2023</div>
+            <div class="timeline-title" data-i18n="timeline_title_last_battle">Київщина, Харківщина, Південь</div>
+            <div class="timeline-text" data-i18n="timeline_text_last_battle">Брав участь у звільненні Київщини та Харківщини. Згодом — Запорізький та Херсонський напрямки. Працював на складних ділянках, підтримував побратимів, ніколи не залишав своїх. У грудні 2023 року, виконуючи бойове завдання, його позицію атакував ворожий ФПВ-дрон. Ігор загинув, прикривши собою побратимів — так само, як жив: стоячи поруч, до кінця, без страху і без кроку назад.</div>
+          </div>
+
+          <a href="biography.html#bio-war-path" class="link-more" data-i18n="read_more_war">Більше про шлях</a>
+        </div>
+      </div>
+
+      <div class="war-path-photos">
+
+        <div class="war-photo-card">
+          <img src="img/war1.jpg" alt="З побратимами 78-го полку" loading="lazy"/>
+          <div class="war-photo-caption" data-i18n="war_photo_caption_1" alt="З побратимами 78-го полку">З побратимами 78-го полку</div>
+        </div>
+
+        <div class="war-photo-card is-portrait">
+          <img src="img/war2.jpg" alt="Робота з дроном на передовій" loading="lazy"/>
+          <div class="war-photo-caption" data-i18n="war_photo_caption_2" alt="Робота з дроном на передовій">Робота з дроном на передовій</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== LIFE FRAGMENTS ===== -->
+  <section id="life" class="section life-fragments">
+    <div class="section-inner">
+
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="section_kicker_life_fragments">Фото</div>
+        <h2 class="section-title" data-i18n="section_title_life_fragments">Фрагменти життя</h2>
+        <p class="section-subtitle" data-i18n="section_subtitle_life_fragments">Ігор умів радіти простим речам — грі, місту, моментам із друзями. Кілька кадрів його живої історії.</p>
+      </div>
+
+      <div class="life-grid">
+
+        <div class="life-card">
+          <div class="life-card-img">
+            <img src="img/life1.jpg" alt="" loading="lazy"/>
+            <div class="life-card-overlay"></div>
+            <!-- <div class="life-card-quote" data-i18n="life_card_quote_1">«Жив так, ніби кожен день важливий»</div> -->
+            <div class="photo-mark" data-i18n="life_card_quote_1">«Жив так, ніби кожен день важливий»</div>
+          </div>
+          <div class="life-card-body">
+            <div class="life-card-title" data-i18n="life_card_title_1">З родиною</div>
+            <div class="life-card-text" data-i18n="life_card_text_1">Дім, у якому виріс. Місто, яке він любив.</div>
+          </div>
+        </div>
+
+        <div class="life-card">
+          <div class="life-card-img">
+            <img src="img/life2.jpg" alt="" loading="lazy"/>
+            <div class="life-card-overlay"></div>
+            <!-- <div class="life-card-quote" data-i18n="life_card_quote_2">«Моя Женя»</div> -->
+            <div class="photo-mark" data-i18n="life_card_quote_2">«Моя Женя»</div>            
+          </div>
+          <div class="life-card-body">
+            <div class="life-card-title" data-i18n="life_card_title_2">Кохана</div>
+            <div class="life-card-text" data-i18n="life_card_text_2">Та, заради якої повертався. Дім, який починався з неї.</div>
+          </div>
+        </div>
+
+        <div class="life-card">
+          <div class="life-card-img">
+            <img src="img/life3.jpg" alt="" loading="lazy"/>
+            <div class="life-card-overlay"></div>
+            <!-- <div class="life-card-quote" data-i18n="life_card_quote_3">«Поїду захищати слонів»</div> -->
+            <div class="photo-mark" data-i18n="life_card_quote_3">«Поїду захищати слонів»</div>              
+          </div>
+          <div class="life-card-body">
+            <div class="life-card-title" data-i18n="life_card_title_3">Мрії</div>
+            <div class="life-card-text" data-i18n="life_card_text_3">Африка, Крим, власний благодійний фонд — те, про що мріяв уголос.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="fragments.html" class="link-more" data-i18n="read_full_fragments">Усі фрагменти</a>
+
+    </div>
+  </section>
+
+  <!-- ===== SYMBOLS ===== -->
+  <section id="symbols" class="section symbols">
+    <div class="symbols-inner">
+
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="section_kicker_symbols">Символіка</div>
+        <h2 class="section-title" data-i18n="section_title_symbols">Символи його шляху</h2>
+        <p class="section-subtitle" data-i18n="section_subtitle_symbols">Те, що уособлює характер Ігоря, його позивний і те, за що він стояв до кінця.</p>
+      </div>
+
+      <div class="symbols-grid">
+
+        <div class="symbol-card">
+          <!-- <div class="symbol-icon">🐘</div> -->
+          <div class="symbol-icon">
+            <img src="img/elephant.svg" alt="Slon" aria-hidden="true" class="slon-svg">  
+          </div>     
+          <div class="symbol-title" data-i18n="symbol_title_slon">Слон</div>
+          <div class="symbol-text" data-i18n="symbol_text_slon">Позивний, який народився з дитячої любові й перетворився на знак сили, витримки і здатності тримати удар. «Слон» — той, хто йде вперед, коли інші зупиняються.</div>
+        </div>
+
+        <div class="symbol-card">
+          <!-- <div class="symbol-icon">🛡️</div> -->
+          <div class="symbol-icon">
+            <img src="img/shield.svg" alt="Shield" aria-hidden="true" class="slon-svg">  
+          </div>
+          <div class="symbol-title" data-i18n="symbol_title_shield">Щит</div>
+          <div class="symbol-text" data-i18n="symbol_text_shield">Захист побратимів, родини, дому. Те, чим Ігор був для людей навколо себе — і в Маріїнському парку, і в окопах ДШВ.</div>
+        </div>
+
+        <div class="symbol-card">
+          <!-- <div class="symbol-icon">🇺🇦</div> -->
+          <div class="symbol-icon">
+            <img src="img/map.svg" alt="Ukraine" aria-hidden="true" class="slon-svg">
+          </div>       
+          <div class="symbol-title" data-i18n="symbol_title_ukraine">Україна</div>
+          <div class="symbol-text" data-i18n="symbol_text_ukraine">Те, за що він двічі робив вибір — у 17 і у 25. Те, заради чого жив і за що віддав життя.</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== GRATITUDE ===== -->
+  <section id="gratitude" class="section gratitude">
+    <div class="gratitude-inner">
+
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="section_kicker_gratitude">Хто пам'ятає</div>
+        <h2 class="section-title" data-i18n="section_title_gratitude">Слова, які залишились</h2>
+      </div>
+
+      <div class="quotes">
+
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <div class="quote-text" data-i18n="gratitude_quote_1">Він був для нас Всесвітом. Справжній патріот, вірний друг і побратим, з великим серцем, відкритим для всіх. У будь-яких обставинах підбадьорював інших і повторював, що все буде добре. Так було і на Майдані, коли йому було 17. Так було і потім.</div>
+          <div class="quote-author" data-i18n="gratitude_author_1">— Мама</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <div class="quote-text" data-i18n="gratitude_quote_2">Головним його бажанням була наша перемога. Після неї планував багато подорожувати — підлаштовуючи маршрути так, щоб встигати на футбольні матчі. Мріяв про будиночок у горах із неймовірними краєвидами і про доньку — обов'язково першу. У нього була мета створити благодійний фонд, який він би назвав «Білий Слон».</div>
+          <div class="quote-author" data-i18n="gratitude_author_2">— Наречена</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <div class="quote-text" data-i18n="gratitude_quote_3">«Слон» завжди хотів бути попереду. Командир кликав його у штаб — він відмовлявся: «Я хочу заходити в міста і ставити прапори». Так і робив.</div>
+          <div class="quote-author" data-i18n="gratitude_author_3">— Побратим, 78-й десантно-штурмовий полк</div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <div class="quote-text" data-i18n="gratitude_quote_4">Людина, яка точно знала свої цінності й трималася їх. Кремезний, з широкими плечима, за які можна було сховатися. «Своя людина» з перших слів — і назавжди.</div>
+          <div class="quote-author" data-i18n="gratitude_author_4">— Друг</div>
+        </div>
+
+        <div class="quotes-cta">
+          <div class="quotes-counter">
+            <span class="quotes-counter-line"></span>
+            <span class="quotes-counter-text">&nbsp;</span>
+            <span class="quotes-counter-line"></span>
+          </div>
+          
+          <a href="memories.html" class="btn btn-quotes-cta" data-i18n="quotes_read_all">Читати всі →</a>
+          
+          <p class="quotes-cta-caption" data-i18n="quotes_caption">Кожен голос — частина пам'яті</p>
+        </div>
+
+      </div>
+     
+    </div>
+  </section>
+
+  <!-- ===== MEMORY ACTIONS ===== -->
+  <section class="section memory-actions memory-scene">
+    <!-- ФОНОВИЙ СЛОН -->
+    <!-- <div class="elephant-bg"></div> -->
+
+    <div class="memory-inner">
+
+      <h2 class="memory-title" data-i18n="memory_title">Вшанувати пам’ять</h2>
+
+      <p class="memory-subtitle" data-i18n="memory_subtitle">Якщо ви знали Ігоря або хочете залишити слова — зробіть це тут.</p>
+
+      <!-- ===== Дві кнопки (як було) ===== -->
+      <div class="memory-buttons">
+      
+        <button id="lightCandleBtn" type="button" class="memory-btn">
+          <span class="memory-btn-icon">
+            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+          </span>
+          <span data-i18n="light_candle">Запалити свічку</span>
+        </button>
+      
+        <a href="contact.html" class="memory-btn">
+          <span class="memory-btn-icon">
+            <img src="img/message.svg" alt="" aria-hidden="true" class="slon-svg" />
+          </span>
+          <span data-i18n="leave_message">Залишити слова</span>
+        </a>
+      
+      </div>
+      
+      <!-- ===== Маленький лічильник прямо під кнопками ===== -->
+      <div class="candle-counter-line">
+        <span class="candle-counter-line-number" id="candlesCount">—</span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line">
+          свічок памʼяті вже горить
+        </span>
+      </div>
+      
+      <!-- ===== Картка свічки — зʼявляється після кліку ===== -->
+      <div id="candleCard" class="candle-card" hidden>
+      
+        <!-- Стан "щойно запалена" — пропозиція підписати -->
+        <div id="candleStateLit" class="candle-card-state">
+          <div class="candle-card-icon">
+            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+          </div>
+          <p class="candle-card-text" data-i18n="candle_lit_message">
+            Світло памʼяті горить
+          </p>
+      
+          <div class="candle-sign-form">
+            <p class="candle-sign-text" data-i18n="candle_sign_prompt">
+              Ваше імʼя залишиться поряд
+            </p>
+            <input
+              type="text"
+              id="candleName"
+              class="candle-name-input"
+              maxlength="80"
+              data-i18n-placeholder="candle_name_placeholder"
+              placeholder="Як до вас звертатись" />
+            <div class="candle-sign-actions">
+              <button type="button" id="signCandleBtn" class="memory-btn candle-sign-btn">
+                <span data-i18n="candle_sign_btn">Підписати</span>
+              </button>
+              <a href="#" id="skipCandleBtn" class="candle-skip" data-i18n="candle_skip">
+                пропустити
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Стан "вже підписано / повторний візит" -->
+        <div id="candleStateDone" class="candle-card-state" hidden>
+          <div class="candle-card-icon">
+            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+          </div>
+          <p class="candle-card-text" data-i18n="candle_done_message">
+            Ваша свічка горить
+          </p>
+          <div class="candle-done-name" id="candleDoneName"></div>
+        </div>
+      
+      </div>
+
+      <!-- ===== CANDLE ===== -->
+      <div id="candleContainer" class="candle-visual candle-scene">
+
+        <!-- SVG СВІЧКА -->
+        <svg width="80" height="160" viewBox="0 0 80 160">
+
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="30%" r="50%">
+              <stop offset="0%" stop-color="rgba(255,200,120,0.6)" />
+              <stop offset="100%" stop-color="rgba(255,200,120,0)" />
+            </radialGradient>
+
+            <linearGradient id="wax" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f5f5f5"/>
+              <stop offset="100%" stop-color="#d4d4d4"/>
+            </linearGradient>
+          </defs>
+
+          <circle cx="40" cy="40" r="30" fill="url(#glow)">
+            <animate attributeName="r" values="28;32;28" dur="3s" repeatCount="indefinite"/>
+          </circle>
+
+          <path d="M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z"
+            fill="#FFD580">
+            <animate attributeName="d"
+              dur="1.6s"
+              repeatCount="indefinite"
+              values="
+              M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z;
+              M40 22 C46 32, 48 42, 40 50 C32 42, 34 32, 40 22 Z;
+              M40 20 C44 30, 52 40, 40 50 C28 40, 36 30, 40 20 Z;
+              M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z
+            "/>
+          </path>
+
+          <rect x="39" y="48" width="2" height="6" fill="#444" />
+          <rect x="25" y="54" width="30" height="80" rx="6" fill="url(#wax)" />
+          <ellipse cx="40" cy="140" rx="20" ry="6" fill="rgba(0,0,0,0.3)" />
+
+        </svg>
+
+        <p class="candle-text" data-i18n="candle_text">Свічку запалено</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-left">
+        <div data-i18n="footer_left_text_1">Сайт-пам'ять про Ігоря «Слона» Утюжа.</div>
+        <div data-i18n="footer_left_text_2">Створено родиною та друзями. 2024 — 2026.</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-lang" data-i18n="footer_right_text">Мова</div>
+        <div class="footer-lang">
+          <span class="is-active" data-lang="uk" role="button" tabindex="0">UA</span>
+          <span data-lang="en" role="button" tabindex="0">EN</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===== НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ ===== -->
+  <nav class="bottom-nav" aria-label="Мобільна навігація">
+    <a href="index.html" class="bottom-nav-item is-active" aria-current="page">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 11c0-3.3 2.7-6 6-6h3c3.3 0 6 2.7 6 6v4"/>
+        <path d="M4 11v6"/>
+        <path d="M7 17v3"/>
+        <path d="M19 15v5"/>
+        <path d="M16 17v3"/>
+        <path d="M10 11c0 1.5 1 2.5 2 3v4"/>
+        <path d="M12 18l-1 1"/>
+        <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
+      </svg>      
+      <span class="bottom-nav-label" data-i18n="menu_home">Головна</span>
+    </a>
+    
+    <a href="memories.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>      
+      <span class="bottom-nav-label" data-i18n="menu_memories">Спогади</span>
+    </a>
+    
+    <a href="stories.html" class="bottom-nav-item">
+    <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 6c2-1 5-1.5 8 0v13c-3-1.5-6-1-8 0z"/>
+      <path d="M22 6c-2-1-5-1.5-8 0v13c3-1.5 6-1 8 0z"/>
+      <path d="M10 6v13"/>
+    </svg>
+      <span class="bottom-nav-label" data-i18n="menu_stories">Історії</span>
+    </a>
+    
+    <a href="biography.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/>
+        <path d="M4 17a3 3 0 0 1 3-3h12"/>
+        <path d="M9 8h6M9 12h4"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
+    </a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="lang.js"></script>
+  <script src="candle.js"></script>
+  <script src="quotes-counter.js"></script>
+  <script src="candle_counter.js"></script>
+  <script src="bottom_menu.js"></script>
+  <script src="menu.js"></script>  
+</body>
+</html>

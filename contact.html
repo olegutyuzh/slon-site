@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Залишити слова — Ігор «Слон» Утюж</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <!-- SupdaBase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- GoatCounter analytics -->
+  <script data-goatcounter="https://slon.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo">
+        <div class="header-logo-mark">
+          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+        </div>
+        SLON
+      </a>
+
+      <nav class="header-nav" aria-label="Основна навігація">
+        <a href="memories.html" data-i18n="menu_memories">Спогади</a>
+        <a href="stories.html" data-i18n="menu_stories">Історії</a>
+        <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
+      </nav>            
+
+      <div class="header-lang">
+        <button data-lang="uk" class="is-active" onclick="setLanguage('uk')">UA</button>
+        <button data-lang="en" onclick="setLanguage('en')">EN</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-page">
+    <div class="contact-inner">
+
+      <a href="index.html" class="contact-back" data-i18n="contact_back"></a>
+
+      <div class="section-header contact-header">
+        <div class="section-kicker" data-i18n="contact_kicker">Слова пам'яті</div>
+        <h2 class="section-title contact-title" data-i18n="contact_title">Залишити слова</h2>
+        <p class="section-subtitle" data-i18n="contact_subtitle">Один спогад, одна історія, одне слово — усе важить. Те, що ви напишете, залишиться частиною памʼяті про нього.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+
+        <div class="form-row">
+          <label for="name">
+            <span data-i18n="contact_name_label">Ваше ім'я</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            data-i18n-placeholder="contact_name_placeholder"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="category">
+            <span data-i18n="contact_category_label">Як ви знали Ігоря</span>
+          </label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected data-i18n="contact_category_placeholder">Оберіть категорію</option>
+            <option value="family"   data-i18n="contact_category_family">Родина</option>
+            <option value="comrades" data-i18n="contact_category_comrades">Побратим</option>
+            <option value="friends"  data-i18n="contact_category_friends">Друг</option>
+            <option value="other"    data-i18n="contact_category_other">Інше</option>
+          </select>
+        </div>        
+
+        <div class="form-row">
+          <label for="email">
+            <span data-i18n="contact_email_label">Email</span>
+            <span class="form-optional" data-i18n="contact_optional">(необов'язково)</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            data-i18n-placeholder="contact_email_placeholder"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="message">
+            <span data-i18n="contact_message_label">Ваші слова</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            data-i18n-placeholder="contact_message_placeholder"
+            required
+          ></textarea>
+        </div>
+
+        <input
+          type="text"
+          name="bot-field"
+          class="hidden-field"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <div id="formError" class="form-error"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="contact_submit"></button>
+          <a href="index.html" class="btn btn-ghost" data-i18n="contact_cancel"></a>
+        </div>
+
+      </form>
+
+      <!-- повідомлення після відправки -->
+      <div id="contactSuccess" class="contact-success">
+        <div class="contact-success-icon">
+          <!-- 🕯️ -->
+            <div class="symbol-icon">
+              <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg">
+            </div>
+        </div>
+        <h3 class="contact-success-title" data-i18n="contact_success_title">Дякуємо. Ваші слова з нами.</h3>
+        <p class="contact-success-text" data-i18n="contact_success_text">Ми прочитаємо їх уважно. Найближчим часом вони з'являться на сторінці спогадів — поруч зі словами рідних, побратимів і друзів. Це багато для нас означає.</p>
+        <a href="index.html" class="btn btn-ghost" data-i18n="back_to_home">Повернутися на головну</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-left">
+        <div data-i18n="footer_left_text_1">Сайт-пам'ять про Ігоря «Слона» Утюжа.</div>
+        <div data-i18n="footer_left_text_2">Створено родиною та друзями. 2024 — 2026.</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-lang" data-i18n="footer_right_text">Мова</div>
+        <div class="footer-lang">
+          <span class="is-active" data-lang="uk">UA</span>
+          <span data-lang="en">EN</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="supabase-config.js"></script>
+  <script src="lang.js"></script>
+  <script src="contact.js"></script>  
+</body>
+</html>
