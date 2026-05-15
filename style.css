@@ -179,7 +179,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero-photo-wrap {
@@ -505,7 +505,8 @@ a {
 
 .life-card-img img {
   width: 100%;
-  height: 210px;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -1874,7 +1875,7 @@ body::after {
   width: min(1320px, 100%);
   grid-template-columns: minmax(280px, .9fr) minmax(0, 1.4fr);
   gap: clamp(42px, 6vw, 90px);
-  align-items: center;
+  align-items: start;
 }
 
 .hero-photo-wrap {
@@ -2217,6 +2218,25 @@ body::after {
     linear-gradient(180deg, #0b0c10, #11141a 52%, #07080a);
 }
 
+/* Компактніша секція «Шлях воїна» */
+.war-path {
+  padding-top: clamp(64px, 7vw, 110px);
+  padding-bottom: clamp(64px, 7vw, 110px);
+}
+
+.war-path .section-header {
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+.war-path .timeline-item {
+  padding-bottom: 20px;       /* було 34px */
+  margin-bottom: 8px;          /* було 16px */
+}
+
+.war-path-photos {
+  padding-top: 0 !important;   /* було 42px */
+}
+
 .war-path-inner {
   grid-template-columns: minmax(0, 1fr) minmax(320px, .75fr);
   gap: clamp(42px, 6vw, 88px);
@@ -2228,8 +2248,8 @@ body::after {
 }
 
 .timeline-item {
-  padding: 0 0 34px;
-  margin-bottom: 16px;
+  padding: 0 0 20px;       /* було 34px */
+  margin-bottom: 8px;       /* було 16px */
 }
 
 .timeline-item::before {
@@ -2274,7 +2294,7 @@ body::after {
 .war-photo-card.is-portrait { transform: translateX(34px); }
 
 .war-photo-card img {
-  height: 300px;
+  height: clamp(200px, 20vw, 260px); 
   filter: saturate(.78) contrast(1.08) brightness(.86);
   transition: transform 1.2s var(--v2-ease), filter .7s var(--v2-ease);
 }
@@ -2285,7 +2305,7 @@ body::after {
   filter: saturate(.92) contrast(1.08) brightness(.94);
 }
 
-.war-photo-card.is-portrait img { height: 420px; }
+.war-photo-card.is-portrait img { height: clamp(240px, 24vw, 300px); }
 
 .war-photo-caption {
   padding: 16px 18px 18px;
@@ -2300,21 +2320,57 @@ body::after {
 }
 
 .life-grid {
-  grid-template-columns: 1fr 1.28fr .92fr;
-  gap: clamp(18px, 2.4vw, 32px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 3.5vw, 48px);   /* було 18px, 2.4vw, 32px */
   align-items: start;
+  padding: 20px 0;                 /* щоб повернуті кути не різались зверху/знизу */
 }
 
 .life-card {
   border-radius: 34px;
   background: rgba(255,255,255,.025);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.life-card:nth-child(2) { margin-top: 74px; }
-.life-card:nth-child(3) { margin-top: 28px; }
+.life-card:hover {
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.life-card:nth-child(1) { margin-top: 40px; }
+.life-card:nth-child(2) { margin-top: 0; }
+.life-card:nth-child(3) { margin-top: 60px; }
+
+/* Хаотичні повороти карток */
+.life-card:nth-child(1) {
+  transform: rotate(-2.5deg);
+}
+.life-card:nth-child(2) {
+  transform: rotate(1.5deg);
+}
+.life-card:nth-child(3) {
+  transform: rotate(-1.2deg);
+}
+
+/* Плавна поведінка при hover */
+.life-card {
+  transition: transform 0.5s var(--v2-ease, ease);
+  transform-origin: center center;
+}
+
+/* На hover — картка випрямляється і трохи піднімається */
+.life-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  z-index: 2;
+}
 
 .life-card-img img {
-  height: clamp(260px, 34vw, 480px);
+  height: auto;
+  aspect-ratio: 16 / 10;          /* горизонтальне співвідношення */
+  object-fit: cover;
   filter: saturate(.82) contrast(1.05) brightness(.88);
   transition: transform 1.2s var(--v2-ease), filter .7s var(--v2-ease);
 }
@@ -2531,8 +2587,15 @@ body::after {
   filter: blur(0);
 }
 
-.life-card:nth-child(2).reveal-on-scroll.is-visible { transform: translateY(74px); }
-.life-card:nth-child(3).reveal-on-scroll.is-visible { transform: translateY(28px); }
+.life-card:nth-child(1).reveal-on-scroll.is-visible {
+  transform: rotate(-2.5deg);
+}
+.life-card:nth-child(2).reveal-on-scroll.is-visible {
+  transform: rotate(1.5deg);
+}
+.life-card:nth-child(3).reveal-on-scroll.is-visible {
+  transform: rotate(-1.2deg);
+}
 .war-photo-card:first-child.reveal-on-scroll.is-visible { transform: translateX(-18px); }
 .war-photo-card.is-portrait.reveal-on-scroll.is-visible { transform: translateX(34px); }
 
@@ -2643,15 +2706,23 @@ body::after {
     grid-template-columns: 1fr;
   }
 
-  .life-card:nth-child(2),
-  .life-card:nth-child(3),
-  .life-card:nth-child(2).reveal-on-scroll.is-visible,
-  .life-card:nth-child(3).reveal-on-scroll.is-visible {
-    margin-top: 0;
-    transform: none;
-  }
+/* Скидаємо повороти, зсуви та reveal-анімацію для всіх трьох карток */
+.life-card:nth-child(1),
+.life-card:nth-child(2),
+.life-card:nth-child(3),
+.life-card:nth-child(1).reveal-on-scroll.is-visible,
+.life-card:nth-child(2).reveal-on-scroll.is-visible,
+.life-card:nth-child(3).reveal-on-scroll.is-visible {
+  margin-top: 0;
+  transform: none;
+}
 
-  .life-card-img img { height: 340px; }
+/* Прибираємо hover-ефекти, які не потрібні на мобільному */
+.life-card:hover {
+  transform: none;
+}
+
+  .life-card-img img { height: auto; aspect-ratio: 16 / 10; }
   .symbol-card, .object-card { min-height: auto; }
   .memory-pause { min-height: 62vh; }
   .quote-card { padding: 28px 22px 26px 28px; }
@@ -2667,7 +2738,8 @@ body::after {
   .btn, .memory-btn { width: 100%; }
   .section-title, .memory-title { letter-spacing: -.035em; }
   .about-block { padding-left: 18px; }
-  .war-photo-card img, .war-photo-card.is-portrait img, .life-card-img img { height: 300px; }
+  .war-photo-card img, .war-photo-card.is-portrait img { height: 300px; }
+  .life-card-img img { height: auto; aspect-ratio: 16 / 10; }
   .footer { padding-bottom: 120px; }
 }
 
