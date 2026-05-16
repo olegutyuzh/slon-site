@@ -1,0 +1,239 @@
+/* ============================================================
+   PRIORITY 5 — Підгонка hero під референс-скріншот
+   Підключати ПІСЛЯ priority-4.css (або останнім у списку)
+   
+   Що змінюється vs попередній стан:
+   1. Фото більше і вирівняне ліворуч (не по центру/справа)
+   2. Текстова колонка вужча, ближче до правого краю фото
+   3. Цитата — м'який gradient без різкої рамки
+   4. Кнопка "Його шлях" — повноцінна pill-форма
+   5. SCROLL — компактніший, лінія коротша
+   ============================================================ */
+
+
+/* ---------- 1. HERO-INNER: сітка 1fr/1.1fr, фото ліворуч ---------- */
+
+@media (min-width: 861px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) !important;
+    gap: 80px !important;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ---------- 2. ФОТО: більше, ліворуч, без зайвого ореолу ---------- */
+
+.hero-photo-wrap {
+  justify-self: start !important;       /* було center у v2, end у priority-1 */
+  width: min(540px, 100%) !important;   /* було 360px / 480px */
+  max-width: 540px;
+  position: relative;
+}
+
+/* Прибираємо великий золотий ореол навколо фото — у референсі 
+   він майже непомітний, фото "висить" чистіше */
+.hero-photo-wrap::before {
+  opacity: 0.18 !important;             /* було .65 */
+  inset: -8% !important;                /* було -18%/-40px */
+  filter: blur(80px) !important;
+  background: radial-gradient(
+    circle,
+    rgba(214, 168, 95, 0.15),
+    transparent 60%
+  ) !important;
+}
+
+/* Сам бордер фото — тонший, теплий, як у референсі */
+.hero-photo {
+  border-radius: 28px !important;       /* трохи більше заокруглення */
+  border: 1px solid rgba(246, 239, 228, 0.08) !important;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(214, 168, 95, 0.05) !important;
+}
+
+.hero-photo img {
+  filter: saturate(0.82) contrast(1.05) !important;
+}
+
+
+/* ---------- 3. БЕКГРАУНД-ПОРТРЕТ СПРАВА: приглушити ---------- */
+
+.hero-bg-image {
+  opacity: 0.45 !important;             /* робимо ледь видним як у референсі */
+}
+
+
+/* ---------- 4. КОНТЕНТНА КОЛОНКА: повітря та відступи ---------- */
+
+.hero-content {
+  max-width: 560px;
+}
+
+/* Кікер "ВОЇН, ДРУГ, СИН" — трохи менший margin знизу */
+.hero-kicker {
+  margin-bottom: 18px !important;
+}
+
+/* Title — тісніше до дат */
+.hero-title {
+  margin-bottom: 4px !important;
+}
+
+
+/* ---------- 5. ДАТИ: лінії тонші, повітря більше ---------- */
+
+.hero-years {
+  border-top: 1px solid rgba(200, 164, 90, 0.28) !important;
+  border-bottom: 1px solid rgba(200, 164, 90, 0.28) !important;
+  margin: 24px 0 36px !important;
+  padding: 14px 0 12px !important;
+  min-width: 380px;
+  color: rgba(200, 164, 90, 0.7) !important;
+  font-size: 15px;
+  letter-spacing: 0.24em;
+}
+
+
+/* ---------- 6. ОПИСОВИЙ ТЕКСТ: трохи легший ---------- */
+
+.hero-text {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(246, 239, 228, 0.82);
+  margin-bottom: 32px;
+}
+
+
+/* ---------- 7. ЦИТАТА: м'який gradient без різкої рамки ---------- */
+
+.hero-text_slogan {
+  /* Прибираємо різку золоту рамку, замінюємо на gradient + тонку 
+     ліву лінію (як акцент абзацу) */
+  background: linear-gradient(
+    135deg,
+    rgba(214, 168, 95, 0.08) 0%,
+    rgba(214, 168, 95, 0.02) 100%
+  ) !important;
+  border: none !important;
+  border-left: 2px solid rgba(214, 168, 95, 0.35) !important;
+  border-radius: 4px !important;        /* було 16-24px — менше "карточковості" */
+
+  padding: 24px 28px !important;
+  margin: 8px 0 36px !important;
+
+  /* Шрифт цитати — крупніший, italic */
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 22px !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+  color: rgba(214, 168, 95, 0.92) !important;
+
+  /* Прибираємо box-shadow, якщо є */
+  box-shadow: none !important;
+}
+
+
+/* ---------- 8. КНОПКИ HERO: PRIMARY більша, pill-форма ---------- */
+
+.hero-actions {
+  gap: 16px;
+  align-items: center;
+}
+
+/* Перша кнопка ("Його шлях") — PRIMARY */
+.hero-actions .btn:first-child,
+.hero-actions .btn-primary {
+  padding: 18px 44px !important;        /* було вужче */
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px !important;      /* повноцінна pill */
+  background: linear-gradient(135deg, #f2d5a4, #d6a85f) !important;
+  border: 1px solid rgba(242, 213, 164, 0.6) !important;
+  color: #0a0a0a !important;
+  box-shadow:
+    0 8px 24px rgba(214, 168, 95, 0.25),
+    0 0 0 1px rgba(242, 213, 164, 0.2) inset !important;
+}
+
+.hero-actions .btn:first-child:hover,
+.hero-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(214, 168, 95, 0.35),
+    0 0 0 1px rgba(242, 213, 164, 0.3) inset !important;
+}
+
+/* Друга кнопка ("Подяка") — SECONDARY ghost */
+.hero-actions .btn:nth-child(2),
+.hero-actions .btn-ghost {
+  padding: 18px 36px !important;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px !important;
+  background: transparent !important;
+  border: 1px solid rgba(246, 239, 228, 0.18) !important;
+  color: rgba(246, 239, 228, 0.78) !important;
+}
+
+.hero-actions .btn:nth-child(2):hover,
+.hero-actions .btn-ghost:hover {
+  background: rgba(246, 239, 228, 0.04) !important;
+  border-color: rgba(214, 168, 95, 0.35) !important;
+  color: rgba(246, 239, 228, 0.95) !important;
+}
+
+
+/* ---------- 9. SCROLL: компактніший ---------- */
+
+.hero-scroll {
+  bottom: 32px !important;              /* підстраховка з попереднього фіксу */
+  gap: 8px !important;
+  font-size: 9.5px !important;
+  letter-spacing: 0.32em !important;
+  color: rgba(246, 239, 228, 0.35) !important;
+}
+
+/* Лінія коротша, тонша */
+.hero-scroll i {
+  height: 32px !important;              /* було 54px */
+  background: rgba(246, 239, 228, 0.12) !important;
+}
+
+
+/* ---------- 10. RESPONSIVE: при <1080px — фото зменшується ---------- */
+
+@media (max-width: 1180px) {
+  .hero-inner {
+    gap: 56px !important;
+  }
+
+  .hero-photo-wrap {
+    width: min(440px, 100%) !important;
+  }
+
+  .hero-content {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 860px) {
+  /* На мобільному все по-вертикалі — фікси вже в priority-4 */
+  .hero-photo-wrap {
+    width: min(380px, 100%) !important;
+    justify-self: center !important;
+  }
+
+  .hero-years {
+    min-width: 280px;
+    font-size: 13px;
+  }
+
+  .hero-text_slogan {
+    font-size: 18px !important;
+    padding: 20px 22px !important;
+  }
+}

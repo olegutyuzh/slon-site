@@ -672,7 +672,7 @@ a {
 .quote-author {
   font-size: 11px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #C8A45A;
   margin: 0;
 }

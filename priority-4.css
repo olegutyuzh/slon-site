@@ -136,6 +136,62 @@ body {
 
 
 /* ============================================================
+   ПРОБЛЕМА 4b — ТЕКСТ HERO ВУЗЬКИЙ НА МОБІЛЬНОМУ
+   
+   На скріншоті видно: "Захисник України, боєць / 78-го окремого 
+   десантно- / штурмового полку..." — 8 рядків замість 4-5. 
+   Цитата ще вужче — по 3 слова на рядок.
+   
+   ПРИЧИНА: priority-1.css задавав grid-template-columns: 
+   1.1fr/1fr без медіа-запиту — ця сітка зберігалася і на 
+   мобільному, через що hero-content втискався у ~150px стовпчик.
+   Виправлено в priority-1.css (обгорнуто @media min-width: 861px).
+   
+   Тут додатково гарантуємо повну ширину для текстових 
+   елементів — слоган у style.css має inline-block, який через 
+   text-align: center стискався по найдовшому слову.
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .hero-content {
+    max-width: 100% !important;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-text {
+    max-width: 100% !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Slogan: inline-block → block, щоб не стискався під текстом */
+  .hero-text_slogan {
+    display: block !important;
+    max-width: 100% !important;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;          /* всередині цитати — вирівнювання по лівому */
+  }
+  
+  /* Кікер "ВОЇН, ДРУГ, СИН" — центруємо явно */
+  .hero-kicker {
+    text-align: center;
+    display: block;
+  }
+  
+  /* Дати — центр (mobile-стиль уже в priority-1.css, тут підстраховка) */
+  .hero-years {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+/* ============================================================
    ПРОБЛЕМА 5 — MEMORY-PAUSE ЗАЙВО ПОРОЖНІЙ
    
    Image 2: блок "Пам'ять — це світло, яке не згасає" 

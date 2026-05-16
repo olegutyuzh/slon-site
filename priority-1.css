@@ -12,7 +12,7 @@
    Стало: 92px зверху (60px хедер + 32px повітря).
    Без subnav 148px дають надто багато пустого простору. */
 .hero {
-  padding-top: 52px !important;
+  padding-top: 92px !important;
 }
 
 @media (max-width: 860px) {
@@ -27,10 +27,16 @@
   }
 }
 
-.hero-inner {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 64px;
-  align-items: center;
+/* Сітка 1.1fr / 1fr — ТІЛЬКИ на десктопі, щоб не накладатися на 
+   mobile-правило style.css:2672, яке робить 1 колонку.
+   Без цього обмеження на мобільному hero-content вписувався у вузьку
+   ~150px колонку, тексти ламались по 3 слова на рядок. */
+@media (min-width: 861px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+  }
 }
 
 .hero-photo-wrap {
