@@ -84,6 +84,7 @@
   function setCounter(n) {
     if (n === null || n === undefined) return;
     counterEl.textContent = String(n);
+    counterEl.classList.add("is-loaded");
   }
 
   function hideButton() {
