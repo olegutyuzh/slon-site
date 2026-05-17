@@ -1416,7 +1416,7 @@ a {
 
 .quote-card {
   position: relative;
-  padding: 34px 38px 32px 44px;
+  padding: 34px 38px 32px 100px;
   border: none;
   border-left: 1px solid rgba(214, 168, 95, .28);
   background: linear-gradient(90deg, rgba(214, 168, 95, .06), transparent 60%);
@@ -1425,15 +1425,16 @@ a {
 
 .quote-mark {
   position: absolute;
-  top: -18px;
+  top: 8px;
   left: 18px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 110px;
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  font-size: 90px;
   line-height: 1;
-  color: rgba(214, 168, 95, .16);
+  color: rgba(214, 168, 95, .35);
   pointer-events: none;
   -webkit-user-select: none;
   user-select: none;
+  font-weight: 700;
 }
 
 .quote-text {
@@ -2357,7 +2358,7 @@ a {
   }
 
   .quote-card {
-    padding: 28px 22px 26px 28px;
+    padding: 28px 22px 26px 72px;
   }
 
   /* === Reveal-on-scroll вимикаємо повністю === */
@@ -2477,13 +2478,13 @@ a {
 /* === <= 600px: цитати quote-card стискаються === */
 @media (max-width: 600px) {
   .quote-card {
-    padding: 22px 20px 20px 26px;
+    padding: 24px 22px 22px 72px;
   }
 
   .quote-mark {
-    font-size: 80px;
-    top: -12px;
-    left: 12px;
+    font-size: 64px;
+    top: 8px;
+    left: 14px;
   }
 
   .quote-text {

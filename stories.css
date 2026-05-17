@@ -240,8 +240,10 @@
 }
 
 .stories-filter {
-  display: inline-block;
-  padding: 8px 18px;
+  display: inline-flex;             /* було inline-block — потрібен flex для лейбла + лічильника */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 18px;        /* трохи менший правий padding, бо там бейдж */
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -250,8 +252,9 @@
   border: 1px solid rgba(200, 164, 90, 0.25);
   border-radius: 999px;
   background: transparent;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .stories-filter:hover {
@@ -263,6 +266,47 @@
   color: #050608;
   background: #C8A45A;
   border-color: #C8A45A;
+}
+
+/* Кнопка без матчів — приглушена і не клікабельна */
+.stories-filter[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Лейбл — це звичайний текст кнопки */
+.stories-filter-label {
+  line-height: 1;
+}
+
+/* Бейдж-лічильник: маленьке коло з числом, приглушено-золоте */
+.stories-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  color: rgba(200, 164, 90, 0.9);
+  background: rgba(200, 164, 90, 0.12);
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.stories-filter:hover .stories-filter-count {
+  color: #C8A45A;
+  background: rgba(200, 164, 90, 0.18);
+}
+
+/* На активній кнопці бейдж стає темно-золотим на тлі золотої заливки */
+.stories-filter.is-active .stories-filter-count {
+  color: #C8A45A;
+  background: rgba(5, 6, 8, 0.85);
 }
 
 
@@ -283,7 +327,11 @@
    з великою золотою лапкою → підпис автора → тонке посилання "Читати".
    Без важкого бордера-картки: тонка лінія-розділювач під/між картками. */
 
-.story-card {
+/* Подвоєний селектор .story-card.story-card — для підвищеної специфічності,
+   щоб перебити можливі залишкові правила з blog.css або іншого старого файлу.
+   Це чистіший спосіб, ніж !important — потім легко змінити. */
+.story-card,
+.story-card.story-card {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 48px;
@@ -314,7 +362,8 @@
   transform: scale(1.03);
 }
 
-.story-card-photo {
+.story-card-photo,
+.story-card .story-card-photo {
   display: block;
   overflow: hidden;
   border-radius: 8px;
@@ -322,6 +371,9 @@
   aspect-ratio: 4 / 3;
   border: 1px solid rgba(214, 168, 95, 0.1);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  width: 100%;            /* фото займає всю ширину своєї колонки (280px) */
+  max-width: 100%;
+  margin: 0;
 }
 
 .story-card-photo img {
@@ -398,24 +450,28 @@
   line-height: 1.55;
   color: rgba(246, 239, 228, 0.78);
   margin: 0 0 22px;
-  padding: 4px 0 4px 36px;
+  padding: 4px 0 4px 52px;          /* більший лівий відступ — звільняє колонку під ялинку */
   font-style: italic;
   font-weight: 400;
 }
 
-/* Велика золота лапка зліва */
+/* Велика українська «ялинка» зліва.
+   U+00AB « — той самий патерн, що на .quote-card і .memory-card:
+   Playfair Display 700, у власній колонці зліва, не перекриває текст. */
 .story-card-lede::before {
-  content: "\201C";                                  /* левая «друкарська» лапка */
+  content: "\00AB";
   position: absolute;
-  left: -2px;
-  top: -12px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 56px;
+  left: 4px;
+  top: 0;
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  font-size: 48px;
   line-height: 1;
-  color: rgba(214, 168, 95, 0.55);
+  color: rgba(214, 168, 95, 0.4);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* === Автор === */
@@ -537,8 +593,17 @@
   }
 
   .stories-filter {
-    padding: 6px 14px;
+    padding: 6px 10px 6px 14px;
     font-size: 11px;
+    gap: 6px;
+  }
+
+  .stories-filter-count {
+    min-width: 18px;
+    height: 17px;
+    font-size: 9.5px;
+    padding: 0 4px;
+  }
   }
 
   .story-card {
@@ -556,12 +621,13 @@
   }
 
   .story-card-lede {
-    padding-left: 28px;
+    padding-left: 42px;
   }
 
   .story-card-lede::before {
-    font-size: 44px;
-    top: -8px;
+    font-size: 40px;
+    top: 0;
+    left: 2px;
   }
 
   /* На вузьких — якщо "Читати" переноситься під автора через flex-wrap,
@@ -595,13 +661,14 @@
   .story-card-lede {
     font-size: 16px;
     line-height: 1.5;
-    padding-left: 24px;
+    padding-left: 36px;
     margin-bottom: 18px;
   }
 
   .story-card-lede::before {
-    font-size: 38px;
-    top: -6px;
+    font-size: 34px;
+    top: 0;
+    left: 2px;
   }
 
   .story-card-meta {
@@ -727,6 +794,91 @@
 /* ===== ОФОРМЛЕННЯ ТЕКСТУ ІСТОРІЇ =====
    Використовується всередині .bio-content на сторінках окремих історій.
    Класи .aside та .handwritten зустрічаються в HTML-розмітці постів. */
+
+/* Markdown-цитата `> текст` рендериться як <blockquote>.
+   Стилізуємо її так само, як .quote-card на сторінці біографії:
+   ліва золота риска, велика гнута лапка зверху, серіф-курсив золотом.
+   
+   Якщо в markdown треба підпис автора — поставити його як останній абзац
+   у цитаті, він підхопить менший шрифт і капс. */
+.bio-content blockquote {
+  position: relative;
+  margin: 36px 0;
+  padding: 34px 38px 32px 100px;
+  border: none;
+  border-left: 1px solid rgba(214, 168, 95, 0.28);
+  background: linear-gradient(90deg, rgba(214, 168, 95, 0.06), transparent 60%);
+  border-radius: 0 28px 28px 0;
+  quotes: "\201E" "\201C" "\201A" "\2018";   /* українські „ та " (резерв) */
+}
+
+/* Велика українська «ялинка» зверху-зліва.
+   U+00AB «  — це початкова українська лапка-«ялинка», граматично
+   правильна для української прози. Гармонує з тим самим символом
+   усередині самого тексту цитати (де теж "«…»").
+   
+   Шрифт Playfair Display (а не Cormorant Garamond, як у тексті цитати):
+   у Playfair «ялинка» намальована товщою і виразніше, ніж у Cormorant
+   — Cormorant дає тонкі хирляві риски, які тонуть на чорному фоні.
+   
+   Лапка стоїть у власній колонці зліва (padding-left: 100px у картки),
+   тому НЕ перекриває текст і НЕ налазить на золоту лінію border-left. */
+.bio-content blockquote::before {
+  content: "\00AB";
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  font-size: 90px;
+  line-height: 1;
+  color: rgba(214, 168, 95, 0.35);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-weight: 700;
+}
+
+/* Основний текст цитати: великий, курсивний, серіф */
+.bio-content blockquote p {
+  position: relative;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.1vw, 32px);
+  line-height: 1.35;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(246, 239, 228, 0.88);
+  margin: 0 0 18px;
+}
+
+.bio-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Якщо останній абзац цитати починається з тире "— Автор" — це підпис.
+   Робимо його дрібним капсом золотом, без курсиву (sans). */
+.bio-content blockquote p:last-child:not(:only-child) {
+  font-family: "Inter", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--v2-gold-2, #f2d5a4);
+  margin-top: 16px;
+}
+
+@media (max-width: 720px) {
+  .bio-content blockquote {
+    margin: 28px 0;
+    padding: 24px 22px 22px 72px;
+  }
+
+  .bio-content blockquote::before {
+    font-size: 64px;
+    top: 8px;
+    left: 14px;
+  }
+}
+
 
 /* Виділена фраза-врізка — для коротких емоційних рядків посеред тексту.
    Наприклад: "Тепер він — один із наших Небесних Вартових." */

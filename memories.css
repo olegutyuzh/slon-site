@@ -113,10 +113,13 @@
 }
 
 /* Картка спогаду — точне дзеркало .quote-card з біографії:
-   падінг, фон, рамка, заокруглення — все ідентичне. */
+   падінг, фон, рамка, заокруглення — все ідентичне.
+   padding-left: 100px залишає колонку зліва для великої декоративної
+   ялинки `«`, щоб вона стояла повністю праворуч від золотої border-left
+   і не перекривала текст. */
 .memory-card {
   position: relative;
-  padding: 34px 38px 32px 44px;
+  padding: 34px 38px 32px 100px;
   background: linear-gradient(90deg, rgba(214, 168, 95, 0.06), transparent 60%);
   border: none;
   border-left: 1px solid rgba(214, 168, 95, 0.28);
@@ -129,19 +132,23 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Велика декоративна лапка — символ і параметри в CSS через ::before.
-   Раніше memories.js вставляв <div class="memory-card-mark">"</div>,
-   але тепер JS більше не додає цей елемент — лапка живе тільки тут. */
+/* Велика декоративна українська «ялинка» — символ і параметри в CSS через ::before.
+   U+00AB «  — українська початкова лапка-«ялинка», граматично коректна
+   для української прози. Шрифт Playfair Display (а не Cormorant), бо в Playfair
+   ця ялинка намальована товщою і виразніше.
+   
+   Стоїть у власній колонці зліва (padding-left картки 100px), повністю
+   праворуч від золотої border-left і не перекриває текст. */
 .memory-card::before {
-  content: "\201C";       /* U+201C: Left Double Quotation Mark */
+  content: "\00AB";
   position: absolute;
-  top: -18px;
+  top: 8px;
   left: 18px;
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 110px;
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 90px;
   line-height: 1;
-  font-weight: 400;
-  color: rgba(214, 168, 95, 0.16);
+  font-weight: 700;
+  color: rgba(214, 168, 95, 0.35);
   pointer-events: none;
   -webkit-user-select: none;
   user-select: none;
@@ -248,7 +255,7 @@
   border: none;
   border-left: 1px solid rgba(214, 168, 95, 0.18);
   border-radius: 0 28px 28px 0;
-  padding: 34px 38px 32px 44px;
+  padding: 34px 38px 32px 100px;
 }
 
 .skeleton-line {
@@ -266,9 +273,15 @@
 }
 
 .skeleton-line.is-mark {
-  width: 24px;
-  height: 28px;
-  margin-bottom: 14px;
+  /* Імітуємо позицію реальної ::before лапки на .memory-card —
+     стоїть у власній колонці зліва (там де padding-left: 100px),
+     не у звичайному потоці, щоб не зміщувати текст. */
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0;
 }
 
 .skeleton-line.is-short  { width: 60%; }
@@ -315,13 +328,13 @@
 
   .memory-card,
   .skeleton-card {
-    padding: 28px 22px 26px 28px;
+    padding: 24px 22px 22px 72px;
   }
 
   .memory-card::before {
-    font-size: 80px;
-    top: -12px;
-    left: 12px;
+    font-size: 64px;
+    top: 8px;
+    left: 14px;
   }
 
   /* На мобільному текст лишаємо в clamp() з основних правил —

@@ -100,12 +100,36 @@
   <div class="section-inner bio-chapter-inner">
 
     
+    
+    
+    
+    
+    
+    
+
+    
+ 
     <div class="stories-filters">
-      <button type="button" class="stories-filter is-active" data-filter="all" data-i18n="stories_filter_all">Усі</button>
-      <button type="button" class="stories-filter" data-filter="tribute" data-i18n="stories_filter_tribute">Вшанування</button>      
-      <button type="button" class="stories-filter" data-filter="maidan" data-i18n="stories_filter_maidan">Майдан</button>
-      <button type="button" class="stories-filter" data-filter="service" data-i18n="stories_filter_service">Служба</button>
-      <button type="button" class="stories-filter" data-filter="events" data-i18n="stories_filter_events">Події</button>      
+      <button type="button" class="stories-filter is-active" data-filter="all">
+        <span class="stories-filter-label" data-i18n="stories_filter_all">Усі</span>
+        <span class="stories-filter-count" aria-label="кількість історій">4</span>
+      </button>
+      <button type="button" class="stories-filter" data-filter="tribute">
+        <span class="stories-filter-label" data-i18n="stories_filter_tribute">Вшанування</span>
+        <span class="stories-filter-count" aria-label="кількість історій">2</span>
+      </button>
+      <button type="button" class="stories-filter" data-filter="maidan" disabled>
+        <span class="stories-filter-label" data-i18n="stories_filter_maidan">Майдан</span>
+        <span class="stories-filter-count" aria-label="кількість історій">0</span>
+      </button>
+      <button type="button" class="stories-filter" data-filter="service" disabled>
+        <span class="stories-filter-label" data-i18n="stories_filter_service">Служба</span>
+        <span class="stories-filter-count" aria-label="кількість історій">0</span>
+      </button>
+      <button type="button" class="stories-filter" data-filter="events">
+        <span class="stories-filter-label" data-i18n="stories_filter_events">Події</span>
+        <span class="stories-filter-count" aria-label="кількість історій">2</span>
+      </button>
     </div>
 
     
@@ -315,7 +339,7 @@
   });
 
   const initial = (location.hash || '#all').slice(1);
-  if (['all','childhood','maidan','service','tribute'].includes(initial)) {
+  if (['all','tribute','maidan','service','events'].includes(initial)) {
     applyFilter(initial);
   }
 })();

@@ -21,11 +21,12 @@
 
 /* ===== БЛОК «СЛОВА ПОДЯКИ» ===== */
 
-.quote-mark {
+/* .quote-mark {
   position: absolute;
   top: -18px;
   left: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif; 
+  /* font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 110px;
   line-height: 1;
   color: rgba(200, 164, 90, 0.12);
@@ -33,7 +34,7 @@
   -webkit-user-select: none;
   user-select: none;
 }
-
+ */
 /* ===== MEMORY ACTIONS ===== */
 
 .memory-title {
