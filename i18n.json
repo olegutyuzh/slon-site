@@ -19,6 +19,12 @@
     "menu_symbols": "Символіка",
     "menu_gratitude": "Подяка",
 
+    "bio_nav_ch1": "Своя людина",
+    "bio_nav_ch2": "Перший фронт",
+    "bio_nav_ch3": "Повернення",
+    "bio_nav_ch4": "Слон",
+    "bio_nav_ch5": "Останній шлях",
+
     "section_kicker": "Про Ігоря",
     "section_title": "Хто він був для нас",
     "section_subtitle": "Коротка історія життя, характеру та шляху Ігоря — людини, яка вміла бути поруч і вміла йти вперед.",
@@ -263,6 +269,7 @@
     "story_nav_prev": "Попередня",
     "story_nav_next": "Наступна",
     "story_back_to_list": "← Усі історії",
+    "story_byline_label": "Розповідає",
     
     "story_share_title": "Поділитися історією",
     "story_share_subtitle": "Якщо вам відгукнулася ця історія — поділіться нею. Так більше людей дізнаються про Ігоря.",
@@ -346,6 +353,12 @@
     "menu_life": "Life moments",
     "menu_symbols": "Symbols",
     "menu_gratitude": "Remembrances",
+
+    "bio_nav_ch1": "One of Our Own",
+    "bio_nav_ch2": "The First Front",
+    "bio_nav_ch3": "The Return",
+    "bio_nav_ch4": "Slon",
+    "bio_nav_ch5": "The Last Journey",
 
     "section_kicker": "About Ihor",
     "section_title": "Who he was to us",
@@ -602,6 +615,7 @@
     "story_share_copy": "Copy link",
     "story_share_copied": "Copied ✓",
     "story_share_native": "Share…",
+    "story_byline_label": "Told by",
 
     "life-hero-kicker": "Fragments",
     "fragments_back": "← Back to home",

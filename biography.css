@@ -1,76 +1,278 @@
 /* ========================================================================
    BIOGRAPHY PAGE — додаткові стилі
-   Усі базові класи (header, footer, section, quote-card, btn, memory-*)
-   беруться зі style.css. Тут — тільки унікальне для biography.html.
-   Палітра успадкована: #050608 (фон), #C8A45A (золото), #E6E6E6 (текст).
+   Усі базові класи (header, footer, section, quote-card, btn, memory-*,
+   contact-back) беруться зі style.css. Тут — тільки унікальне для
+   biography.html.
+
+   Палітра успадковується зі style.css через CSS-змінні:
+     --v2-bg / --v2-text / --v2-muted / --v2-soft
+     --v2-gold (#d6a85f) / --v2-gold-2 (#f2d5a4)
+     --v2-ease
+   Заголовки — Cormorant Garamond (як і на головній).
    ======================================================================== */
 
 
-/* ===== BIO HERO ===== */
+/* ============================================================
+   BIO HERO — 2 колонки (текст зліва, фото справа)
+   Дзеркальна композиція до головної сторінки (.hero).
+   Використовує ті ж атмосферні шари: glow + haze.
+   ============================================================ */
 
 .bio-hero {
-  padding: 140px 24px 64px;
+  position: relative;
+  min-height: 60svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 120px 24px 80px;
   background:
-    radial-gradient(circle at top left, #1b1c24 0, #050608 55%),
-    radial-gradient(circle at bottom right, #101118 0, #050608 60%);
-  text-align: center;
+    radial-gradient(circle at top left, #1b1c24 0, var(--v2-bg) 55%),
+    radial-gradient(circle at bottom right, #101118 0, var(--v2-bg) 60%);
+  isolation: isolate;
 }
 
+/* ===== Фонові декоративні шари (як у .hero на головній) ===== */
+
+.bio-hero-bg,
+.bio-hero-bg > * {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bio-hero-bg {
+  z-index: -2;
+}
+
+.bio-hero-bg-glow {
+  width: min(68vw, 900px);
+  height: min(68vw, 900px);
+  left: 56%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(242, 213, 164, 0.18),
+    rgba(214, 168, 95, 0.07) 34%,
+    transparent 68%
+  );
+  filter: blur(90px);
+  animation: v2HeroGlow 7s ease-in-out infinite;
+}
+
+.bio-hero-bg-haze {
+  top: 35%;
+  height: 65%;
+  background:
+    radial-gradient(ellipse at 44% 62%, rgba(255, 255, 255, 0.06), transparent 44%),
+    radial-gradient(ellipse at 70% 64%, rgba(214, 168, 95, 0.09), transparent 48%),
+    linear-gradient(0deg, rgba(5, 6, 8, 0.86), transparent);
+}
+
+/* ===== Внутрішня сітка hero ===== */
+
 .bio-hero-inner {
-  max-width: 760px;
+  width: min(1280px, 100%);
   margin: 0 auto;
+  display: grid;
+  align-items: center;
+  gap: clamp(42px, 6vw, 90px);
+}
+
+@media (min-width: 861px) {
+  .bio-hero-inner {
+    /* Дзеркально до головної: текст 1fr, фото 1.05fr */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 80px;
+  }
+}
+
+/* ===== ЛІВА КОЛОНКА: текст ===== */
+
+.bio-hero-content {
+  max-width: 560px;
+  position: relative;
+  animation: v2Intro 1.4s var(--v2-ease) both;
+}
+
+.bio-hero-content::before {
+  content: "";
+  position: absolute;
+  inset: -8% -10% -8% -12%;
+  z-index: -1;
+  background: radial-gradient(ellipse at 30% 50%, rgba(5, 6, 8, 0.55), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
 .bio-hero-kicker {
-  font-size: 12px;
-  letter-spacing: 0.22em;
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B3B3B3;
-  margin-bottom: 16px;
+  color: rgba(179, 179, 179, 0.7);
+  font-weight: 500;
+  margin-bottom: 18px;
 }
 
 .bio-hero-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(34px, 4.5vw, 48px);
-  line-height: 1.15;
-  color: #C8A45A;
-  margin: 0 0 12px;
-  font-weight: 700;
+  margin: 0 0 4px;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 4.5vw, 64px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--v2-text);
+  font-weight: 500;
+  text-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.7),
+    0 0 90px rgba(214, 168, 95, 0.16);
+  text-wrap: balance;
 }
 
+/* Дати-епітафія (як на головній: рамка зверху і знизу) */
 .bio-hero-years {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: 15px;
-  color: #B3B3B3;
-  letter-spacing: 0.04em;
-  margin-bottom: 28px;
+  letter-spacing: 0.24em;
+  color: rgba(200, 164, 90, 0.7);
+  margin: 24px 0 32px;
+  padding: 14px 0 12px;
+  border-top: 1px solid rgba(200, 164, 90, 0.28);
+  border-bottom: 1px solid rgba(200, 164, 90, 0.28);
+  display: inline-block;
+  min-width: 380px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(200, 164, 90, 0.04);
 }
 
 .bio-hero-lede {
-  font-size: 15px;
-  line-height: 1.75;
-  color: #B3B3B3;
-  max-width: 640px;
-  margin: 0 auto;
+  max-width: 540px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(246, 239, 228, 0.78);
+  margin: 0;
   font-style: italic;
 }
 
-.bio-hero-divider {
-  width: 60px;
-  height: 1px;
-  background: rgba(200, 164, 90, 0.5);
-  margin: 40px auto 0;
+/* ===== ПРАВА КОЛОНКА: фото ===== */
+
+.bio-hero-photo-wrap {
+  position: relative;
+  justify-self: end;          /* дзеркально: фото притиснуте до правого краю */
+  width: min(540px, 100%);
+  max-width: 540px;
+}
+
+/* Glow за фото (як на головній) */
+.bio-hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(214, 168, 95, 0.15), transparent 60%);
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  animation: heroPortraitBreathe 8s ease-in-out infinite;
+}
+
+.bio-hero-photo {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 239, 228, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(214, 168, 95, 0.05);
+}
+
+.bio-hero-photo img {
+  max-width: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.05);
+  display: block;
+}
+
+.bio-hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(5, 6, 8, 0.08), rgba(5, 6, 8, 0.7));
+  pointer-events: none;
+}
+
+.bio-hero-photo-mark {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(8, 9, 11, 0.68);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 168, 95, 0.28);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--v2-gold-2);
+  box-shadow: 0 0 50px rgba(214, 168, 95, 0.09);
+}
+
+/* ===== Адаптив hero (повторює логіку головної) ===== */
+
+@media (max-width: 1180px) {
+  .bio-hero-inner {
+    gap: 56px;
+  }
+
+  .bio-hero-photo-wrap {
+    width: min(440px, 100%);
+  }
+
+  .bio-hero-content {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .bio-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-hero-content {
+    order: -1;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .bio-hero-lede {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bio-hero-photo-wrap {
+    width: min(320px, 80vw);
+    justify-self: center;
+  }
 }
 
 
-/* ===== РОЗДІЛ ===== */
+/* ============================================================
+   РОЗДІЛИ
+   ============================================================ */
 
 .bio-chapter {
-  background: #050608;
-  border-top: 1px solid rgba(38, 39, 51, 0.6);
+  background: var(--v2-bg);
+  border-top: 1px solid var(--v2-line);
 }
 
 .bio-chapter-alt {
-  background: #0a0b10;
+  background: var(--v2-bg-2);
 }
 
 .bio-chapter-inner {
@@ -84,16 +286,21 @@
 }
 
 .bio-chapter .section-kicker {
-  font-size: 11px;
-  letter-spacing: 0.24em;
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
 }
 
+/* Перевизначаємо .section-title зі style.css: для розділів життєпису
+   треба значно менший розмір, бо це довгі заголовки-цитати. */
 .bio-chapter .section-title {
-  font-size: clamp(24px, 3.2vw, 32px);
-  line-height: 1.25;
-  color: #E6E6E6;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--v2-text);
   max-width: 680px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
 
@@ -102,7 +309,7 @@
 .bio-content {
   font-size: 16px;
   line-height: 1.8;
-  color: #D8D8D8;
+  color: rgba(246, 239, 228, 0.86);
 }
 
 .bio-content p {
@@ -114,9 +321,8 @@
 }
 
 .bio-content em {
-  color: #C8A45A;
+  color: var(--v2-gold-2);
   font-style: italic;
-  opacity: 0.95;
 }
 
 .bio-content .quote-card {
@@ -128,17 +334,18 @@
 
 .bio-pullquote {
   position: relative;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.4;
-  color: #C8A45A;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--v2-gold-2);
   text-align: center;
-  padding: 36px 24px;
+  padding: 40px 24px;
   margin: 36px -8px;
   font-style: italic;
-  font-weight: 600;
-  border-top: 1px solid rgba(200, 164, 90, 0.2);
-  border-bottom: 1px solid rgba(200, 164, 90, 0.2);
+  font-weight: 500;
+  border-top: 1px solid rgba(214, 168, 95, 0.2);
+  border-bottom: 1px solid rgba(214, 168, 95, 0.2);
 }
 
 .bio-pullquote::before,
@@ -148,14 +355,14 @@
   left: 50%;
   width: 8px;
   height: 8px;
-  background: #C8A45A;
+  background: var(--v2-gold);
   border-radius: 999px;
   transform: translateX(-50%);
   opacity: 0.6;
 }
 
 .bio-pullquote::before { top: -4px; }
-.bio-pullquote::after { bottom: -4px; }
+.bio-pullquote::after  { bottom: -4px; }
 
 
 /* ===== FIGURE (фото з підписом) ===== */
@@ -167,8 +374,8 @@
 .bio-figure-img {
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(230, 230, 230, 0.08);
-  background: radial-gradient(circle at top, #181926, #050608);
+  border: 1px solid var(--v2-line);
+  background: radial-gradient(circle at top, #181926, var(--v2-bg));
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -183,56 +390,41 @@
 
 /* Вертикальне (портретне) фото — НЕ обрізаємо, центруємо в колонці */
 .bio-figure--portrait .bio-figure-img {
-  max-width: 420px;       /* портретне не повинне розтягуватись на всю ширину */
+  max-width: 420px;
   margin: 0 auto;
-  background: #050608;    /* без градієнту, щоб не світилось довкола */
+  background: var(--v2-bg);
 }
 
+/* Широке портретне/композитне — показуємо повністю, без обрізання */
 .bio-figure--portrait-nocut .bio-figure-img {
-  max-width: 880px;       /* портретне не повинне розтягуватись на всю ширину */
+  max-width: 880px;
   margin: 0 auto;
-  background: #050608;    /* без градієнту, щоб не світилось довкола */
+  background: var(--v2-bg);
 }
 
-.bio-figure--portrait .bio-figure-img img {
-  max-height: none;       /* знімаємо обмеження висоти */
+.bio-figure--portrait .bio-figure-img img,
+.bio-figure--portrait-nocut .bio-figure-img img {
+  max-height: none;
   height: auto;
-  object-fit: contain;    /* показуємо фото повністю, без обрізання */
+  object-fit: contain;
 }
 
 .bio-figure-caption {
   margin-top: 14px;
   font-size: 13px;
   line-height: 1.5;
-  color: #8a8a8a;
+  color: var(--v2-soft);
   text-align: center;
   font-style: italic;
 }
 
 .bio-figure-source {
   display: block;
-  margin-top: 0.4em;
-  font-size: 0.85em;
-  opacity: 0.65;
-  font-style: italic;
-}
-
-.bio-figure-source a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-.bio-figure-source a:hover {
-  opacity: 0.85;
-}
-
-.bio-figure-source {
-  text-align: center;
   margin-top: 0.5em;
   font-size: 0.8em;
-  opacity: 0.55;
+  text-align: center;
+  color: var(--v2-soft);
+  opacity: 0.75;
   font-style: italic;
   letter-spacing: 0.02em;
 }
@@ -242,12 +434,15 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s var(--v2-ease), opacity 0.2s var(--v2-ease);
 }
 
 .bio-figure-source a:hover {
-  opacity: 0.85;
+  color: var(--v2-gold-2);
+  opacity: 1;
 }
+
+
 /* ===== РОЗДІЛЬНИК У ТЕКСТІ ===== */
 
 .bio-divider {
@@ -256,7 +451,7 @@
   background: linear-gradient(
     to right,
     transparent,
-    rgba(200, 164, 90, 0.6),
+    rgba(214, 168, 95, 0.6),
     transparent
   );
   margin: 40px auto;
@@ -268,36 +463,84 @@
 .bio-closing {
   margin-top: 48px;
   padding-top: 36px;
-  border-top: 1px solid rgba(200, 164, 90, 0.2);
+  border-top: 1px solid rgba(214, 168, 95, 0.2);
   text-align: center;
 }
 
 .bio-closing-thanks {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  color: #E6E6E6;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.15;
+  color: var(--v2-text);
   margin: 0 0 8px;
   font-style: italic;
+  font-weight: 500;
 }
 
 .bio-closing-memory {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  color: #C8A45A;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.15;
+  color: var(--v2-gold-2);
   margin: 0;
   letter-spacing: 0.04em;
+  font-weight: 500;
 }
 
 
-/* ===== АДАПТИВ ===== */
+/* ===== Узгодження з sub_menu.css =====
+   У sub_menu.css правило body.has-subnav .hero { padding-top: ... }
+   зміщує тільки .hero. Розширюємо його для .bio-hero, бо у нас саме
+   ця секція стоїть першою. */
+
+body.has-subnav .bio-hero {
+  padding-top: calc(60px + 44px + 16px + 60px);
+  /* 60 хедер + 44 subnav + 16 проміжок + ще 60 для повітря над заголовком */
+}
+
+@media (max-width: 720px) {
+  body.has-subnav .bio-hero {
+    padding-top: calc(60px + 40px + 12px + 40px);
+  }
+}
+
+/* Активний пункт subnav (підсвічується при скролі до відповідного розділу).
+   У sub_menu.css правил для .is-active в .subnav немає — додаємо тут. */
+.subnav a.is-active {
+  color: #C8A45A;
+  opacity: 1;
+}
+
+/* Якорі секцій: коли користувач клацає пункт subnav, секція приїжджає
+   не впритул до фіксованих меню зверху, а з відступом. */
+.bio-chapter[id] {
+  scroll-margin-top: calc(60px + 44px + 24px);
+}
+
+@media (max-width: 720px) {
+  .bio-chapter[id] {
+    scroll-margin-top: calc(60px + 40px + 16px);
+  }
+}
+
+
+/* ============================================================
+   АДАПТИВ ДЛЯ КОНТЕНТУ
+   ============================================================ */
 
 @media (max-width: 720px) {
   .bio-hero {
-    padding: 110px 20px 48px;
+    padding: 100px 20px 56px;
+  }
+
+  .bio-hero-years {
+    min-width: 280px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
   }
 
   .bio-hero-lede {
-    font-size: 14px;
+    font-size: 14.5px;
   }
 
   .bio-content {
@@ -306,21 +549,13 @@
   }
 
   .bio-pullquote {
-    font-size: 19px;
-    padding: 28px 16px;
+    font-size: 20px;
+    padding: 30px 16px;
     margin: 28px 0;
   }
 
   .bio-figure {
     margin: 28px 0;
-  }
-
-  .bio-closing-thanks {
-    font-size: 20px;
-  }
-
-  .bio-closing-memory {
-    font-size: 18px;
   }
 }
 
@@ -330,36 +565,11 @@
   }
 
   .bio-pullquote {
-    font-size: 17px;
-    line-height: 1.45;
+    font-size: 18px;
+    line-height: 1.35;
   }
-}
 
-/* ===== BACK LINK ===== */
-.back-link-wrapper {
-  max-width: 760px;              /* збігається з bio-hero-inner і bio-chapter-inner */
-  margin: 0 auto;
-  padding: 32px 24px 0;          /* той самий горизонтальний padding, що в bio-hero */
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-size: 13px;                 /* у тоні з figure-caption (13px) і hero-kicker (12px) */
-  letter-spacing: 0.04em;          /* як у bio-hero-years */
-  color: #8a8a8a;                /* той самий приглушений сірий, що й у figure-caption */
-  text-decoration: none;
-  transition: color 0.25s ease, gap 0.25s ease;
-}
-
-.back-link:hover {
-  color: #C8A45A;                /* ваше золото на hover — теплий акцент */
-  gap: 0.7em;
-}
-
-@media (max-width: 720px) {
-  .back-link-wrapper {
-    padding: 24px 20px 0;
+  .bio-hero-years {
+    min-width: 240px;
   }
 }

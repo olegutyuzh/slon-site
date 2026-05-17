@@ -51,62 +51,10 @@
   margin: 0 0 8px;
 }
 
-/* ===== Список карток ===== */
-
-.memory-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 24px 28px;
-  position: relative;
-  animation: memoryFadeIn 0.4s ease both;
-}
-
-.memory-card-mark {
-  font-family: "Playfair Display", Georgia, serif;
-  color: #C8A45A;
-  font-size: 56px;
-  line-height: 0.5;
-  margin-bottom: 12px;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.memory-card-text {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #D4D4D4;
-  margin: 0 0 18px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/* ===== Мобільна адаптація ===== */
-
-@media (max-width: 640px) {
-  .memories-page {
-    padding-top: 100px;
-  }
-
-  .memory-card {
-    padding: 20px 20px;
-  }
-
-  .memory-card-text {
-    font-size: 14px;
-  }
-
-  .memory-card-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .memories-filter {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-}
+/* ===== Список карток =====
+   Стилі .memory-card, .memory-card-mark, .memory-card-text, .memory-card-meta
+   та мобільна адаптація .memories-page / .memories-filter
+   перенесені до memories.css, де їм логічне місце. */
 
 /* ===================================
    НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ

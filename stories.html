@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/biography.css" />
+  <link rel="stylesheet" href="/blog.css" />
   <link rel="stylesheet" href="/stories.css" />
   <link rel="stylesheet" href="/voices.css" />
   <link rel="stylesheet" href="/share.css" />
   <link rel="stylesheet" href="/bottom_menu.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
 
   <title>Історії — Ігор «Слон» Утюж</title>
 
@@ -43,6 +44,14 @@
 <body class="page">
 
   
+  <div class="site-atmosphere" aria-hidden="true">
+    <span class="ambient-glow ambient-glow-main"></span>
+    <span class="ambient-glow ambient-glow-side"></span>
+    <span class="ambient-haze"></span>
+    <span class="ambient-grain"></span>
+  </div>
+
+  
   <header class="header">
     <div class="header-inner">
 
@@ -68,15 +77,22 @@
   </header>
 
   
-<section class="bio-hero">
+
+<section class="bio-hero bio-hero--centered">
+  <div class="bio-hero-bg" aria-hidden="true">
+    <div class="bio-hero-bg-glow"></div>
+    <div class="bio-hero-bg-haze"></div>
+  </div>
   <div class="bio-hero-inner">
-    <div class="bio-hero-kicker" data-i18n="stories_kicker">Блог пам'яті</div>
-    <h1 class="bio-hero-title" data-i18n="stories_title">Історії</h1>
-    <p class="bio-hero-lede" data-i18n="stories_subtitle">
-      Спогади, події, маленькі та великі історії про Ігоря — від родини, друзів і побратимів.
-      Щоразу, коли в нас є що додати, з'являється новий запис.
-    </p>
-    <div class="bio-hero-divider"></div>
+    <div class="bio-hero-content">
+      <div class="bio-hero-kicker" data-i18n="stories_kicker">Блог пам'яті</div>
+      <h1 class="bio-hero-title" data-i18n="stories_title">Історії</h1>
+      <div class="bio-hero-divider"></div>
+      <p class="bio-hero-lede" data-i18n="stories_subtitle">
+        Спогади, події, маленькі та великі історії про Ігоря — від родини, друзів і побратимів.
+        Щоразу, коли в нас є що додати, з'являється новий запис.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -128,7 +144,7 @@
 
           
           <div class="story-card-author">
-            — <span data-lang-content="uk">Ніна, мати</span><span data-lang-content="en">Nina, mother</span>
+            <span data-lang-content="uk">Ніна, мати</span><span data-lang-content="en">Nina, mother</span>
           </div>
           
 
@@ -140,7 +156,7 @@
 
         
         <a href="/stories/memorialna-doshka-shkola.html" class="story-card-photo">
-          <img src="/img/stories/memorial_plaque.png" alt="Меморіальна дошка в середній школі №277" loading="lazy" />
+          <img src="/img/stories/memorial_plaque.jpg" alt="Меморіальна дошка в середній школі №277" loading="lazy" />
         </a>
         
 
@@ -169,7 +185,7 @@
 
           
           <div class="story-card-author">
-            — <span data-lang-content="uk">Олег, батько</span><span data-lang-content="en">Oleg, father</span>
+            <span data-lang-content="uk">Олег, батько</span><span data-lang-content="en">Oleg, father</span>
           </div>
           
 
@@ -180,8 +196,49 @@
       <article class="story-card" data-category="tribute">
 
         
+        <a href="/stories/football.html" class="story-card-photo">
+          <img src="/img/stories/scene.jpg" alt="Матчи збірної України" loading="lazy" />
+        </a>
+        
+
+        <div class="story-card-body">
+          <div class="story-card-meta">
+            <span class="story-card-category" data-i18n="stories_filter_tribute">Вшанування</span>
+            <span class="story-card-date">
+              <span data-lang-content="uk">21 березня 2024</span>
+              <span data-lang-content="en">March 21, 2024</span>
+            </span>
+          </div>
+
+          <h2 class="story-card-title">
+            <a href="/stories/football.html">
+              <span data-lang-content="uk">Матчи збірної України</span>
+              <span data-lang-content="en">Ukraine national team matches</span>
+            </a>
+          </h2>
+
+          
+          <p class="story-card-lede">
+            <span data-lang-content="uk">Ігор любив футбол — гру, у якій він відчував свободу, азарт і командний дух. Він стежив за матчами, ділився емоціями з друзями й сам виходив на поле, коли була нагода. Футбол був для нього способом тримати себе в тонусі й просто радіти життю.</span>
+            <span data-lang-content="en">Ihor loved football — a game that gave him a sense of freedom, excitement, and team spirit. He followed matches, shared emotions with friends, and played himself whenever he had the chance. Football kept him energized and simply brought him joy.</span>
+          </p>
+          
+
+          
+          <div class="story-card-author">
+            <span data-lang-content="uk">Розповідає Ніна, мати</span><span data-lang-content="en">Told by Nina, the mother</span>
+          </div>
+          
+
+          <a href="/stories/football.html" class="story-card-more" data-i18n="stories_read_more">Читати →</a>
+        </div>
+      </article>
+      
+      <article class="story-card" data-category="tribute">
+
+        
         <a href="/stories/concert-zhadana.html" class="story-card-photo">
-          <img src="/img/stories/scene.png" alt="Концерт, на який Ігор таки потрапив" loading="lazy" />
+          <img src="/img/stories/scene.jpg" alt="Концерт, на який Ігор таки потрапив" loading="lazy" />
         </a>
         
 
@@ -210,7 +267,7 @@
 
           
           <div class="story-card-author">
-            — <span data-lang-content="uk">Розповідає Євгенія, наречена</span><span data-lang-content="en">Told by Yevheniia, the fiancée</span>
+            <span data-lang-content="uk">Розповідає Євгенія, наречена</span><span data-lang-content="en">Told by Yevheniia, the fiancée</span>
           </div>
           
 

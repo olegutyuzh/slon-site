@@ -6,10 +6,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="biography.css" />
   <link rel="stylesheet" href="menu.css" />  
+  <link rel="stylesheet" href="sub_menu.css" />
   <link rel="stylesheet" href="bottom_menu.css" />      
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
   <link rel="alternate" hreflang="uk" href="https://slon.life/biography.html" />
   <link rel="alternate" hreflang="en" href="https://slon.life/biography.html?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://slon.life/biography.html" />
@@ -41,7 +42,7 @@
         async src="https://gc.zgo.at/count.js"></script>
 </head>
 
-<body class="page">
+<body class="page has-subnav">
 
   <!-- ===== HEADER ===== -->
   <header class="header">
@@ -68,29 +69,51 @@
     </div>
   </header>
 
-  <!-- ПЕРЕД bio-hero -->
-  <!-- <div class="back-link-wrapper"> -->
-    <a href="index.html" class="contact-back" data-i18n="back_to_home">
-      ← Повернутись на головну
-    </a>
-  <!-- </div> -->
+  <!-- ===== SUB-НАВІГАЦІЯ ПО РОЗДІЛАХ (стилі з sub_menu.css) ===== -->
+  <nav class="subnav" aria-label="Розділи життєпису">
+    <div class="subnav-inner">
+      <a href="#bio-ch1" data-i18n="bio_nav_ch1">Своя людина</a>
+      <a href="#bio-war-path" data-i18n="bio_nav_ch2">Перший фронт</a>
+      <a href="#bio-ch3" data-i18n="bio_nav_ch3">Повернення</a>
+      <a href="#bio-ch4" data-i18n="bio_nav_ch4">Слон</a>
+      <a href="#bio-ch5" data-i18n="bio_nav_ch5">Останній шлях</a>
+    </div>
+  </nav>
 
-  <!-- ===== BIO HERO ===== -->
+  <!-- ===== BIO HERO (2 колонки: текст зліва, фото справа) ===== -->
   <section class="bio-hero">
+
+    <!-- Фонові декоративні шари (як на головній) -->
+    <div class="bio-hero-bg" aria-hidden="true">
+      <div class="bio-hero-bg-glow"></div>
+      <div class="bio-hero-bg-haze"></div>
+    </div>
+
     <div class="bio-hero-inner">
 
-      <div class="bio-hero-kicker" data-i18n="bio_hero_kicker">Життєпис</div>
-      <h1 class="bio-hero-title" data-i18n="bio_hero_title">Ігор «Слон» Утюж</h1>
-      <div class="bio-hero-years" data-i18n="bio_hero_years">18.04.1996 — 07.12.2023</div>
+      <!-- ЛІВА КОЛОНКА: текст -->
+      <div class="bio-hero-content">
+        <div class="bio-hero-kicker" data-i18n="bio_hero_kicker">Життєпис</div>
+        <h1 class="bio-hero-title" data-i18n="bio_hero_title">Ігор «Слон» Утюж</h1>
+        <div class="bio-hero-years" data-i18n="bio_hero_years">18.04.1996 — 07.12.2023</div>
 
-      <p class="bio-hero-lede" data-i18n="bio_hero_lede">Текст-спогад пам'яті військового Ігоря Утюжа, який загинув 7 грудня 2023 року. Матеріал написано на основі розповіді з родиною Ігоря: батьків — Олега й Ніни Утюж, а також нареченої — Євгенії Шклярук.</p>
+        <p class="bio-hero-lede" data-i18n="bio_hero_lede">Текст-спогад пам'яті військового Ігоря Утюжа, який загинув 7 грудня 2023 року. Матеріал написано на основі розповіді з родиною Ігоря: батьків — Олега й Ніни Утюж, а також нареченої — Євгенії Шклярук.</p>
+      </div>
 
-      <div class="bio-hero-divider"></div>
+      <!-- ПРАВА КОЛОНКА: фото -->
+      <div class="bio-hero-photo-wrap">
+        <div class="bio-hero-photo">
+          <img src="img/hero-portrait.jpg" alt="Ігор «Слон» Утюж" loading="eager" />
+          <div class="bio-hero-photo-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="bio-hero-photo-mark" data-i18n="bio_hero_photo_mark">СЛОН</div>
+      </div>
+
     </div>
   </section>
 
   <!-- ===== CHAPTER 1: СВОЯ ЛЮДИНА ===== -->
-  <section class="section bio-chapter">
+  <section id="bio-ch1" class="section bio-chapter">
     <div class="section-inner bio-chapter-inner">
 
       <div class="section-header">
@@ -198,7 +221,7 @@
   </section>
 
   <!-- ===== CHAPTER 3: ВІЙНА ПОЧАЛАСЯ! ===== -->
-  <section class="section bio-chapter">
+  <section id="bio-ch3" class="section bio-chapter">
     <div class="section-inner bio-chapter-inner">
 
       <div class="section-header">
@@ -233,7 +256,7 @@
   </section>
 
   <!-- ===== CHAPTER 4: ТАТУ, ЯК ВИРОСТУ... ===== -->
-  <section class="section bio-chapter bio-chapter-alt">
+  <section id="bio-ch4" class="section bio-chapter bio-chapter-alt">
     <div class="section-inner bio-chapter-inner">
 
       <div class="section-header">
@@ -280,7 +303,7 @@
   </section>
 
   <!-- ===== CHAPTER 5: Я ЗРОБЛЮ ВСЕ, ЩОБ ВИЖИТИ ===== -->
-  <section class="section bio-chapter">
+  <section id="bio-ch5" class="section bio-chapter">
     <div class="section-inner bio-chapter-inner">
 
       <div class="section-header">
@@ -453,6 +476,39 @@
   <script src="lang.js"></script>
   <script src="candle.js"></script>
   <script src="bottom_menu.js"></script>
-  <script src="menu.js"></script>     
+  <script src="menu.js"></script>
+
+  <!-- ===== Scroll-spy для subnav: підсвічує активний пункт при скролі ===== -->
+  <script>
+    (function () {
+      const links = document.querySelectorAll('.subnav a[href^="#"]');
+      if (!links.length) return;
+
+      // Мапа id → посилання
+      const map = new Map();
+      links.forEach(a => {
+        const id = a.getAttribute('href').slice(1);
+        const sec = document.getElementById(id);
+        if (sec) map.set(sec, a);
+      });
+
+      // IntersectionObserver: коли центральна третина екрану перетинає секцію — вона активна
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const link = map.get(entry.target);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('is-active'));
+            link.classList.add('is-active');
+          }
+        });
+      }, {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0
+      });
+
+      map.forEach((_, section) => io.observe(section));
+    })();
+  </script>
 </body>
 </html>

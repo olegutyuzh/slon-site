@@ -1,6 +1,12 @@
-/* ====================================================
-   ===== MEMORIES PAGE =====
-   ==================================================== */
+/* ========================================================================
+   MEMORIES PAGE — додаткові стилі
+   Базові класи (header, footer, section, btn) беруться зі style.css.
+   Палітра успадковується через CSS-змінні (--v2-gold, --v2-text, ...).
+   Заголовки — Cormorant Garamond, як на головній.
+   ======================================================================== */
+
+
+/* ===== Контейнер сторінки ===== */
 
 .memories-page {
   padding-top: 140px;     /* щоб не залазило під фіксований header */
@@ -12,10 +18,40 @@
   margin: 0 auto;
 }
 
+
+/* ===== Заголовок сторінки =====
+   Перевизначаємо .section-title зі style.css: на головній він
+   величезний (clamp 46–92px), а тут треба пропорційно до колонки 760px. */
+
 .memories-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
+
+.memories-page .section-kicker {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+}
+
+.memories-page .section-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--v2-text);
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+
+.memories-page .section-subtitle {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--v2-muted);
+  max-width: 560px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
 
 /* ===== Фільтри ===== */
 
@@ -33,30 +69,40 @@
   gap: 8px;
   padding: 8px 16px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--v2-line);
   border-radius: 999px;
-  color: #B3B3B3;
+  color: var(--v2-muted);
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s var(--v2-ease),
+    color 0.2s var(--v2-ease),
+    background 0.2s var(--v2-ease);
 }
 
 .memories-filter:hover {
-  border-color: rgba(200, 164, 90, 0.5);
-  color: #E6E6E6;
+  border-color: rgba(214, 168, 95, 0.5);
+  color: var(--v2-text);
 }
 
 .memories-filter.is-active {
-  background: rgba(200, 164, 90, 0.12);
-  border-color: #C8A45A;
-  color: #C8A45A;
+  background: rgba(214, 168, 95, 0.12);
+  border-color: var(--v2-gold);
+  color: var(--v2-gold-2);
 }
 
 .memories-filter-count {
   font-size: 12px;
   opacity: 0.7;
+  font-feature-settings: "tnum" 1;
 }
+
+.memories-filter:focus-visible {
+  outline: 2px solid var(--v2-gold);
+  outline-offset: 3px;
+}
+
 
 /* ===== Список карток ===== */
 
@@ -66,13 +112,15 @@
   gap: 16px;
 }
 
+/* Картка спогаду — точне дзеркало .quote-card з біографії:
+   падінг, фон, рамка, заокруглення — все ідентичне. */
 .memory-card {
   position: relative;
-  padding: 28px 28px 24px 36px;
-  background: transparent;
+  padding: 34px 38px 32px 44px;
+  background: linear-gradient(90deg, rgba(214, 168, 95, 0.06), transparent 60%);
   border: none;
-  border-left: 2px solid rgba(200, 164, 90, 0.25);
-  border-radius: 0;
+  border-left: 1px solid rgba(214, 168, 95, 0.28);
+  border-radius: 0 28px 28px 0;
   animation: memoryFadeIn 0.4s ease both;
 }
 
@@ -81,25 +129,34 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.memory-card-mark {
+/* Велика декоративна лапка — символ і параметри в CSS через ::before.
+   Раніше memories.js вставляв <div class="memory-card-mark">"</div>,
+   але тепер JS більше не додає цей елемент — лапка живе тільки тут. */
+.memory-card::before {
+  content: "\201C";       /* U+201C: Left Double Quotation Mark */
   position: absolute;
   top: -18px;
   left: 18px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: 110px;
   line-height: 1;
-  color: rgba(200, 164, 90, 0.12);
+  font-weight: 400;
+  color: rgba(214, 168, 95, 0.16);
   pointer-events: none;
-  -webkit-user-select: none;  
+  -webkit-user-select: none;
   user-select: none;
-  margin: 0;
 }
 
+/* Текст спогаду — той самий стиль, що й .quote-text на біографії:
+   Cormorant italic, великий розмір, тепла напівпрозора заливка. */
 .memory-card-text {
   position: relative;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #D4D4D4;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.1vw, 32px);
+  line-height: 1.35;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(246, 239, 228, 0.88);
   margin: 0 0 18px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -111,20 +168,31 @@
   align-items: center;
   gap: 12px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(214, 168, 95, 0.1);
   flex-wrap: wrap;
 }
 
+/* Підпис автора — точно як .quote-author: sans, дрібний,
+   широкий letter-spacing, тепле золото. Текст показуємо як є
+   (без auto-uppercase) — як і на біографії. */
 .memory-card-author {
-  font-size: 14px;
-  color: #C8A45A;
+  font-family: "Inter", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--v2-gold-2);
+  margin: 0;
 }
 
+/* Дата — той самий ритм, що й автор, але приглушеним кольором. */
 .memory-card-date {
-  font-size: 12px;
-  color: #888780;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--v2-soft);
   font-feature-settings: "tnum" 1;
 }
+
 
 /* ===== Стан "порожньо" і помилка ===== */
 
@@ -132,9 +200,11 @@
 .memories-error {
   text-align: center;
   padding: 40px 20px;
-  color: #888780;
+  color: var(--v2-soft);
   font-size: 14px;
+  font-style: italic;
 }
+
 
 /* ===== "Показати ще" ===== */
 
@@ -144,62 +214,27 @@
   margin-top: 28px;
 }
 
+
 /* ===== CTA ===== */
 
 .memories-cta {
   text-align: center;
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--v2-line);
 }
 
 .memories-cta p {
   font-size: 15px;
-  color: #B3B3B3;
-  margin: 0 0 16px;
+  color: var(--v2-muted);
+  margin: 0 0 18px;
 }
 
-/* ===== Focus для доступності ===== */
 
-.memories-filter:focus-visible {
-  outline: 2px solid #C8A45A;
-  outline-offset: 3px;
-}
-
-/* ===== Мобільна адаптація ===== */
-
-@media (max-width: 640px) {
-  .memories-page {
-    padding-top: 100px;
-  }
-
-  .memory-card {
-    padding: 22px 20px 20px 26px;
-  }
-
-  .memory-card-mark {
-    font-size: 80px;
-    top: -12px;
-    left: 12px;
-  }
-
-  .memory-card-text {
-    font-size: 14px;
-  }
-
-  .memory-card-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .memories-filter {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-}
-
-/* ===== СКЕЛЕТОН ДЛЯ СПОГАДІВ ===== */
+/* ===== СКЕЛЕТОН =====
+   Дзеркало нової форми .memory-card: ліва золота лінія, м'який золотий
+   градієнт зліва, заокруглений правий край. Щоб не було стрибка при
+   заміні плейсхолдера на дані. */
 
 .memories-skeleton {
   display: flex;
@@ -208,10 +243,12 @@
 }
 
 .skeleton-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 24px 28px;
+  position: relative;
+  background: linear-gradient(90deg, rgba(214, 168, 95, 0.04), transparent 60%);
+  border: none;
+  border-left: 1px solid rgba(214, 168, 95, 0.18);
+  border-radius: 0 28px 28px 0;
+  padding: 34px 38px 32px 44px;
 }
 
 .skeleton-line {
@@ -219,9 +256,9 @@
   border-radius: 6px;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(200, 164, 90, 0.10) 50%,
-    rgba(255, 255, 255, 0.04) 100%
+    rgba(246, 239, 228, 0.04) 0%,
+    rgba(214, 168, 95, 0.10) 50%,
+    rgba(246, 239, 228, 0.04) 100%
   );
   background-size: 200% 100%;
   animation: skeletonShimmer 1.6s ease-in-out infinite;
@@ -244,7 +281,7 @@
   gap: 12px;
   padding-top: 14px;
   margin-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--v2-line);
 }
 
 .skeleton-meta .skeleton-line {
@@ -260,7 +297,6 @@
   100% { background-position: -200% 0; }
 }
 
-/* Плавне зникнення скелетону */
 .memories-skeleton.is-hiding {
   animation: skeletonFadeOut 0.3s ease forwards;
 }
@@ -269,8 +305,43 @@
   to { opacity: 0; transform: translateY(-4px); }
 }
 
+
+/* ===== Мобільна адаптація ===== */
+
 @media (max-width: 640px) {
+  .memories-page {
+    padding-top: 100px;
+  }
+
+  .memory-card,
   .skeleton-card {
-    padding: 20px 20px;
+    padding: 28px 22px 26px 28px;
+  }
+
+  .memory-card::before {
+    font-size: 80px;
+    top: -12px;
+    left: 12px;
+  }
+
+  /* На мобільному текст лишаємо в clamp() з основних правил —
+     22px нижня межа достатня. line-height трохи плотніший. */
+  .memory-card-text {
+    line-height: 1.3;
+  }
+
+  .memory-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .memories-filter {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .memories-page .section-subtitle {
+    font-size: 14px;
   }
 }

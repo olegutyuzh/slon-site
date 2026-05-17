@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/biography.css" />
+  <link rel="stylesheet" href="/blog.css" />
   <link rel="stylesheet" href="/stories.css" />
   <link rel="stylesheet" href="/voices.css" />
   <link rel="stylesheet" href="/share.css" />
   <link rel="stylesheet" href="/bottom_menu.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
 
   <title>Історії — Ігор «Слон» Утюж</title>
 
@@ -25,7 +26,7 @@
   <meta property="og:url" content="https://slon.life/stories/concert-zhadana.html">
   <meta property="og:site_name" content="Slon">
   
-    <meta property="og:image" content="https://slon.life/img/stories/scene.png">
+    <meta property="og:image" content="https://slon.life/img/stories/scene.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
@@ -37,7 +38,7 @@
   <meta name="twitter:card" content="summary_large_image">
   
   
-  <meta name="twitter:image" content="https://slon.life/img/stories/scene.png">
+  <meta name="twitter:image" content="https://slon.life/img/stories/scene.jpg">
 
   <!-- GoatCounter analytics -->
   <script data-goatcounter="https://slon.goatcounter.com/count"
@@ -46,6 +47,14 @@
 </head>
 
 <body class="page">
+
+  
+  <div class="site-atmosphere" aria-hidden="true">
+    <span class="ambient-glow ambient-glow-main"></span>
+    <span class="ambient-glow ambient-glow-side"></span>
+    <span class="ambient-haze"></span>
+    <span class="ambient-grain"></span>
+  </div>
 
   
   <header class="header">
@@ -82,41 +91,50 @@
 
 
 
-<section class="bio-hero">
+<section class="bio-hero bio-hero--centered story-hero">
+  <div class="bio-hero-bg" aria-hidden="true">
+    <div class="bio-hero-bg-glow"></div>
+    <div class="bio-hero-bg-haze"></div>
+  </div>
+
   <div class="bio-hero-inner">
+    <div class="bio-hero-content">
 
-    <div class="story-attribution">
-      <img src="/img/igor-portrait-small.png" 
-          alt="Ігор «Слон» Утюж" 
-          class="story-attribution__avatar">
-      <span class="story-attribution__text">
-      <span data-i18n="stories_filter_tribute">Вшанування</span>
-    </div>
+      <div class="story-hero-meta">
+        <span class="story-hero-category" data-i18n="stories_filter_tribute">Вшанування</span>
+        <span class="story-hero-dot" aria-hidden="true">·</span>
+        <span class="story-hero-date">
+          <span data-lang-content="uk">7 лютого 2024</span>
+          <span data-lang-content="en">February 7, 2024</span>
+        </span>
+      </div>
 
-    <h1 class="bio-hero-title">
-      <span data-lang-content="uk">Концерт, на який Ігор таки потрапив</span>
-      <span data-lang-content="en">The concert Igor finally made it to</span>
-    </h1>
+      <h1 class="bio-hero-title">
+        <span data-lang-content="uk">Концерт, на який Ігор таки потрапив</span>
+        <span data-lang-content="en">The concert Igor finally made it to</span>
+      </h1>
 
-    <div class="bio-hero-years">
-      <span data-lang-content="uk">7 лютого 2024</span>
-      <span data-lang-content="en">February 7, 2024</span>
-    </div>
-
-    
-    <p class="story-hero-lede">
-      <span data-lang-content="uk">Ігор таки потрапив на концерт «Жадан та Собаки» — його фото стояло на сцені поруч із улюбленим гуртом. Пісню «Троєщина» вони виконали для нього та всіх полеглих захисників.</span>
-      <span data-lang-content="en">Igor still made it to the “Zhadan and the Dogs” concert — his photo stood on the stage beside the band he loved. They dedicated “Troieshchyna” to him and to all fallen defenders.</span>
-    </p>
-    
-
-    
-    <div class="story-attribution-author">
-      —&nbsp;<span data-lang-content="uk">Розповідає Євгенія, наречена</span><span data-lang-content="en">Told by Yevheniia, the fiancée</span>
-    </div>
-        
+      <div class="bio-hero-divider"></div>
 
       
+      <p class="story-hero-lede">
+        <span data-lang-content="uk">Ігор таки потрапив на концерт «Жадан та Собаки» — його фото стояло на сцені поруч із улюбленим гуртом. Пісню «Троєщина» вони виконали для нього та всіх полеглих захисників.</span>
+        <span data-lang-content="en">Igor still made it to the “Zhadan and the Dogs” concert — his photo stood on the stage beside the band he loved. They dedicated “Troieshchyna” to him and to all fallen defenders.</span>
+      </p>
+      
+
+      
+      <div class="story-hero-byline">
+        <span class="story-hero-byline__label" data-i18n="story_byline_label">Розповідає</span>
+        <span class="story-hero-byline__divider" aria-hidden="true"></span>
+        <span class="story-hero-byline__name">
+          <span data-lang-content="uk">Розповідає Євгенія, наречена</span>
+          <span data-lang-content="en">Told by Yevheniia, the fiancée</span>
+        </span>
+      </div>
+      
+
+    </div>
   </div>
 </section>
 
@@ -129,9 +147,9 @@
 
       
         
-        <figure class="story-figure ">
+        <figure class="story-figure story-figure--lead">
           <div class="story-figure-img">
-            <img src="/img/stories/scene.png" alt="Концерт, на який Ігор таки потрапив" loading="lazy" />
+            <img src="/img/stories/scene.jpg" alt="Концерт, на який Ігор таки потрапив" loading="lazy" />
           </div>
           
           <figcaption class="story-figure-caption">
@@ -162,7 +180,7 @@
 <p>А перед виконанням «Троєщина» Сергій Жадан сказав кілька теплих слів про Ігоря. Про його шлях. Про його силу. І про всіх наших захисників, які віддали життя за Україну. Цю пісню вони виконали для нього.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/zhadan.png" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
+        <img src="/img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря</span>
@@ -216,7 +234,7 @@
 <p>Before performing “Troieshchyna,” Serhiy Zhadan said a few warm words about Igor — about his story, his strength, and about all our defenders who gave their lives for Ukraine. They dedicated this song to him.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/zhadan.png" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
+        <img src="/img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря</span>
@@ -375,11 +393,11 @@
         
 
         
-        <a href="/stories/memorialna-doshka-shkola.html" class="post-nav-link post-nav-prev">
+        <a href="/stories/football.html" class="post-nav-link post-nav-prev">
           <span class="post-nav-label">← <span data-i18n="story_nav_prev">Попередня</span></span>
           <span class="post-nav-title">
-            <span data-lang-content="uk">Меморіальна дошка в середній школі №277</span>
-            <span data-lang-content="en">A memorial plaque at Secondary school 277</span>
+            <span data-lang-content="uk">Матчи збірної України</span>
+            <span data-lang-content="en">Ukraine national team matches</span>
           </span>
         </a>
         
