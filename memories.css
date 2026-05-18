@@ -358,3 +358,14 @@
     font-size: 14px;
   }
 }
+
+/* На сторінці спогадів блок "Вшанувати памʼять" іде одразу після списку — 
+   зменшуємо великі дефолтні відступи між ними */
+.memories-page {
+  padding-bottom: 60px;
+}
+
+.memories-page + .memory-actions {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
