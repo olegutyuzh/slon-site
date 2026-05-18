@@ -1,0 +1,246 @@
+/* ============================================
+   LIFE HERO — оновлений блок (v2)
+   Додати В САМИЙ КІНЕЦЬ fragments.css
+   Перекриває старі правила через .life-hero .child
+   ============================================ */
+
+/* Контейнер — не чіпаємо фон, він добрий зі старого CSS */
+.life-hero .life-hero-inner {
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Kicker «ФРАГМЕНТИ» */
+.life-hero .life-hero-kicker {
+  display: block;
+  margin-bottom: 2.5rem;
+  animation: heroFadeNew 1.6s ease-out 0.1s backwards;
+}
+
+/* Заголовок */
+.life-hero .life-hero-title {
+  margin: 0 0 2.5rem;
+  animation: heroFadeNew 2.2s ease-out 0.3s backwards;
+}
+
+/* ====== ДАТИ — повністю переписуємо стилі ====== */
+.life-hero .life-hero-dates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  position: relative;
+  padding: 1.5rem 0;
+  margin: 0 0 2.5rem;
+
+  /* СКИДАЄМО все, що могло прийти від старих стилів */
+  background: none;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-style: normal;
+  letter-spacing: normal;
+
+  animation: heroFadeNew 2.2s ease-out 0.7s backwards;
+}
+
+/* Тонкі лінії зверху/знизу */
+.life-hero .life-hero-dates::before,
+.life-hero .life-hero-dates::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  max-width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 164, 90, 0.35) 50%,
+    transparent
+  );
+}
+.life-hero .life-hero-dates::before { top: 0; }
+.life-hero .life-hero-dates::after  { bottom: 0; }
+
+.life-hero .life-hero-dates-place {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(200, 164, 90, 0.85);
+  display: inline;
+}
+
+.life-hero .life-hero-dates-sep {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: rgba(200, 164, 90, 0.5);
+  font-style: italic;
+}
+
+.life-hero .life-hero-dates-years {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: rgba(200, 164, 90, 0.55);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ====== ЕПІГРАФ — повністю переписуємо .life-hero-epigraph ====== */
+.life-hero figure.life-hero-epigraph,
+.life-hero .life-hero-epigraph {
+  /* СКИДАЄМО все зі старих стилів */
+  display: block;
+  background: none;
+  border: none;
+  border-left: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+
+  margin: 0 auto 2.5rem;
+  max-width: 620px;
+  animation: heroFadeNew 2.2s ease-out 1.1s backwards;
+}
+
+.life-hero .life-hero-epigraph blockquote {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.45;
+  color: #d9c896;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: center;
+  position: relative;
+  quotes: "«" "»";
+}
+
+/* Декоративні лапки */
+.life-hero .life-hero-epigraph blockquote::before {
+  content: open-quote;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.4em;
+  line-height: 0;
+  color: rgba(200, 164, 90, 0.25);
+  position: relative;
+  top: 0.32em;
+  margin-right: 0.05em;
+}
+.life-hero .life-hero-epigraph blockquote::after {
+  content: close-quote;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.4em;
+  line-height: 0;
+  color: rgba(200, 164, 90, 0.25);
+  position: relative;
+  top: 0.32em;
+  margin-left: 0.05em;
+}
+
+.life-hero .life-hero-epigraph figcaption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(200, 164, 90, 0.5);
+  text-align: center;
+}
+
+.life-hero .life-hero-epigraph figcaption::before {
+  content: '— ';
+  margin-right: 0.1em;
+}
+
+/* ====== LEAD ====== */
+.life-hero .life-hero-lead {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(244, 236, 216, 0.72);
+  max-width: 560px;
+  margin: 0 auto 4rem;
+  animation: heroFadeNew 2.2s ease-out 1.5s backwards;
+}
+
+/* ====== СКРОЛ-ІНДИКАТОР ====== */
+.life-hero .life-hero-scroll {
+  width: 1px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  animation: heroFadeNew 2.2s ease-out 2s backwards;
+}
+
+.life-hero .life-hero-scroll-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(200, 164, 90, 0.4) 50%,
+    transparent 100%
+  );
+  animation: scrollLineNew 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollLineNew {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes heroFadeNew {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-hero .life-hero-kicker,
+  .life-hero .life-hero-title,
+  .life-hero .life-hero-dates,
+  .life-hero .life-hero-epigraph,
+  .life-hero .life-hero-lead,
+  .life-hero .life-hero-scroll { animation: none; }
+  .life-hero .life-hero-scroll-line { animation: none; opacity: 0.5; }
+}
+
+/* ====== МОБІЛЬНА ВЕРСІЯ ====== */
+@media (max-width: 720px) {
+  .life-hero .life-hero-kicker { margin-bottom: 1.8rem; }
+  .life-hero .life-hero-title { margin-bottom: 1.8rem; }
+  .life-hero .life-hero-dates { margin-bottom: 1.8rem; }
+  .life-hero .life-hero-dates-place { font-size: 1rem; }
+  .life-hero .life-hero-dates-years { font-size: 0.7rem; letter-spacing: 0.2em; }
+
+  /* Переписуємо старий мобільний padding епіграфа */
+  .life-hero figure.life-hero-epigraph,
+  .life-hero .life-hero-epigraph {
+    display: block;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .life-hero .life-hero-epigraph blockquote { font-size: 1.2rem; }
+  .life-hero .life-hero-lead { margin-bottom: 2.5rem; font-size: 1.05rem; }
+}

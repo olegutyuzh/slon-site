@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="uk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +14,10 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
 
-<!-- Шрифти ПЕРШИМИ -->
+<!-- Шрифти (Cormorant + Inter + Playfair — як на index) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
 
 <!-- Стилі в тому ж порядку, що й на index.html -->
 <link rel="stylesheet" href="style.css">
@@ -24,9 +26,18 @@
 <link rel="stylesheet" href="menu.css">
 <link rel="stylesheet" href="sub_menu.css">
 <link rel="stylesheet" href="fragments.css"> <!-- останнім, щоб не перебивався -->
+<link rel="stylesheet" href="life-hero-styles.css">
 </head>
 
 <body class="page">
+
+<!-- ===== АТМОСФЕРА (як на index) ===== -->
+<div class="site-atmosphere" aria-hidden="true">
+  <span class="ambient-glow ambient-glow-main"></span>
+  <span class="ambient-glow ambient-glow-side"></span>
+  <span class="ambient-haze"></span>
+  <span class="ambient-grain"></span>
+</div>
 
 <!-- ===== ШАПКА ===== -->
 <header class="header">
@@ -44,7 +55,6 @@
       <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
     </nav>
 
-    <!-- ДОДАТИ перемикач мови -->
     <div class="header-lang">
       <button type="button" data-lang="uk" class="is-active">UA</button>
       <button type="button" data-lang="en">EN</button>
@@ -53,19 +63,44 @@
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="life-hero">
+<section class="life-hero" aria-label="Фрагменти життя">
   <div class="life-hero-inner">
-    <div class="life-hero-kicker" data-i18n="life-hero-kicker">Фрагменти</div>
-    <h1 class="life-hero-title" data-i18n="life-hero-title">Те, що він любив,<br>і ті, кого любив він</h1>
+
+    <div class="life-hero-kicker section-kicker" data-i18n="life-hero-kicker">Фрагменти</div>
+
+    <h1 class="life-hero-title" data-i18n-html="life-hero-title">Те, що він любив,<br>і ті, кого любив він</h1>
+
+    <div class="life-hero-dates">
+      <div>
+        <span class="life-hero-dates-place" data-i18n="life-hero-place-birth">Київ</span>
+        <span class="life-hero-dates-sep" aria-hidden="true">—</span>
+        <span class="life-hero-dates-place" data-i18n="life-hero-place-death">Запоріжжя</span>
+      </div>
+      <span class="life-hero-dates-years" data-i18n="life-hero-years">[дата народження] — 7 грудня 2023</span>
+    </div>
+
+    <figure class="life-hero-epigraph">
+      <blockquote data-i18n-html="life-hero-epigraph">
+        Якщо мені врятували життя,<br>отже, я потрібен для чогось більшого
+      </blockquote>
+      <figcaption data-i18n="life-hero-epigraph-source">
+        Ігор, після поранення на Майдані, лютий 2014
+      </figcaption>
+    </figure>
+
     <p class="life-hero-lead" data-i18n="life-hero-lead">
-      Кадри з життя Ігоря — родина, кохана, мрії. Те, чим жив до того,
-      як удруге зробив вибір йти першим.
+      Між Майданом і фронтом — вісім років. Родина, Євгенія, рафтинг, гори, мрії. Кадри з того часу, який він прожив для себе.
     </p>
+
+    <div class="life-hero-scroll" aria-hidden="true">
+      <span class="life-hero-scroll-line"></span>
+    </div>
+
   </div>
 </section>
 
 <!-- ===== ОСНОВНА СЕКЦІЯ ===== -->
-<section class="section life-fragments">
+<section class="section life-fragments-page">
   <div class="section-inner">
 
     <a href="/index.html#life" class="life-back" data-i18n="fragments_back">← Повернутись на головну</a>
@@ -79,7 +114,7 @@
           <img src="img/life/family-1.jpg"
                alt="Ігор з родиною, літо 2018" loading="lazy">
         </a>
-        <div class="photo-mark" data-i18n="family_card_quote_1">«Літо 2018. Вдома з батьками.»</div>  
+        <div class="photo-mark" data-i18n="family_card_quote_1">«Літо 2018. Вдома з батьками.»</div>
       </div>
 
       <div class="life-fragment-text">
@@ -87,7 +122,7 @@
             <span class="life-fragment-category-label" data-i18n="life-fragment-category-family">Родина</span>
             <span class="life-fragment-category-count">5</span>
         </div>
-        <p class="life-fragment-quote" data-i18n="life-fragment-quote-family">«Жив так, ніби кожен день важливий»</p>
+        <p class="life-fragment-quote" data-i18n="life-fragment-quote-family">«Теплі кадри, що зберігають його присутність»</p>
         <p class="life-fragment-body" data-i18n="life-fragment-body-family">
           Дім, у якому виріс. Місто, яке він любив. Він завжди повертався —
           з тренувань, з фронту, з закордонних поїздок. Завжди казав, що
@@ -102,28 +137,28 @@
            data-lightbox="family"
            data-caption-key="family_caption_2">
           <img src="img/life/family-2.jpg" alt="Тренування з веслування" loading="lazy">
-          <div class="photo-mark" data-i18n="family_card_quote_2">«Тренування з веслування»</div> 
+          <div class="photo-mark" data-i18n="family_card_quote_2">«Тренування з веслування»</div>
         </a>
         <a href="img/life/family-3-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="family"
            data-caption-key="family_caption_3">
           <img src="img/life/family-3.jpg" alt="Київ, Троєщина, рідний район" loading="lazy">
-          <div class="photo-mark" data-i18n="family_card_quote_3">«Троєщина, рідний район»</div>           
+          <div class="photo-mark" data-i18n="family_card_quote_3">«Троєщина, рідний район»</div>
         </a>
         <a href="img/life/family-4-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="family"
            data-caption-key="family_caption_4">
           <img src="img/life/family-4.jpg" alt="Сімейне свято" loading="lazy">
-          <div class="photo-mark" data-i18n="family_card_quote_4">«Сімейне свято, 2019.»</div>            
+          <div class="photo-mark" data-i18n="family_card_quote_4">«Сімейне свято, 2019.»</div>
         </a>
         <a href="img/life/family-5-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="family"
            data-caption-key="family_caption_5">
           <img src="img/life/family-5.jpg" alt="З батьком" loading="lazy">
-          <div class="photo-mark" data-i18n="family_card_quote_5">«З батьком на риболовлі.»</div>           
+          <div class="photo-mark" data-i18n="family_card_quote_5">«З батьком на риболовлі.»</div>
         </a>
       </div>
       <div class="life-fragment-dots" aria-hidden="true"></div>
@@ -137,7 +172,7 @@
         <div class="life-fragment-category is-active">
             <span class="life-fragment-category-label" data-i18n="life-fragment-category-love">Кохана</span>
             <span class="life-fragment-category-count">5</span>
-        </div>        
+        </div>
         <p class="life-fragment-quote" data-i18n="life-fragment-quote-love">«Моя Женя»</p>
         <p class="life-fragment-body" data-i18n="life-fragment-body-love">
           Та, заради якої повертався. Дім, який починався з неї. Він казав, що після перемоги вони знайдуть будиночок у горах, і там ростимуть діти.
@@ -151,8 +186,8 @@
            data-caption-key="love_caption_1">
           <img src="img/life/love-1.jpg"
                alt="Ігор з Женею, 2021" loading="lazy">
-        <div class="photo-mark" data-i18n="love_card_quote_1">«2021. Перед війною.»</div>           
         </a>
+        <div class="photo-mark" data-i18n="love_card_quote_1">«2021. Перед війною.»</div>
       </div>
 
       <div class="life-fragment-thumbs">
@@ -161,7 +196,7 @@
            data-lightbox="love"
            data-caption-key="love_caption_2">
           <img src="img/life/love-2.jpg" alt="У подорожі" loading="lazy">
-          <div class="photo-mark" data-i18n="love_card_quote_2">«У подорожі.»</div>           
+          <div class="photo-mark" data-i18n="love_card_quote_2">«У подорожі.»</div>
         </a>
         <a href="img/life/love-3-large.jpg"
            class="life-fragment-thumb"
@@ -175,17 +210,17 @@
            data-lightbox="love"
            data-caption-key="love_caption_4">
           <img src="img/life/love-4.jpg" alt="Прогулянка" loading="lazy">
-          <div class="photo-mark" data-i18n="love_card_quote_4">«Прогулянка містом.»</div> 
+          <div class="photo-mark" data-i18n="love_card_quote_4">«Прогулянка містом.»</div>
         </a>
         <a href="img/life/love-5-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="love"
            data-caption-key="love_caption_5">
           <img src="img/life/love-5.jpg" alt="Зустріч" loading="lazy">
-          <div class="photo-mark" data-i18n="love_card_quote_5">«Зустріч після відрядження.»</div>           
+          <div class="photo-mark" data-i18n="love_card_quote_5">«Зустріч після відрядження.»</div>
         </a>
       </div>
-      <div class="life-fragment-dots" aria-hidden="true"></div>      
+      <div class="life-fragment-dots" aria-hidden="true"></div>
     </article>
 
     <div class="life-fragment-divider"><span>◆</span></div>
@@ -198,8 +233,8 @@
            data-caption-key="dreams_caption_1">
           <img src="img/life/dreams-1.jpg"
                alt="Гори, момент відпочинку" loading="lazy">
-          <div class="photo-mark" data-i18n="dreams_card_quote_1">«Гори — одна зі стихій Ігоря.»</div>                 
         </a>
+        <div class="photo-mark" data-i18n="dreams_card_quote_1">«Гори — одна зі стихій Ігоря.»</div>
       </div>
 
       <div class="life-fragment-text">
@@ -213,7 +248,7 @@
           донька — обов'язково перша. Те, про що мріяв уголос.
           Те, що мало збутися після перемоги.
         </p>
-        <p class="life-fragment-attribution" data-i18n="life-fragment-attribution-dreams">— Зі спогадів Ігоря</p>        
+        <p class="life-fragment-attribution" data-i18n="life-fragment-attribution-dreams">— Зі спогадів Ігоря</p>
       </div>
 
       <div class="life-fragment-thumbs">
@@ -222,31 +257,31 @@
            data-lightbox="dreams"
            data-caption-key="dreams_caption_2">
           <img src="img/life/dreams-2.jpg" alt="Матч збірної" loading="lazy">
-          <div class="photo-mark" data-i18n="dreams_card_quote_2">«На матчі збірної.»</div>           
+          <div class="photo-mark" data-i18n="dreams_card_quote_2">«На матчі збірної.»</div>
         </a>
         <a href="img/life/dreams-3-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="dreams"
            data-caption-key="dreams_caption_3">
           <img src="img/life/dreams-3.jpg" alt="Шахи з друзями" loading="lazy">
-          <div class="photo-mark" data-i18n="dreams_card_quote_3">«Playing chess with friends.»</div>           
+          <div class="photo-mark" data-i18n="dreams_card_quote_3">«Playing chess with friends.»</div>
         </a>
         <a href="img/life/dreams-4-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="dreams"
            data-caption-key="dreams_caption_4">
           <img src="img/life/dreams-4.jpg" alt="Гори" loading="lazy">
-          <div class="photo-mark" data-i18n="dreams_card_quote_4">«Гори, мрія про будинок.»</div>           
+          <div class="photo-mark" data-i18n="dreams_card_quote_4">«Гори, мрія про будинок.»</div>
         </a>
         <a href="img/life/dreams-5-large.jpg"
            class="life-fragment-thumb"
            data-lightbox="dreams"
            data-caption-key="dreams_caption_5">
           <img src="img/life/dreams-5.jpg" alt="Слони" loading="lazy">
-          <div class="photo-mark" data-i18n="dreams_card_quote_5">«Слони — дитяча любов.»</div>            
+          <div class="photo-mark" data-i18n="dreams_card_quote_5">«Слони — дитяча любов.»</div>
         </a>
       </div>
-      <div class="life-fragment-dots" aria-hidden="true"></div>      
+      <div class="life-fragment-dots" aria-hidden="true"></div>
     </article>
 
   </div>
@@ -272,47 +307,47 @@
   </div>
 </footer>
 
-  <!-- ===== НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ ===== -->
-  <nav class="bottom-nav" aria-label="Мобільна навігація">
-    <a href="index.html" class="bottom-nav-item is-active" aria-current="page">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M4 11c0-3.3 2.7-6 6-6h3c3.3 0 6 2.7 6 6v4"/>
-        <path d="M4 11v6"/>
-        <path d="M7 17v3"/>
-        <path d="M19 15v5"/>
-        <path d="M16 17v3"/>
-        <path d="M10 11c0 1.5 1 2.5 2 3v4"/>
-        <path d="M12 18l-1 1"/>
-        <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
-      </svg>      
-      <span class="bottom-nav-label" data-i18n="menu_home">Головна</span>
-    </a>
-    
-    <a href="memories.html" class="bottom-nav-item">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>      
-      <span class="bottom-nav-label" data-i18n="menu_memories">Спогади</span>
-    </a>
-    
-    <a href="stories.html" class="bottom-nav-item">
+<!-- ===== НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ ===== -->
+<nav class="bottom-nav" aria-label="Мобільна навігація">
+  <a href="index.html" class="bottom-nav-item">
+    <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 11c0-3.3 2.7-6 6-6h3c3.3 0 6 2.7 6 6v4"/>
+      <path d="M4 11v6"/>
+      <path d="M7 17v3"/>
+      <path d="M19 15v5"/>
+      <path d="M16 17v3"/>
+      <path d="M10 11c0 1.5 1 2.5 2 3v4"/>
+      <path d="M12 18l-1 1"/>
+      <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
+    </svg>
+    <span class="bottom-nav-label" data-i18n="menu_home">Головна</span>
+  </a>
+
+  <a href="memories.html" class="bottom-nav-item">
+    <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span class="bottom-nav-label" data-i18n="menu_memories">Спогади</span>
+  </a>
+
+  <a href="stories.html" class="bottom-nav-item">
     <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M2 6c2-1 5-1.5 8 0v13c-3-1.5-6-1-8 0z"/>
       <path d="M22 6c-2-1-5-1.5-8 0v13c3-1.5 6-1 8 0z"/>
       <path d="M10 6v13"/>
     </svg>
-      <span class="bottom-nav-label" data-i18n="menu_stories">Історії</span>
-    </a>
-    
-    <a href="biography.html" class="bottom-nav-item">
-      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/>
-        <path d="M4 17a3 3 0 0 1 3-3h12"/>
-        <path d="M9 8h6M9 12h4"/>
-      </svg>
-      <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
-    </a>
-  </nav>
+    <span class="bottom-nav-label" data-i18n="menu_stories">Історії</span>
+  </a>
+
+  <a href="biography.html" class="bottom-nav-item is-active" aria-current="page">
+    <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/>
+      <path d="M4 17a3 3 0 0 1 3-3h12"/>
+      <path d="M9 8h6M9 12h4"/>
+    </svg>
+    <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
+  </a>
+</nav>
 
 <!-- ===== ЛАЙТБОКС ===== -->
 <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Перегляд фото">
