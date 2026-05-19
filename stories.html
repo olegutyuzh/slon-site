@@ -103,24 +103,24 @@
 
     
  
-    <div class="stories-filters">
-      <button type="button" class="stories-filter is-active" data-filter="all">
+    <div class="stories-filters" role="tablist" aria-label="Фільтр історій">
+      <button type="button" class="stories-filter is-active" data-filter="all" role="tab" aria-selected="true">
         <span class="stories-filter-label" data-i18n="stories_filter_all">Усі</span>
         <span class="stories-filter-count" aria-label="кількість історій">4</span>
       </button>
-      <button type="button" class="stories-filter" data-filter="tribute">
+      <button type="button" class="stories-filter" data-filter="tribute" role="tab" aria-selected="false">
         <span class="stories-filter-label" data-i18n="stories_filter_tribute">Вшанування</span>
         <span class="stories-filter-count" aria-label="кількість історій">2</span>
       </button>
-      <button type="button" class="stories-filter" data-filter="maidan" disabled>
+      <button type="button" class="stories-filter" data-filter="maidan" role="tab" aria-selected="false" disabled>
         <span class="stories-filter-label" data-i18n="stories_filter_maidan">Майдан</span>
         <span class="stories-filter-count" aria-label="кількість історій">0</span>
       </button>
-      <button type="button" class="stories-filter" data-filter="service" disabled>
+      <button type="button" class="stories-filter" data-filter="service" role="tab" aria-selected="false" disabled>
         <span class="stories-filter-label" data-i18n="stories_filter_service">Служба</span>
         <span class="stories-filter-count" aria-label="кількість історій">0</span>
       </button>
-      <button type="button" class="stories-filter" data-filter="events">
+      <button type="button" class="stories-filter" data-filter="events" role="tab" aria-selected="false">
         <span class="stories-filter-label" data-i18n="stories_filter_events">Події</span>
         <span class="stories-filter-count" aria-label="кількість історій">2</span>
       </button>
@@ -320,7 +320,9 @@
       card.style.display = match ? '' : 'none';
     });
     filters.forEach(f => {
-      f.classList.toggle('is-active', f.dataset.filter === cat);
+      const isActive = f.dataset.filter === cat;
+      f.classList.toggle('is-active', isActive);
+      f.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
   }
 
