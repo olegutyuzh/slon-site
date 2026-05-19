@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="candle.css" />
-  <link rel="stylesheet" href="bottom_menu.css" />  
-  <link rel="stylesheet" href="menu.css" />  
-  <link rel="stylesheet" href="sub_menu.css" /> 
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/candle.css" />
+  <link rel="stylesheet" href="/css/bottom_menu.css" />  
+  <link rel="stylesheet" href="/css/menu.css" />  
+  <link rel="stylesheet" href="/css/sub_menu.css" /> 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,10 +39,6 @@
 
   <!-- Optional CTA -->
   <meta property="og:see_also" content="https://slon.life/thanks.html">   
-
-  <!-- GoatCounter analytics -->
-  <script data-goatcounter="https://slon.goatcounter.com/count"
-        async src="https://gc.zgo.at/count.js"></script>
 </head>
 
 <body class="page has-subnav">
@@ -60,7 +56,7 @@
 
       <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
         SLON
       </a>
@@ -132,8 +128,8 @@
   <!-- ===== SILENT MEMORY PAUSE ===== -->
   <section class="section memory-pause" aria-label="Пауза памʼяті">
     <div class="memory-pause-inner">
-      <p class="memory-pause-kicker">Light through memory</p>
-      <blockquote>«Памʼять — це світло, яке не згасає»</blockquote>
+      <p class="memory-pause-kicker" data-i18n="memory.pause.kicker">Light through memory</p>
+      <blockquote data-i18n="memory.pause.quote">«Памʼять — це світло, яке не згасає»</blockquote>
     </div>
   </section>
 
@@ -325,7 +321,7 @@
 
 
   <!-- ===== MEMORY OBJECTS ===== -->
-  <section id="objects" class="section memory-objects">
+<!--   <section id="objects" class="section memory-objects">
     <div class="section-inner">
       <div class="section-header section-header-centered">
         <div class="section-kicker">Артефакти памʼяті</div>
@@ -351,7 +347,7 @@
         </article>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ===== GRATITUDE ===== -->
   <section id="gratitude" class="section gratitude">
@@ -601,13 +597,13 @@
   </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
-  <script src="lang.js"></script>
-  <script src="candle.js"></script>
-  <script src="quotes-counter.js"></script>
-  <script src="candle_counter.js"></script>
-  <script src="bottom_menu.js"></script>
-  <script src="menu.js"></script>  
+  <script src="/js/supabase-config.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/candle.js"></script>
+  <script src="/js/quotes-counter.js"></script>
+  <script src="/js/candle_counter.js"></script>
+  <script src="/js/bottom_menu.js"></script>
+  <script src="/js/menu.js"></script>  
 
   <script>
     (() => {
@@ -631,6 +627,6 @@
       items.forEach((el) => observer.observe(el));
     })();
   </script>
-  <script src="priority-1.js" defer></script>  
+  <script src="/js/priority-1.js" defer></script>  
 </body>
 </html>

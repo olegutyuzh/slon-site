@@ -155,6 +155,9 @@
     "memories_cta_text": "Якщо ви знали Ігоря — поділіться тим, що памʼятаєте.",
     "memories_cta_button": "Залишити слова",
 
+    "memory.pause.quote": "«Памʼять — це світло, яке не згасає»",
+    "memory.pause.kicker": "Світло крізь памʼять",        
+
     "menu_home": "Головна",    
     "menu_memories": "Спогади",
 
@@ -177,6 +180,10 @@
     "candle_name_placeholder": "Як до вас звертатись",
     "candle_sign_btn": "Підписати",
     "candle_skip": "пропустити",
+
+    "read_full_biography": "Повний життєпис",
+    "read_more_war": "Більше про шлях",
+    "read_full_fragments": "Усі фрагменти",        
 
     "menu_biography": "Життєпис",
 
@@ -500,6 +507,9 @@
     "memories_cta_text": "If you knew Ihor — share what you remember.",
     "memories_cta_button": "Leave words",
 
+    "memory.pause.quote": "“Memory is a light that never fades.”",
+    "memory.pause.kicker": "Light through memory",    
+
     "menu_home": "Home",    
     "menu_memories": "Memories",
 
@@ -522,6 +532,10 @@
     "candle_name_placeholder": "How should we call you",
     "candle_sign_btn": "Sign",
     "candle_skip": "skip",
+
+    "read_full_biography": "Full biography",
+    "read_more_war": "More about the journey",
+    "read_full_fragments": "All fragments",
 
     "menu_biography": "Biography",
     "bio_hero_kicker": "Biography",
