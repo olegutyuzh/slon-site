@@ -99,6 +99,25 @@ fi
 echo ""
 
 # ============================================================
+# CSS Bundle — об'єднання спільних файлів (для Index сторінки)
+# ============================================================
+echo -e "${YELLOW}📦 Створення CSS bundle (спільні стилі)...${NC}"
+
+cleancss -o css/min/index.bundle.min.css \
+    css/style.css \
+    css/menu.css \
+    css/sub_menu.css \
+    css/bottom_menu.css \
+    css/candle.css
+
+if [ -f "css/min/index.bundle.min.css" ]; then
+    BUNDLE_SIZE=$(get_size "css/min/index.bundle.min.css")
+    echo -e "  ${GREEN}✓${NC} index.bundle.min.css: ${BUNDLE_SIZE} KB"
+fi
+
+echo ""
+
+# ============================================================
 # JS — мініфікація кожного файлу окремо
 # ============================================================
 echo -e "${YELLOW}📄 Мініфікація JS файлів...${NC}"
