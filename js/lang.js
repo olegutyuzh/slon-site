@@ -125,7 +125,7 @@ function applyTranslations() {
         })
         .then(data => {
             translationsCache = data;
-            window.translationsCache = data; // експорт для інших скриптів (напр. contact.html)
+            window.translationsCache = data; // експорт для інших скриптів (напр. memory-new.html)
             render(data);
         })
         .catch(err => console.error("[i18n]", err));
