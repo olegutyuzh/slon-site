@@ -1,4 +1,7 @@
-# Memorial Website / Меморіальний сайт
+# 🕊️ Ihor "Slon" Utyuzh — Memorial Website
+
+A tribute to the life, courage, and memory of Ihor Utyuzh  
+🇺🇦 Defender of Ukraine • Callsign "Slon" • 1996–2023
 
 > 🇺🇦 [Українська](#українська) | 🇬🇧 [English](#english)
 
@@ -8,212 +11,195 @@
 
 ### 💙 Присвята
 
-Цей сайт створено на згадку про **Ігор Утюж** *(18.04.1996 — 07.12.2023)*.
+Цей сайт створено на згадку про **Ігоря Утюжа** *(позивний «Слон», 1996–2023)*
+— захисника України.
 
 > *«Поки ми пам'ятаємо — вони з нами.»*
 
-[Кілька слів про людину: ким була, чим займалася, що любила, що залишила по
-собі. Цей розділ — серце сайту, тож напишіть від щирого серця.]
+---
+
+### 📁 Структура проєкту
+
+```text
+slon-site/
+├── .vscode/                       # Налаштування VS Code (Live Server тощо)
+│
+├── css/                           # Стилі сайту
+│   ├── style.css                  # Основні стилі
+│   ├── biography.css              # Сторінка біографії
+│   ├── candle.css                 # Віртуальна свічка пам'яті
+│   ├── football.css               # Розділ про футбол
+│   ├── fragments.css              # Фрагменти/уривки
+│   ├── life-hero-styles.css       # Стилі головного блоку
+│   ├── memories.css               # Книга спогадів
+│   ├── menu.css                   # Головне меню
+│   ├── bottom_menu.css            # Нижнє меню
+│   ├── sub_menu.css               # Підменю
+│   ├── share.css                  # Кнопки поширення
+│   ├── stories.css                # Розділ історій
+│   └── voices.css                 # Голосові спогади
+│
+├── img/                           # Зображення та графіка
+│   ├── bio/                       # Фото для біографії
+│   ├── football/                  # Фото з футбольної тематики
+│   ├── life/                      # Життєві фотографії
+│   ├── stories/                   # Зображення до історій
+│   ├── SVG icons/                 # Векторні іконки
+│   ├── hero-portrait.jpg          # Головний портрет
+│   ├── hero-portrait2.jpg         # Альтернативний портрет
+│   ├── igor-portrait-small.png    # Малий портрет
+│   ├── elephant-bg.jpg            # Фонове зображення
+│   ├── elephant.svg               # Символ «Слона»
+│   ├── candle.svg                 # Іконка свічки
+│   ├── shield.svg                 # Іконка щита
+│   ├── map.svg                    # Карта
+│   ├── message.svg                # Іконка повідомлення
+│   ├── symbol-slon.jpg            # Символіка
+│   ├── symbol-slon.png            # Символіка (PNG)
+│   ├── life1.jpg, life2.JPG, …    # Життєві кадри
+│   ├── war1.jpg, war2.jpg         # Воєнні фото
+│   └── og-cover.png               # Прев'ю для соцмереж
+│
+├── stories/                       # Окремі історії та події
+│   ├── concert-zhadana.html       # Концерт Жадана
+│   ├── den-narodzhenia.html       # День народження
+│   ├── football.html              # Футбольна історія
+│   └── memorialna-doshka-shkola.html  # Меморіальна дошка у школі
+│
+├── index.html                     # Головна сторінка
+├── biography.html                 # Біографія
+├── memories.html                  # Книга спогадів
+├── memory-new.html                # Нова форма спогаду
+├── stories.html                   # Список історій
+├── football.html                  # Футбольний розділ
+├── fragments.html                 # Фрагменти
+├── life-hero-preview.html         # Прев'ю героя
+├── preview.html                   # Загальне прев'ю
+│
+├── memories.json                  # База спогадів
+├── i18n.json                      # Переклади (мультимовність)
+├── .hintrc                        # Конфіг HTMLHint
+├── .markdownlint.json             # Конфіг Markdownlint
+│
+├── favicon.ico                    # Іконка сайту
+├── robots.txt                     # Інструкції для пошукових ботів
+├── sitemap.xml                    # Мапа сайту
+└── README.md                      # Цей файл
+```
 
 ---
 
-### 📖 Про проєкт
+### 💻 Локальний запуск та дебаг
 
-**slon.life** — це меморіальний вебсайт, створений для збереження пам'яті,
-історій, фотографій і спогадів. Сайт є цифровим простором, де родина, друзі та
-всі небайдужі можуть вшанувати пам'ять та поділитися своїми спогадами.
-
-#### Можливості
-
-- 📷 Галерея фотографій
-- 📜 Біографія та життєвий шлях
-- 💬 Книга спогадів та співчуттів
-- 🕯️ Віртуальна свічка пам'яті
-- 📅 Хронологія важливих подій
-- 📱 Адаптивний дизайн для всіх пристроїв
-
----
-
-### 🛠️ Технології
-
-- **HTML5** — структура та семантична розмітка
-- **CSS3** — стилізація, анімації, адаптивність
-- **JavaScript** — інтерактивність та динамічний контент
-
----
-
-### 🚀 Встановлення
+Найпростіший спосіб запустити та дебажити проєкт локально — використати
+розширення **Live Server** для Visual Studio Code. Воно запускає локальний
+сервер з автоматичним перезавантаженням сторінки після кожного збереження 
+файлу.
 
 #### Передумови
 
-Вам знадобиться лише сучасний браузер (Chrome, Firefox, Safari, Edge).
-Для локальної розробки бажано встановити [Git](https://git-scm.com/).
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/) (для клонування репозиторію)
 
-#### Кроки
+#### Крок 1: Клонуйте репозиторій
 
-1. Клонуйте репозиторій:
-
-   ```bash
-   git clone https://github.com/[username]/[repo-name].git
-   ```
-
-2. Перейдіть у папку проєкту:
-
-   ```bash
-   cd [repo-name]
-   ```
-
-3. Відкрийте `index.html` у браузері:
-
-   ```bash
-   open index.html
-   ```
-
-   Або запустіть локальний сервер (рекомендовано):
-
-   ```bash
-   # Python 3
-   python -m http.server 8000
-
-   # Node.js (за наявності npx)
-   npx serve
-   ```
-
-4. Відкрийте у браузері: `http://localhost:8000`
-
----
-
-### 📂 Структура проєкту
-
-```text
-[repo-name]/
-├── index.html          # Головна сторінка
-├── pages/              # Додаткові сторінки
-│   ├── biography.html
-│   ├── gallery.html
-│   └── memories.html
-├── assets/
-│   ├── css/            # Стилі
-│   ├── js/             # Скрипти
-│   ├── images/         # Фотографії
-│   └── fonts/          # Шрифти
-└── README.md
+```bash
+git clone https://github.com/[username]/slon-site.git
+cd slon-site
 ```
 
----
+#### Крок 2: Встановіть розширення Live Server
 
-### 💡 Використання
+1. Відкрийте VS Code
+2. Перейдіть у вкладку **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Знайдіть **`Live Server`** від Ritwick Dey
+4. Натисніть **Install**
 
-Сайт є статичним і не потребує бекенду. Щоб додати або змінити контент:
+Або встановіть через термінал:
 
-- **Фотографії** — додавайте у `assets/images/` та оновіть `gallery.html`
-- **Спогади** — редагуйте відповідні HTML-файли у папці `pages/`
-- **Стилі** — змінюйте у `assets/css/style.css`
-
----
-
-### 🌐 Деплой на Netlify
-
-Netlify — це безкоштовний хостинг для статичних сайтів з автоматичним деплоєм з
- GitHub.
-
-#### Спосіб 1: Через інтерфейс Netlify (найпростіший)
-
-1. Зареєструйтеся на [netlify.com](https://www.netlify.com/) (можна через GitHub-акаунт)
-2. Натисніть **"Add new site"** → **"Import an existing project"**
-3. Оберіть **GitHub** та авторизуйтеся
-4. Виберіть ваш репозиторій зі списку
-5. Налаштування білду залиште порожніми (для статичного сайту):
-   - **Build command:** *(залишити порожнім)*
-   - **Publish directory:** `.` *(або вкажіть папку, якщо `index.html` не в корені)*
-6. Натисніть **"Deploy site"**
-
-Через 30–60 секунд сайт буде доступний за адресою типу `https://random-name-12345.netlify.app`.
-
-#### Спосіб 2: Через Netlify CLI
-
-1. Встановіть Netlify CLI:
-
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. Авторизуйтеся:
-
-   ```bash
-   netlify login
-   ```
-
-3. У папці проєкту виконайте:
-
-   ```bash
-   netlify deploy --prod
-   ```
-
-4. Дотримуйтесь інструкцій у терміналі.
-
-#### Спосіб 3: Drag & Drop
-
-Найшвидший спосіб без Git: просто перетягніть папку проєкту на сторінку [app.netlify.com/drop](https://app.netlify.com/drop).
-
-#### Власний домен
-
-Щоб під'єднати власний домен (наприклад, `memory-of-name.com`):
-
-1. У панелі Netlify відкрийте ваш сайт
-2. Перейдіть у **Domain settings** → **Add custom domain**
-3. Введіть домен та слідуйте інструкціям щодо налаштування DNS-записів
-
-#### Файл конфігурації (опціонально)
-
-Для додаткових налаштувань створіть файл `netlify.toml` у корені проєкту:
-
-```toml
-[build]
-  publish = "."
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+```bash
+code --install-extension ritwickdey.LiveServer
 ```
 
+#### Крок 3: Запустіть проєкт
+
+1. Відкрийте папку проєкту у VS Code: **File → Open Folder...**
+2. Відкрийте файл `index.html`
+3. Запустіть Live Server одним зі способів:
+   - Клік правою кнопкою миші на `index.html` → **"Open with Live Server"**
+   - Натисніть **"Go Live"** у нижньому правому куті VS Code
+   - Використайте шорткат `Alt+L Alt+O`
+
+Сайт автоматично відкриється у браузері за адресою `http://127.0.0.1:5500`.
+
+#### Крок 4: Дебаг
+
+- **Авто-перезавантаження** — будь-яка зміна у HTML/CSS/JS перезавантажує сторінку
+- **DevTools** — натисніть `F12` у браузері для відкриття інструментів розробника:
+  - **Console** — JavaScript-помилки та `console.log()`
+  - **Elements** — інспекція HTML/CSS у реальному часі
+  - **Network** — перевірка завантаження зображень і ресурсів
+  - **Lighthouse** — аудит продуктивності, SEO та доступності
+
+#### Власні налаштування (опціонально)
+
+Щоб змінити порт або браузер, створіть файл `.vscode/settings.json` у корені проєкту:
+
+```jsonc
+{
+  // Порт локального сервера
+  "liveServer.settings.port": 5500,
+  // Браузер для відкриття (chrome, firefox, edge тощо)
+  "liveServer.settings.CustomBrowser": "chrome",
+  // true — не відкривати браузер автоматично
+  "liveServer.settings.NoBrowser": false,
+  // Файли, що не викликають перезавантаження
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass"
+  ]
+}
+```
+
+#### Усунення несправностей
+
+- **«Port 5500 is already in use»** — змініть порт у налаштуваннях або зупиніть
+ процес, що його займає
+- **Браузер не відкривається** — перевірте налаштування `CustomBrowser` або
+відкрийте `http://127.0.0.1:5500` вручну
+- **Зміни не видно** — зробіть жорстке перезавантаження
+(`Ctrl+Shift+R` / `Cmd+Shift+R`) для очищення кешу
+
 ---
 
-### 🤝 Внесок у проєкт (Contributing)
+### 🚀 Варіанти деплою
 
-Якщо ви хочете поділитися спогадами, фотографіями або допомогти з розробкою —
-будь ласка, зробіть це з повагою до пам'яті.
+#### 🌱 Netlify
 
-1. Зробіть форк репозиторію
-2. Створіть гілку для вашої правки (`git checkout -b feature/your-contribution`)
-3. Зробіть коміт (`git commit -m 'Додано спогад від...'`)
-4. Запуште у вашу гілку (`git push origin feature/your-contribution`)
-5. Створіть Pull Request
+Перетягніть ZIP у [app.netlify.com/drop](https://app.netlify.com/drop) — готово.
 
-Для надсилання особистих спогадів напишіть на: **[email@example.com]**
+#### 🐙 GitHub Pages
 
----
+Push → Settings → Pages → root → live.
 
-### 📄 Ліцензія
+#### ⚡ Vercel
 
-Цей проєкт поширюється під ліцензією **MIT** — деталі у файлі [LICENSE](LICENSE).
-
-Фотографії, особисті тексти та спогади є власністю родини і не можуть
-використовуватися без дозволу.
+Upload → Deploy → instant.
 
 ---
 
-### 🙏 Подяки
+### 🎨 Візуальні матеріали
 
-Дякуємо всім, хто допоміг створити цей сайт, поділився спогадами та зберігає
-світлу пам'ять.
+- **favicon.ico** — іконка сайту  
+- **og-image.jpg** — прев'ю для соцмереж  
+- **img/** — усі фотографії, що використовуються на сайті  
+
+---
+
+### ❤️ Світла пам'ять
+
+Усі матеріали належать родині Ігоря Утюжа.
 
 ---
 ---
@@ -222,220 +208,193 @@ Netlify — це безкоштовний хостинг для статични
 
 ### 💙 In Memory Of
 
-This website is dedicated to the memory of **Ihor Utiuzh**
-*(April 18, 1996 — December 08, 2023)*.
+This website is dedicated to the memory of **Ihor Utyuzh**
+*(callsign "Slon", 1996–2023)* — defender of Ukraine.
 
 > *"As long as we remember, they are with us."*
 
-[A few words about the person: who they were, what they loved, what they left
-behind. This section is the heart of the site, so write from the heart.]
+---
+
+### 📁 Project Structure
+
+```text
+slon-site/
+├── .vscode/                       # VS Code settings (Live Server, etc.)
+│
+├── css/                           # Site stylesheets
+│   ├── style.css                  # Main styles
+│   ├── biography.css              # Biography page
+│   ├── candle.css                 # Virtual memorial candle
+│   ├── football.css               # Football section
+│   ├── fragments.css              # Fragments/excerpts
+│   ├── life-hero-styles.css       # Hero block styles
+│   ├── memories.css               # Memories guestbook
+│   ├── menu.css                   # Main menu
+│   ├── bottom_menu.css            # Bottom menu
+│   ├── sub_menu.css               # Submenu
+│   ├── share.css                  # Share buttons
+│   ├── stories.css                # Stories section
+│   └── voices.css                 # Voice memories
+│
+├── img/                           # Images and graphics
+│   ├── bio/                       # Biography photos
+│   ├── football/                  # Football-related photos
+│   ├── life/                      # Life photos
+│   ├── stories/                   # Story images
+│   ├── SVG icons/                 # Vector icons
+│   ├── hero-portrait.jpg          # Main portrait
+│   ├── hero-portrait2.jpg         # Alternative portrait
+│   ├── igor-portrait-small.png    # Small portrait
+│   ├── elephant-bg.jpg            # Background image
+│   ├── elephant.svg               # "Slon" symbol
+│   ├── candle.svg                 # Candle icon
+│   ├── shield.svg                 # Shield icon
+│   ├── map.svg                    # Map
+│   ├── message.svg                # Message icon
+│   ├── symbol-slon.jpg            # Symbolism
+│   ├── symbol-slon.png            # Symbolism (PNG)
+│   ├── life1.jpg, life2.JPG, …    # Life moments
+│   ├── war1.jpg, war2.jpg         # Wartime photos
+│   └── og-cover.png               # Social media preview
+│
+├── stories/                       # Individual stories and events
+│   ├── concert-zhadana.html       # Zhadan's concert
+│   ├── den-narodzhenia.html       # Birthday
+│   ├── football.html              # Football story
+│   └── memorialna-doshka-shkola.html  # Memorial plaque at school
+│
+├── index.html                     # Home page
+├── biography.html                 # Biography
+├── memories.html                  # Memories guestbook
+├── memory-new.html                # New memory form
+├── stories.html                   # Stories listing
+├── football.html                  # Football section
+├── fragments.html                 # Fragments
+├── life-hero-preview.html         # Hero preview
+├── preview.html                   # General preview
+│
+├── memories.json                  # Memories database
+├── i18n.json                      # Translations (multilingual)
+├── .hintrc                        # HTMLHint config
+├── .markdownlint.json             # Markdownlint config
+│
+├── favicon.ico                    # Site icon
+├── robots.txt                     # Search engine instructions
+├── sitemap.xml                    # Sitemap
+└── README.md                      # This file
+```
 
 ---
 
-### 📖 About
+### 💻 Local Development & Debugging
 
-**slon.life** is a memorial website created to preserve memories, stories,
-photographs, and tributes. It serves as a digital space where family, friends,
-and everyone who cared can honor the memory and share their recollections.
-
-#### Features
-
-- 📷 Photo gallery
-- 📜 Biography and life journey
-- 💬 Guestbook for memories and condolences
-- 🕯️ Virtual memorial candle
-- 📅 Timeline of significant events
-- 📱 Responsive design for all devices
-
----
-
-### 🛠️ Built With
-
-- **HTML5** — structure and semantic markup
-- **CSS3** — styling, animations, responsiveness
-- **JavaScript** — interactivity and dynamic content
-
----
-
-### 🚀 Installation
+The easiest way to run and debug the project locally is with
+the **Live Server** extension for Visual Studio Code. It launches a
+local development server with automatic reload on every save —
+perfect for static HTML/CSS sites.
 
 #### Prerequisites
 
-All you need is a modern browser (Chrome, Firefox, Safari, Edge). For local
-development, [Git](https://git-scm.com/) is recommended.
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/) (to clone the repository)
 
-#### Steps
+#### Step 1: Clone the repository
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/[username]/[repo-name].git
-   ```
-
-2. Navigate to the project folder:
-
-   ```bash
-   cd [repo-name]
-   ```
-
-3. Open `index.html` in your browser:
-
-   ```bash
-   open index.html
-   ```
-
-   Or run a local server (recommended):
-
-   ```bash
-   # Python 3
-   python -m http.server 8000
-
-   # Node.js (if npx is available)
-   npx serve
-   ```
-
-4. Open in browser: `http://localhost:8000`
-
----
-
-### 📂 Project Structure
-
-```text
-[repo-name]/
-├── index.html          # Home page
-├── pages/              # Additional pages
-│   ├── biography.html
-│   ├── gallery.html
-│   └── memories.html
-├── assets/
-│   ├── css/            # Styles
-│   ├── js/             # Scripts
-│   ├── images/         # Photographs
-│   └── fonts/          # Fonts
-└── README.md
+```bash
+git clone https://github.com/[username]/slon-site.git
+cd slon-site
 ```
 
----
+#### Step 2: Install the Live Server extension
 
-### 💡 Usage
+1. Open VS Code
+2. Go to the **Extensions** tab (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Search for **`Live Server`** by Ritwick Dey
+4. Click **Install**
 
-The site is fully static and requires no backend. To add or update content:
+Or install via the command line:
 
-- **Photos** — add to `assets/images/` and update `gallery.html`
-- **Memories** — edit the corresponding HTML files in the `pages/` folder
-- **Styles** — modify `assets/css/style.css`
-
----
-
-### 🌐 Deploy to Netlify
-
-Netlify is a free hosting service for static sites with automatic deployment
-from GitHub.
-
-#### Option 1: Through Netlify UI (easiest)
-
-1. Sign up at [netlify.com](https://www.netlify.com/) (you can use your GitHub account)
-2. Click **"Add new site"** → **"Import an existing project"**
-3. Choose **GitHub** and authorize
-4. Select your repository from the list
-5. Leave build settings empty (for a static site):
-   - **Build command:** *(leave empty)*
-   - **Publish directory:** `.` *(or specify a folder if `index.html` is not
-   in the root)*
-6. Click **"Deploy site"**
-
-After 30–60 seconds, your site will be available at a URL like `https://random-name-12345.netlify.app`.
-
-#### Option 2: Netlify CLI
-
-1. Install Netlify CLI:
-
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. Log in:
-
-   ```bash
-   netlify login
-   ```
-
-3. In the project folder, run:
-
-   ```bash
-   netlify deploy --prod
-   ```
-
-4. Follow the terminal prompts.
-
-#### Option 3: Drag & Drop
-
-The fastest way without Git: simply drag your project folder onto [app.netlify.com/drop](https://app.netlify.com/drop).
-
-#### Custom Domain
-
-To connect a custom domain (e.g. `memory-of-name.com`):
-
-1. In the Netlify dashboard, open your site
-2. Go to **Domain settings** → **Add custom domain**
-3. Enter your domain and follow the DNS configuration instructions
-
-#### Configuration File (optional)
-
-For additional settings, create a `netlify.toml` file in the project root:
-
-```toml
-[build]
-  publish = "."
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+```bash
+code --install-extension ritwickdey.LiveServer
 ```
 
+#### Step 3: Launch the project
+
+1. Open the project folder in VS Code: **File → Open Folder...**
+2. Open `index.html`
+3. Launch Live Server one of these ways:
+   - Right-click on `index.html` → **"Open with Live Server"**
+   - Click **"Go Live"** in the bottom-right status bar of VS Code
+   - Use the shortcut `Alt+L Alt+O`
+
+The site will automatically open in your default browser at `http://127.0.0.1:5500`.
+
+#### Step 4: Debugging
+
+- **Auto-reload** — any change to HTML/CSS/JS files reloads the browser automatically
+- **DevTools** — press `F12` in the browser to open Developer Tools:
+  - **Console** — for JavaScript errors and `console.log()` output
+  - **Elements** — to inspect HTML/CSS in real time
+  - **Network** — to check loading of images and other resources
+  - **Lighthouse** — to audit performance, SEO, and accessibility
+
+#### Custom Settings (optional)
+
+To change the default port or browser, create a `.vscode/settings.json`
+file in the project root:
+
+```jsonc
+{
+  // Port for the local server
+  "liveServer.settings.port": 5500,
+  // Browser to open (chrome, firefox, edge, etc.)
+  "liveServer.settings.CustomBrowser": "chrome",
+  // Set to true to disable auto-opening the browser
+  "liveServer.settings.NoBrowser": false,
+  // Files that should not trigger a reload
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass"
+  ]
+}
+```
+
+#### Troubleshooting
+
+- **"Port 5500 is already in use"** — change the port in settings or stop
+the process using it
+- **Browser doesn't open** — check `CustomBrowser` settings or open
+`http://127.0.0.1:5500` manually
+- **Changes are not visible** — perform a hard reload
+(`Ctrl+Shift+R` / `Cmd+Shift+R`) to clear cache
+
 ---
 
-### 🤝 Contributing
+### 🚀 Deployment Options
 
-If you would like to share memories, photographs, or help with development —
-please do so with respect for the memory.
+#### 🌱 Netlify
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/your-contribution`)
-3. Commit your changes (`git commit -m 'Added memory from...'`)
-4. Push to the branch (`git push origin feature/your-contribution`)
-5. Open a Pull Request
+Drag & drop the ZIP to [app.netlify.com/drop](https://app.netlify.com/drop) — done.
 
-To submit personal memories privately, please email: **[email@example.com]**
+#### 🐙 GitHub Pages
 
----
+Push → Settings → Pages → root → live.
 
-### 📄 License
+#### ⚡ Vercel
 
-This project is distributed under the **MIT License** — see the
-[LICENSE](LICENSE) file for details.
-
-Photographs, personal texts, and memories are the property of the family and
-may not be used without permission.
+Upload → Deploy → instant.
 
 ---
 
-### 🙏 Acknowledgments
+### 🎨 Visual Assets
 
-Thank you to everyone who helped create this site, shared their memories, and
-keeps the bright memory alive.
+- **favicon.ico** — site icon  
+- **og-image.jpg** — social preview  
+- **img/** — all photos used on the website  
 
 ---
 
-<div align="center">
+### ❤️ In Memory
 
-*Зроблено з ❤️ та теплою пам'яттю / Made with ❤️ and warm memory*
-
-</div>
+All materials belong to the family of Ihor Utyuzh.
