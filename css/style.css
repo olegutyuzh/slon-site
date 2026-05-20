@@ -640,6 +640,38 @@ a {
   animation: v2Scroll 1.9s ease-in-out infinite;
 }
 
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.lang-switcher button {
+  background: none;
+  border: none;
+  padding: 12px 4px;          /* touch target прихований у padding */
+  color: rgba(255, 255, 255, 0.4);
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lang-switcher button:hover,
+.lang-switcher button:focus-visible {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lang-switcher button[aria-pressed="true"] {
+  color: #fff;
+}
+
+.lang-switcher .sep {
+  color: rgba(255, 255, 255, 0.25);
+  user-select: none;
+}
 
 /* ============================================================
    6. КНОПКИ
