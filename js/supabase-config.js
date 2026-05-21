@@ -16,7 +16,5 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 // Ініціалізуємо клієнт. Бібліотека supabase-js завантажується через CDN
 // у тегу <script> перед цим файлом.
-window.supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
+const { createClient } = window.supabase;
+window.supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
