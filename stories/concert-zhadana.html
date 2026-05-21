@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/biography.css" />
-  <link rel="stylesheet" href="/css/stories.css" />
-  <link rel="stylesheet" href="/css/voices.css" />
-  <link rel="stylesheet" href="/css/share.css" />
-  <link rel="stylesheet" href="/css/bottom_menu.css" />
+  <link rel="stylesheet" href="/css/min/style.min.css" />
+  <link rel="stylesheet" href="/css/min/biography.min.css" />
+  <link rel="stylesheet" href="/css/min/stories.min.css" />
+  <link rel="stylesheet" href="/css/min/voices.min.css" />
+  <link rel="stylesheet" href="/css/min/share.min.css" />
+  <link rel="stylesheet" href="/css/min/bottom_menu.min.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
@@ -54,11 +55,14 @@
   <header class="header">
     <div class="header-inner">
 
-      <a href="/index.html" class="header-logo" aria-label="SLON">
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="/img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+          <img src="./../img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
-        SLON
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="./../img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
       </a>
 
       <nav class="header-nav" aria-label="Основна навігація">
@@ -67,9 +71,10 @@
         <a href="/biography.html" data-i18n="menu_biography">Життєпис</a>
       </nav>
 
-      <div class="header-lang">
-        <button type="button" data-lang="uk" class="is-active">UA</button>
-        <button type="button" data-lang="en">EN</button>
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
     </div>
@@ -163,7 +168,7 @@
 <p>Ми привезли його велику фотографію й викупили окреме місце в першому ряду. Так, ніби Ігор сидів поруч із нами. Так, ніби він просто вийшов на хвилину й зараз повернеться.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/slon_n_zhenya_horizontal.jpg" alt="Наречена Євгенія у залі поруч із портретом Ігоря" loading="lazy" />
+        <img src="./../img/stories/slon_n_zhenya_horizontal.jpg" alt="Наречена Євгенія у залі поруч із портретом Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Наречена Євгенія у залі поруч із портретом Ігоря</span>
@@ -174,7 +179,7 @@
 <p>А перед виконанням «Троєщина» Сергій Жадан сказав кілька теплих слів про Ігоря. Про його шлях. Про його силу. І про всіх наших захисників, які віддали життя за Україну. Цю пісню вони виконали для нього.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
+        <img src="./../img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря</span>
@@ -198,7 +203,7 @@
 <p>Після концерту ми зустрілися з командою гурту. Поспілкувалися. Вони підписали фото Ігоря, подарували символіку, говорили щиро, по-людськи. Це була зустріч, у якій не було формальностей — тільки вдячність, пам’ять і тепло.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/slone_4_3.jpg" alt="Сергій Жадан із родиною Ігоря" loading="lazy" />
+        <img src="./../img/stories/slone_4_3.jpg" alt="Сергій Жадан із родиною Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан із родиною Ігоря</span>
@@ -217,7 +222,7 @@
 <p>We brought a large photograph of him and bought a separate seat in the first row. As if Igor were sitting right there with us. As if he had just stepped away for a moment and would return any second.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/slon_n_zhenya_horizontal.jpg" alt="Наречена Євгенія у залі поруч із портретом Ігоря" loading="lazy" />
+        <img src="./../img/stories/slon_n_zhenya_horizontal.jpg" alt="Наречена Євгенія у залі поруч із портретом Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Наречена Євгенія у залі поруч із портретом Ігоря</span>
@@ -228,7 +233,7 @@
 <p>Before performing “Troieshchyna,” Serhiy Zhadan said a few warm words about Igor — about his story, his strength, and about all our defenders who gave their lives for Ukraine. They dedicated this song to him.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
+        <img src="./../img/stories/zhadan.jpg" alt="Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан з мікрофоном на сцені, на екрані позаду — портрет Ігоря</span>
@@ -252,7 +257,7 @@
 <p>After the concert, we met with the band. We talked. They signed Igor’s photo, gave us gifts with the band’s symbols, and spoke with sincerity and kindness. There were no formalities — only gratitude, memory, and warmth.</p>
 <figure class="story-figure story-figure--portrait">
       <div class="story-figure-img">
-        <img src="/img/stories/slone_4_3.jpg" alt="Сергій Жадан із родиною Ігоря" loading="lazy" />
+        <img src="./../img/stories/slone_4_3.jpg" alt="Сергій Жадан із родиною Ігоря" loading="lazy" />
       </div>
         <figcaption class="story-figure-caption">
           <span data-lang-content="uk">Сергій Жадан із родиною Ігоря</span>
@@ -458,7 +463,7 @@
       <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
     </a>
   </nav>
-  <script src="/js/lang.js"></script>
-  <script src="/js/share.js"></script> 
+  <script src="/js/min/lang.min.js"></script>
+  <script src="/js/min/share.min.js"></script> 
 </body>
 </html>

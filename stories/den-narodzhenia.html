@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/biography.css" />
-  <link rel="stylesheet" href="/css/stories.css" />
-  <link rel="stylesheet" href="/css/voices.css" />
-  <link rel="stylesheet" href="/css/share.css" />
-  <link rel="stylesheet" href="/css/bottom_menu.css" />
+  <link rel="stylesheet" href="/css/min/style.min.css" />
+  <link rel="stylesheet" href="/css/min/biography.min.css" />
+  <link rel="stylesheet" href="/css/min/stories.min.css" />
+  <link rel="stylesheet" href="/css/min/voices.min.css" />
+  <link rel="stylesheet" href="/css/min/share.min.css" />
+  <link rel="stylesheet" href="/css/min/bottom_menu.min.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
@@ -54,11 +55,14 @@
   <header class="header">
     <div class="header-inner">
 
-      <a href="/index.html" class="header-logo" aria-label="SLON">
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="/img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+          <img src="./../img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
-        SLON
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="./../img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
       </a>
 
       <nav class="header-nav" aria-label="Основна навігація">
@@ -67,9 +71,10 @@
         <a href="/biography.html" data-i18n="menu_biography">Життєпис</a>
       </nav>
 
-      <div class="header-lang">
-        <button type="button" data-lang="uk" class="is-active">UA</button>
-        <button type="button" data-lang="en">EN</button>
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
     </div>
@@ -372,7 +377,7 @@
       <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
     </a>
   </nav>
-  <script src="/js/lang.js"></script>
-  <script src="/js/share.js"></script> 
+  <script src="/js/min/lang.min.js"></script>
+  <script src="/js/min/share.min.js"></script> 
 </body>
 </html>

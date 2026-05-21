@@ -642,7 +642,13 @@
   }
 }
 
-  .story-card {
+/* було: рядок 643 — зайва } закривала медіазапит зарано.
+     Тепер блок .story-card лишається всередині @media (max-width: 720px). */
+
+  /* Подвоєний селектор — щоб перебити .story-card.story-card з десктопного блоку.
+     Без цього специфічність (0,0,1,0) програє основним правилам (0,0,2,0). */
+  .story-card,
+  .story-card.story-card {
     grid-template-columns: 1fr;
     gap: 22px;
     padding: 28px 4px;
@@ -681,6 +687,7 @@
     grid-column: 1;
     text-align: left;
   }
+}
 
 @media (max-width: 480px) {
   .stories-filter {
