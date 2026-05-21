@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Залишити слова — Ігор «Слон» Утюж</title>
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/candle.css" />
-  <link rel="stylesheet" href="/css/bottom_menu.css" />
-  <link rel="stylesheet" href="/css/menu.css" />
+  <link rel="stylesheet" href="/css/min/style.min.css" />
+  <link rel="stylesheet" href="/css/min/candle.min.css" />
+  <link rel="stylesheet" href="/css/min/bottom_menu.min.css" />
+  <link rel="stylesheet" href="/css/min/menu.min.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,12 @@
         <div class="header-logo-mark">
           <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
-        SLON
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
       </a>
+
 
       <nav class="header-nav" aria-label="Основна навігація">
         <a href="memories.html" data-i18n="menu_memories">Спогади</a>
@@ -47,9 +51,10 @@
         <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
       </nav>
 
-      <div class="header-lang">
-        <button type="button" data-lang="uk" class="is-active" onclick="setLanguage('uk')">UA</button>
-        <button type="button" data-lang="en" onclick="setLanguage('en')">EN</button>
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
     </div>
@@ -241,10 +246,10 @@
     </a>
   </nav>
 
-  <script src="/js/supabase-config.js"></script>
-  <script src="/js/lang.js"></script>
-  <script src="/js/memory-new.js"></script>
-  <script src="/js/bottom_menu.js"></script>
-  <script src="/js/menu.js"></script>
+  <script src="/js/min/supabase-config.min.js"></script>
+  <script src="/js/min/lang.min.js"></script>
+  <script src="/js/min/memory-new.min.js"></script>
+  <script src="/js/min/bottom_menu.min.js"></script>
+  <script src="/js/min/menu.min.js"></script>
 </body>
 </html>

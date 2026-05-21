@@ -15,9 +15,10 @@
 
   let isCondensed = false;
   let ticking = false;
+  let lastScrollY = 0;       // кешуємо позицію скролу, читаємо її в onScroll (passive)
 
   function update() {
-    const y = window.scrollY || window.pageYOffset;
+    const y = lastScrollY;   // ← читаємо з кешу, без звернення до DOM/layout
 
     // Гістерезис: вмикаємо при >120, вимикаємо тільки при <80.
     // Так уникаємо постійних toggle, якщо користувач завис на межі.
@@ -35,14 +36,22 @@
   }
 
   function onScroll() {
+    // Читаємо scrollY у passive-обробнику до запиту на rAF.
+    // Це уникає forced reflow всередині кадру після зміни класів.
+    lastScrollY = window.scrollY || window.pageYOffset;
+
     if (!ticking) {
       window.requestAnimationFrame(update);
       ticking = true;
     }
   }
 
-  // Початковий стан (якщо сторінка завантажилась з прокрутом)
-  update();
+  // Початковий стан (якщо сторінка завантажилась з прокрутом).
+  // Через rAF, щоб не читати scrollY до першого layout-у.
+  window.requestAnimationFrame(function () {
+    lastScrollY = window.scrollY || window.pageYOffset;
+    update();
+  });
 
   window.addEventListener('scroll', onScroll, { passive: true });
 })();

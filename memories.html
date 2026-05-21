@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/candle.css" />  
-  <link rel="stylesheet" href="/css/memories.css" />
-  <link rel="stylesheet" href="/css/bottom_menu.css" />   
-  <link rel="stylesheet" href="/css/menu.css" />      
+  <link rel="stylesheet" href="/css/min/style.min.css" />
+  <link rel="stylesheet" href="/css/min/candle.min.css" />  
+  <link rel="stylesheet" href="/css/min/memories.min.css" />
+  <link rel="stylesheet" href="/css/min/bottom_menu.min.css" />   
+  <link rel="stylesheet" href="/css/min/menu.min.css" />  
+    
+  <link rel="preconnect" href="https://snpuloaaziqptqsqfhdl.supabase.co" crossorigin>
+  <link rel="dns-prefetch" href="https://snpuloaaziqptqsqfhdl.supabase.co">    
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
 
   <title>Спогади — Ігор «Слон» Утюж</title>
@@ -26,7 +30,8 @@
   <meta property="og:locale" content="uk_UA" />
 
   <!-- Supabase JS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js" defer></script>
+
 </head>
 
 <body class="page">
@@ -37,9 +42,12 @@
 
       <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy"/>
+          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
-        SLON
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
       </a>
 
       <nav class="header-nav" aria-label="Основна навігація">
@@ -48,9 +56,10 @@
         <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
       </nav>    
 
-      <div class="header-lang">
-        <button type="button" data-lang="uk" class="is-active">UA</button>
-        <button type="button" data-lang="en">EN</button>
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
     </div>
@@ -286,13 +295,13 @@
   </nav>
 
   <!-- Послідовність важлива: спочатку config, потім memories.js -->
-  <script src="/js/supabase-config.js"></script>
-  <script src="/js/lang.js"></script>
-  <script src="/js/memories.js"></script>
-  <script src="/js/bottom_menu.js"></script>
-  <script src="/js/menu.js"></script>  
-  <script src="/js/reveal.js"></script>  
-  <script src="/js/candle.js"></script>
-  <script src="/js/candle_counter.js"></script>    
+  <script src="/js/min/supabase-config.min.js"></script>
+  <script src="/js/min/lang.min.js"></script>
+  <script src="/js/min/memories.min.js"></script>
+  <script src="/js/min/bottom_menu.min.js"></script>
+  <script src="/js/min/menu.min.js"></script>  
+  <script src="/js/min/reveal.min.js"></script>  
+  <script src="/js/min/candle.min.js"></script>
+  <script src="/js/min/candle_counter.min.js"></script>    
 </body>
 </html>

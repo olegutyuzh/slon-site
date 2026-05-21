@@ -32,7 +32,9 @@ function updateActiveButtons() {
     // Підтримуємо як data-lang="ua", так і data-lang="uk"
     document.querySelectorAll("[data-lang]").forEach(btn => {
         const btnLang = normalizeLang(btn.dataset.lang);
-        btn.classList.toggle("is-active", btnLang === currentLang);
+        const isActive = btnLang === currentLang;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
 }
 
