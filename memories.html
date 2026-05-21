@@ -42,9 +42,12 @@
 
       <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="img/symbol-slon.png" alt="Символ Слон" class="logo-elephant" loading="lazy"/>
+          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
-        SLON
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
       </a>
 
       <nav class="header-nav" aria-label="Основна навігація">
@@ -53,9 +56,10 @@
         <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
       </nav>    
 
-      <div class="header-lang">
-        <button type="button" data-lang="uk" class="is-active">UA</button>
-        <button type="button" data-lang="en">EN</button>
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
     </div>

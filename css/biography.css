@@ -494,13 +494,13 @@
    ця секція стоїть першою. */
 
 body.has-subnav .bio-hero {
-  padding-top: calc(60px + 44px + 16px + 60px);
-  /* 60 хедер + 44 subnav + 16 проміжок + ще 60 для повітря над заголовком */
+  padding-top: calc(var(--header-h) + 44px + 16px + 60px);
+  /* хедер + subnav + проміжок + 60 для повітря над заголовком */
 }
 
 @media (max-width: 720px) {
   body.has-subnav .bio-hero {
-    padding-top: calc(60px + 40px + 12px + 40px);
+    padding-top: calc(var(--header-h) + 40px + 12px + 40px);
   }
 }
 
@@ -514,12 +514,12 @@ body.has-subnav .bio-hero {
 /* Якорі секцій: коли користувач клацає пункт subnav, секція приїжджає
    не впритул до фіксованих меню зверху, а з відступом. */
 .bio-chapter[id] {
-  scroll-margin-top: calc(60px + 44px + 24px);
+  scroll-margin-top: calc(var(--header-h) + 44px + 24px);
 }
 
 @media (max-width: 720px) {
   .bio-chapter[id] {
-    scroll-margin-top: calc(60px + 40px + 16px);
+    scroll-margin-top: calc(var(--header-h) + 40px + 16px);
   }
 }
 

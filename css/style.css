@@ -649,9 +649,14 @@ a {
 }
 
 .lang-switcher button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;            /* WCAG 2.2 / iOS HIG touch target */
+  min-height: 44px;
   background: none;
   border: none;
-  padding: 12px 4px;          /* touch target прихований у padding */
+  padding: 10px 8px;
   color: rgba(255, 255, 255, 0.4);
   font: inherit;
   letter-spacing: inherit;
