@@ -418,7 +418,7 @@
   align-items: center;
   gap: 14px;
   margin-bottom: 16px;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
@@ -432,7 +432,7 @@
   color: rgba(246, 239, 228, 0.5);
   letter-spacing: 0.06em;
   text-transform: none;
-  font-size: 12.5px;
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -446,7 +446,7 @@
 /* === Заголовок === */
 .story-card-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(26px, 2.8vw, 34px);
+  font-size: clamp(28px, 2.6vw, 36px);
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin: 0 0 22px;
@@ -467,11 +467,11 @@
 .story-card-lede {
   position: relative;
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: clamp(17px, 1.6vw, 19px);
+  font-size: clamp(19px, 1.8vw, 22px);
   line-height: 1.55;
   color: rgba(246, 239, 228, 0.78);
   margin: 0 0 22px;
-  padding: 4px 0 4px 52px;          /* більший лівий відступ — звільняє колонку під ялинку */
+  padding: 4px 0 4px 58px;          /* більший лівий відступ — звільняє колонку під ялинку */
   font-style: italic;
   font-weight: 400;
 }
@@ -485,7 +485,7 @@
   left: 4px;
   top: 0;
   font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1;
   color: rgba(214, 168, 95, 0.4);
   font-style: normal;
@@ -498,7 +498,7 @@
 /* === Автор === */
 .story-card-author {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--v2-gold, #d6a85f);
   font-style: italic;
   font-weight: 500;
@@ -530,7 +530,7 @@
    через заголовок і фото — це другорядна підказка. */
 .story-card-more {
   margin-left: auto;            /* притискає до правого краю навіть без автора поруч */
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(200, 164, 90, 0.6);
@@ -1056,4 +1056,18 @@
 
 .stories-filter[disabled] {
   display: none;
+}
+
+  .bio-chapter:last-of-type { padding-bottom: 60px; }
+  .bio-chapter + .memory-actions { padding-top: 40px; }
+  .memory-actions { padding-bottom: 10px; }
+  @media (max-width: 860px) { .memory-actions { padding-bottom: 32px; } }
+  @media (max-width: 720px) { .memory-actions { padding-bottom: 24px; } }
+
+  .memory-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 100px; 
 }

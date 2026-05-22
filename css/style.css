@@ -1552,7 +1552,8 @@ a {
 .memory-actions {
   text-align: center;
   padding-top: clamp(120px, 14vw, 220px);
-  padding-bottom: clamp(120px, 14vw, 220px);
+  /* padding-bottom: clamp(120px, 14vw, 220px); */
+  padding-bottom: 0;
   background:
     radial-gradient(circle at 50% 56%, rgba(255, 200, 120, .18), transparent 30%),
     radial-gradient(circle at 50% 92%, rgba(214, 168, 95, .12), transparent 38%),
@@ -2257,47 +2258,162 @@ a {
 .footer {
   background: rgba(5, 6, 8, .96);
   border-top: 1px solid rgba(246, 239, 228, .08);
-  padding: 28px 24px 96px;
+  padding: 56px 24px 110px;
 }
 
 .footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 12px;
+  gap: 24px;
+  text-align: center;
   color: rgba(246, 239, 228, .48);
 }
 
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.footer-right {
+/* Символ слона */
+.footer-symbol {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  opacity: 0.95;
 }
 
+.footer-symbol-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(214, 168, 95, 0.25));
+}
+
+/* Цитата */
+.footer-quote {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--v2-text);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  max-width: 560px;
+}
+
+/* Дати з декоративними лініями */
+.footer-years {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.footer-years-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(214, 168, 95, 0.35),
+    transparent
+  );
+}
+
+.footer-years-text {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--v2-gold);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Соціальні мережі */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.footer-social-link {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(246, 239, 228, 0.14);
+  background: rgba(255, 255, 255, 0.025);
+  color: rgba(246, 239, 228, 0.7);
+  text-decoration: none;
+  transition: color .25s var(--v2-ease),
+              border-color .25s var(--v2-ease),
+              background .25s var(--v2-ease),
+              transform .25s var(--v2-ease);
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  color: var(--v2-gold-2);
+  border-color: rgba(214, 168, 95, 0.45);
+  background: rgba(214, 168, 95, 0.08);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Текст про сайт */
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: rgba(246, 239, 228, .52);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* Перемикач мови */
 .footer-lang {
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  margin-top: 4px;
 }
 
-.footer-lang span {
-  opacity: 0.6;
+.footer-lang-btn {
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(246, 239, 228, 0.45);
   cursor: pointer;
+  transition: color .2s var(--v2-ease);
 }
 
-.footer-lang span.is-active {
-  opacity: 1;
+.footer-lang-btn:hover,
+.footer-lang-btn:focus-visible {
+  color: var(--v2-gold-2);
+  outline: none;
+}
+
+.footer-lang-btn.is-active {
   color: var(--v2-gold);
 }
 
-.footer-lang span + span::before {
-  content: " / ";
-  opacity: 0.4;
+.footer-lang-sep {
+  color: rgba(246, 239, 228, 0.25);
 }
 
 
@@ -2588,9 +2704,37 @@ a {
     bottom: 24px;
   }
 
+  .footer {
+    padding: 44px 20px 96px;
+  }
+
   .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-quote {
+    font-size: 18px;
+  }
+
+  .footer-years {
+    gap: 12px;
+  }
+
+  .footer-years-text {
+    font-size: 14px;
+  }
+
+  .footer-social {
+    gap: 10px;
+  }
+
+  .footer-social-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  .footer-meta {
+    font-size: 12px;
   }
 
   /* === Контактна сторінка / «Залишити слова» === */
@@ -2933,5 +3077,37 @@ a {
   .memory-buttons .memory-btn:first-child::after {
     animation: none;
     opacity: 0.75;
+  }
+}
+
+/* ===== Зближуємо секції "Слова, які залишились" і "Вшанувати памʼять"
+   на головній сторінці. Базовий .section дає padding 168px зверху і знизу
+   (style.css:916) — на стику двох секцій це до 336px порожнечі. ===== */
+
+/* Низ секції з цитатами */
+.gratitude {
+  padding-bottom: 60px;
+}
+
+/* Верх "Вшанувати памʼять" одразу після цитат (на головній) */
+.gratitude + .memory-actions {
+  padding-top: 40px;
+}
+
+@media (max-width: 860px) {
+  .gratitude {
+    padding-bottom: 48px;
+  }
+  .gratitude + .memory-actions {
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .gratitude {
+    padding-bottom: 36px;
+  }
+  .gratitude + .memory-actions {
+    padding-top: 24px;
   }
 }
