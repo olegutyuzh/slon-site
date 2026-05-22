@@ -583,3 +583,22 @@ body.has-subnav .bio-hero {
 .bio-chapter + .memory-actions {
   padding-top: 40px;
 }
+
+/* ===== Зменшуємо порожнечу під карткою свічки
+   (між блоком "Вшанувати памʼять" і футером) на сторінці біографії.
+   Перебиваємо padding-bottom з .section (style.css:916) ===== */
+.memory-actions {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 860px) {
+  .memory-actions {
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .memory-actions {
+    padding-bottom: 24px;
+  }
+}
