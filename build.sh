@@ -51,6 +51,7 @@ CSS_FILES=(
     "fragments"
     "life-hero-styles"
     "memories"
+    "memory-map"
     "menu"
     "share"
     "stories"
