@@ -3,22 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вшанування пам'яті — Ігор</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap&subset=cyrillic">
-  <link rel="stylesheet" href="/css/min/recognition.min.css" />   
+  <link rel="preload" as="image" href="/img/candle.svg" fetchpriority="high">
 
+  <!-- Основні стилі сайту (header, footer, bottom-nav, токени) -->
+  <link rel="stylesheet" href="/css/min/index.bundle.min.css" />
+  <!-- Стилі сторінки нагород -->
+  <link rel="stylesheet" href="/css/min/recognition.min.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap&subset=cyrillic">
+
+  <link rel="alternate" hreflang="uk" href="https://slon.life/recognition.html" />
+  <link rel="alternate" hreflang="en" href="https://slon.life/recognition.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://slon.life/recognition.html" />
+
+  <title data-i18n="recog_page_title">Вшанування памʼяті — Ігор «Слон» Утюж</title>
+  <link rel="canonical" href="https://slon.life/recognition.html" />
+
+  <meta name="description" content="Нагороди та публікації українських медіа, що вшановують памʼять Ігоря «Слона» Утюжа — захисника України." />
+  <meta property="og:title" content="Вшанування памʼяті — Ігор «Слон» Утюж">
+  <meta property="og:description" content="Державні відзнаки та публікації українських медіа про Ігоря Утюжа.">
+  <meta property="og:image" content="https://slon.life/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slon.life/recognition.html" />
+  <meta property="og:locale" content="uk_UA" />
 </head>
-<body>
+
+<body class="page">
+
+  <div class="site-atmosphere" aria-hidden="true">
+    <span class="ambient-glow ambient-glow-main"></span>
+    <span class="ambient-glow ambient-glow-side"></span>
+    <span class="ambient-haze"></span>
+    <span class="ambient-grain"></span>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
+        <div class="header-logo-mark">
+          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+        </div>
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Основна навігація">
+        <a href="memories.html" data-i18n="menu_memories">Спогади</a>
+        <a href="stories.html" data-i18n="menu_stories">Історії</a>
+        <a href="biography.html" data-i18n="menu_biography">Життєпис</a>
+        <a href="recognition.html" data-i18n="menu_recognition" aria-current="page" class="is-active">Вшанування</a>
+      </nav>
+
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main-content" id="main-content">
 
   <!-- ============================================================
        HERO — заголовок сторінки
        ============================================================ -->
   <header class="page-hero">
-    <div class="page-hero-kicker">Вшанування пам'яті</div>
-    <h1 class="page-hero-title">Нагороди та публікації</h1>
-    <p class="page-hero-subtitle">Державні відзнаки, якими було вшановано бойовий шлях Ігоря, та публікації українських медіа, що зберігають пам'ять про нього.</p>
+    <div class="page-hero-kicker" data-i18n="recog_hero_kicker">Вшанування памʼяті</div>
+    <h1 class="page-hero-title" data-i18n="recog_hero_title">Нагороди та публікації</h1>
+    <p class="page-hero-subtitle" data-i18n="recog_hero_subtitle">Державні відзнаки, якими було вшановано бойовий шлях Ігоря, та публікації українських медіа, що зберігають памʼять про нього.</p>
     <div class="page-hero-ornament">
       <span class="line"></span>
       <span class="diamond"></span>
@@ -30,13 +92,13 @@
        SECTION 1 — НАГОРОДИ
        ============================================================ -->
   <section id="awards" class="section awards">
-    <div class="section-counter">I / II</div>
+    <div class="section-counter" data-i18n="recog_awards_counter">I / II</div>
     <div class="awards-inner">
 
       <div class="section-header">
-        <div class="section-kicker">Частина перша</div>
-        <h2 class="section-title">Нагороди</h2>
-        <p class="section-subtitle">Державні та військові відзнаки, якими було вшановано бойовий шлях і самопожертву Ігоря. Дві з них родина отримала вже після його загибелі.</p>
+        <div class="section-kicker" data-i18n="recog_awards_kicker">Частина перша</div>
+        <h2 class="section-title" data-i18n="recog_awards_title">Нагороди</h2>
+        <p class="section-subtitle" data-i18n="recog_awards_subtitle">Державні та військові відзнаки, якими було вшановано бойовий шлях і самопожертву Ігоря. Дві з них родина отримала вже після його загибелі.</p>
       </div>
 
       <div class="awards-grid">
@@ -49,18 +111,24 @@
           </div>
           <div class="award-content">
             <div class="award-meta">
-              <span class="award-type">Державна нагорода України</span>
-              <span class="award-tag award-tag-posthumous">Посмертно</span>
+              <span class="award-type" data-i18n="recog_award_1_type">Державна нагорода України</span>
+              <span class="award-tag award-tag-posthumous" data-i18n="recog_tag_posthumous">Посмертно</span>
             </div>
-            <h3 class="award-title">Орден «За мужність» ІІІ ступеня</h3>
-            <div class="award-issuer">Указ Президента України</div>
+            <h3 class="award-title" data-i18n="recog_award_1_title">Орден «За мужність» ІІІ ступеня</h3>
+            <div class="award-issuer" data-i18n="recog_award_1_issuer">Указ Президента України</div>
             <dl class="award-document">
-              <div class="award-doc-row"><dt>№ указу</dt><dd>827/2023</dd></div>
-              <div class="award-doc-row"><dt>Дата</dt><dd><time datetime="2023-12-20">20 грудня 2023</time></dd></div>
+              <div class="award-doc-row">
+                <dt data-i18n="recog_award_1_doc_no_label">№ указу</dt>
+                <dd data-i18n="recog_award_1_doc_no_value">827/2023</dd>
+              </div>
+              <div class="award-doc-row">
+                <dt data-i18n="recog_award_1_doc_date_label">Дата</dt>
+                <dd><time datetime="2023-12-20" data-i18n="recog_award_1_doc_date_value">20 грудня 2023</time></dd>
+              </div>
             </dl>
-            <p class="award-text">За особисту мужність, виявлену у захисті державного суверенітету та територіальної цілісності України, самовіддане виконання військового обов’язку.</p>
+            <p class="award-text" data-i18n="recog_award_1_text">За особисту мужність, виявлену у захисті державного суверенітету та територіальної цілісності України, самовіддане виконання військового обовʼязку.</p>
             <div class="award-sources">
-              <a href="https://www.president.gov.ua/documents/8272023-49229" target="_blank" rel="noopener">Указ Президента №827/2023</a>
+              <a href="https://www.president.gov.ua/documents/8272023-49229" target="_blank" rel="noopener" data-i18n="recog_award_1_source_label">Указ Президента №827/2023</a>
             </div>
           </div>
         </article>
@@ -73,16 +141,22 @@
           </div>
           <div class="award-content">
             <div class="award-meta">
-              <span class="award-type">Відзнака Головнокомандувача ЗСУ</span>
-              <span class="award-tag award-tag-posthumous">Посмертно</span>              
+              <span class="award-type" data-i18n="recog_award_2_type">Відзнака Головнокомандувача ЗСУ</span>
+              <span class="award-tag award-tag-posthumous" data-i18n="recog_tag_posthumous">Посмертно</span>
             </div>
-            <h3 class="award-title">Почесний нагрудний знак «Золотий хрест»</h3>
-            <div class="award-issuer">Головнокомандувач Збройних Сил України</div>
+            <h3 class="award-title" data-i18n="recog_award_2_title">Почесний нагрудний знак «Золотий хрест»</h3>
+            <div class="award-issuer" data-i18n="recog_award_2_issuer">Головнокомандувач Збройних Сил України</div>
             <dl class="award-document">
-              <div class="award-doc-row"><dt>№ наказу</dt><dd>2710</dd></div>
-              <div class="award-doc-row"><dt>Дата</dt><dd><time datetime="2023-11-17">17 листопада 2023</time></dd></div>
+              <div class="award-doc-row">
+                <dt data-i18n="recog_award_2_doc_no_label">№ наказу</dt>
+                <dd data-i18n="recog_award_2_doc_no_value">2710</dd>
+              </div>
+              <div class="award-doc-row">
+                <dt data-i18n="recog_award_2_doc_date_label">Дата</dt>
+                <dd><time datetime="2023-11-17" data-i18n="recog_award_2_doc_date_value">17 листопада 2023</time></dd>
+              </div>
             </dl>
-            <p class="award-text">За успішне виконання бойових завдань, проявлену особисту мужність та героїзм при захисті територіальної цілісності України.</p>
+            <p class="award-text" data-i18n="recog_award_2_text">За успішне виконання бойових завдань, проявлену особисту мужність та героїзм при захисті територіальної цілісності України.</p>
           </div>
         </article>
 
@@ -94,12 +168,12 @@
           </div>
           <div class="award-content">
             <div class="award-meta">
-              <span class="award-type">Церковна відзнака</span>
-              <span class="award-tag award-tag-year">2016</span>
+              <span class="award-type" data-i18n="recog_award_3_type">Церковна відзнака</span>
+              <span class="award-tag award-tag-year" data-i18n="recog_award_3_year_tag">2016</span>
             </div>
-            <h3 class="award-title">Медаль «За жертовність і любов до України»</h3>
-            <div class="award-issuer">Українська Православна Церква Київського Патріархату</div>
-            <p class="award-text">Відзнака за самовідданість, мужність і любов до Батьківщини, виявлені у служінні Україні. Нагороду Ігор отримав за життя — у 2016 році, після першої війни.</p>
+            <h3 class="award-title" data-i18n="recog_award_3_title">Медаль «За жертовність і любов до України»</h3>
+            <div class="award-issuer" data-i18n="recog_award_3_issuer">Українська Православна Церква Київського Патріархату</div>
+            <p class="award-text" data-i18n="recog_award_3_text">Відзнака за самовідданість, мужність і любов до Батьківщини, виявлені у служінні Україні. Нагороду Ігор отримав за життя — у 2016 році, після першої війни.</p>
           </div>
         </article>
 
@@ -120,13 +194,13 @@
        SECTION 2 — МЕДІА
        ============================================================ -->
   <section id="media" class="section media">
-    <div class="section-counter">II / II</div>
+    <div class="section-counter" data-i18n="recog_media_counter">II / II</div>
     <div class="media-inner">
 
       <div class="section-header">
-        <div class="section-kicker">Частина друга</div>
-        <h2 class="section-title">У пресі</h2>
-        <p class="section-subtitle">Публікації, репортажі та матеріали українських медіа, в яких розповідається про Ігоря, його службу та шлях.</p>
+        <div class="section-kicker" data-i18n="recog_media_kicker">Частина друга</div>
+        <h2 class="section-title" data-i18n="recog_media_title">У пресі</h2>
+        <p class="section-subtitle" data-i18n="recog_media_subtitle">Публікації, репортажі та матеріали українських медіа, в яких розповідається про Ігоря, його службу та шлях.</p>
       </div>
 
       <!-- Інструменти року: навігація (скрол) + фільтр (приховування) -->
@@ -134,7 +208,7 @@
 
         <!-- Швидка навігація по роках -->
         <nav class="year-nav" aria-label="Перейти до року">
-          <span class="year-nav-label">Перейти до</span>
+          <span class="year-nav-label" data-i18n="recog_year_nav_label">Перейти до</span>
           <a href="#year-2025" class="year-nav-link" data-year-jump="2025">2025<sup>6</sup></a>
           <a href="#year-2024" class="year-nav-link" data-year-jump="2024">2024<sup>3</sup></a>
           <a href="#year-2023" class="year-nav-link" data-year-jump="2023">2023<sup>1</sup></a>
@@ -149,7 +223,7 @@
         <div class="year-divider" id="year-2025">
           <span class="year-divider-number">2025</span>
           <div class="year-divider-meta">
-            <span class="year-divider-count">6 публікацій · Вшанування пам'яті</span>
+            <span class="year-divider-count" data-i18n="recog_year_2025_count">6 публікацій · Вшанування памʼяті</span>
             <span class="year-divider-line"></span>
           </div>
         </div>
@@ -162,23 +236,23 @@
               <img src="img/media/kyiv-military-admin.svg"
                    alt="Київська міська військова адміністрація" loading="lazy">
             </div>
-            <div class="media-source-name">Київська міська військова адміністрація</div>
+            <div class="media-source-name" data-i18n="recog_card_1_source">Київська міська військова адміністрація</div>
           </div>
-          <h3 class="media-card-title">Київ пам'ятає | Ігор Утюж</h3>
-          <p class="media-excerpt">Київська міська військова адміністрація спільно з Платформою Пам’яті Меморіал вшановують пам’ять полеглих захисників родом із Києва.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_1_title">Київ памʼятає | Ігор Утюж</h3>
+          <p class="media-excerpt" data-i18n="recog_card_1_excerpt">Київська міська військова адміністрація спільно з Платформою Памʼяті Меморіал вшановують памʼять полеглих захисників родом із Києва.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-09-24">24 вересня 2025</time>
+                <time datetime="2025-09-24" data-i18n="recog_card_1_date">24 вересня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                5 хв
+                <span data-i18n="recog_card_1_time">5 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -188,25 +262,25 @@
           <div class="media-source">
             <div class="media-logo">
               <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
-                   alt="Платформа пам'яті Меморіал" loading="lazy">
+                   alt="Платформа памʼяті Меморіал" loading="lazy">
             </div>
-            <div class="media-source-name">Платформа пам'яті Меморіал</div>
+            <div class="media-source-name" data-i18n="recog_card_2_source">Платформа памʼяті Меморіал</div>
           </div>
-          <h3 class="media-card-title">Справжній козак: високий, широкоплечий, красивий, впевнений, справедливий | Памʼяті Ігоря Утюжа</h3>
-          <p class="media-excerpt">Відеоісторія платформи Меморіал, присвячена пам’яті солдата Ігоря Утюжа.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_2_title">Справжній козак: високий, широкоплечий, красивий, впевнений, справедливий | Памʼяті Ігоря Утюжа</h3>
+          <p class="media-excerpt" data-i18n="recog_card_2_excerpt">Відеоісторія платформи Меморіал, присвячена памʼяті солдата Ігоря Утюжа.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-09-19">19 вересня 2025</time>
+                <time datetime="2025-09-19" data-i18n="recog_card_2_date">19 вересня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                12 хв
+                <span data-i18n="recog_card_2_time">12 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -218,23 +292,23 @@
               <img src="https://www.google.com/s2/favicons?domain=chopovycka-gromada.gov.ua&sz=64"
                    alt="Чоповицька громада" loading="lazy">
             </div>
-            <div class="media-source-name">Чоповицька громада</div>
+            <div class="media-source-name" data-i18n="recog_card_3_source">Чоповицька громада</div>
           </div>
-          <h3 class="media-card-title">Утюж Ігор Олегович</h3>
-          <p class="media-excerpt">Книга пам'яті</p>
+          <h3 class="media-card-title" data-i18n="recog_card_3_title">Утюж Ігор Олегович</h3>
+          <p class="media-excerpt" data-i18n="recog_card_3_excerpt">Книга памʼяті</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-09-09">09 вересня 2025</time>
+                <time datetime="2025-09-09" data-i18n="recog_card_3_date">09 вересня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                3 хв
+                <span data-i18n="recog_card_3_time">3 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -244,27 +318,27 @@
           <div class="media-source">
             <div class="media-logo">
               <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
-                   alt="Платформа пам'яті Меморіал" loading="lazy">
+                   alt="Платформа памʼяті Меморіал" loading="lazy">
             </div>
-            <div class="media-source-name">Платформа пам'яті Меморіал</div>
+            <div class="media-source-name" data-i18n="recog_card_4_source">Платформа памʼяті Меморіал</div>
           </div>
-          <h3 class="media-card-title">Мріяв захищати слонів в Африці. Загинув на війні</h3>
-          <p class="media-excerpt">Ніна Утюж – мама загиблого захисника-добровольця Ігоря «Слона» Утюжа. Вона приготувала його улюблену страву – лазанью. Після загибелі сина у грудні 2023 року на Запорізькому напрямку, ця страва стала пам’ятною для родини. </p>
+          <h3 class="media-card-title" data-i18n="recog_card_4_title">Мріяв захищати слонів в Африці. Загинув на війні</h3>
+          <p class="media-excerpt" data-i18n="recog_card_4_excerpt">Ніна Утюж — мама загиблого захисника-добровольця Ігоря «Слона» Утюжа. Вона приготувала його улюблену страву — лазанью. Після загибелі сина у грудні 2023 року на Запорізькому напрямку, ця страва стала памʼятною для родини.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-01-03">03 січня 2025</time>
+                <time datetime="2025-01-03" data-i18n="recog_card_4_date">03 січня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                5 хв
+                <span data-i18n="recog_card_4_time">5 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
-        </a>        
+        </a>
 
         <!-- Картка 5 -->
         <a href="https://www.ukrinform.ua/rubric-ato/3943623-pamati-soldata-operatora-bpla-igora-utuza-pozivnij-slon.html" class="media-card" data-year="2025" target="_blank" rel="noopener">
@@ -274,23 +348,23 @@
               <img src="https://www.google.com/s2/favicons?domain=ukrinform.ua&sz=64"
                    alt="Укрінформ" loading="lazy">
             </div>
-            <div class="media-source-name">Укрінформ</div>
+            <div class="media-source-name" data-i18n="recog_card_5_source">Укрінформ</div>
           </div>
-          <h3 class="media-card-title">Пам’яті солдата, оператора БПЛА Ігоря Утюжа (позивний «Слон»)</h3>
-          <p class="media-excerpt">У дитинстві мріяв захищати слонів в Африці, у юнацтві відстоював гідність на Майдані.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_5_title">Памʼяті солдата, оператора БПЛА Ігоря Утюжа (позивний «Слон»)</h3>
+          <p class="media-excerpt" data-i18n="recog_card_5_excerpt">У дитинстві мріяв захищати слонів в Африці, у юнацтві відстоював гідність на Майдані.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-01-03">03 січня 2025</time>
+                <time datetime="2025-01-03" data-i18n="recog_card_5_date">03 січня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                5 хв
+                <span data-i18n="recog_card_5_time">5 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -302,42 +376,40 @@
               <img src="https://www.google.com/s2/favicons?domain=bukovyna.online&sz=64"
                    alt="Буковина Онлайн" loading="lazy">
             </div>
-            <div class="media-source-name">Буковина Онлайн</div>
+            <div class="media-source-name" data-i18n="recog_card_6_source">Буковина Онлайн</div>
           </div>
-          <h3 class="media-card-title">Пам’яті солдата, оператора БПЛА Ігоря Утюжа (позивний «Слон»)</h3>
-          <p class="media-excerpt">У дитинстві мріяв захищати слонів в Африці, у юнацтві відстоював гідність на Майдані.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_6_title">Памʼяті солдата, оператора БПЛА Ігоря Утюжа (позивний «Слон»)</h3>
+          <p class="media-excerpt" data-i18n="recog_card_6_excerpt">У дитинстві мріяв захищати слонів в Африці, у юнацтві відстоював гідність на Майдані.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-01-03">03 січня 2025</time>
+                <time datetime="2025-01-03" data-i18n="recog_card_6_date">03 січня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                5 хв
+                <span data-i18n="recog_card_6_time">5 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
+
         <!-- Повернення до переліку років -->
         <a href="#media" class="year-back-to-top" data-year-back="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="19" x2="12" y2="5"/>
             <polyline points="5 12 12 5 19 12"/>
           </svg>
-          <span>До переліку років</span>
+          <span data-i18n="recog_back_to_years">До переліку років</span>
         </a>
 
-
-
-        
         <!-- ──── РІК 2024 ──── -->
         <div class="year-divider" id="year-2024">
           <span class="year-divider-number">2024</span>
           <div class="year-divider-meta">
-            <span class="year-divider-count">3 публікації · Спогади та річниця</span>
+            <span class="year-divider-count" data-i18n="recog_year_2024_count">3 публікації · Спогади та річниця</span>
             <span class="year-divider-line"></span>
           </div>
         </div>
@@ -348,25 +420,25 @@
           <div class="media-source">
             <div class="media-logo">
               <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
-                   alt="Платформа пам'яті Меморіал" loading="lazy">
+                   alt="Платформа памʼяті Меморіал" loading="lazy">
             </div>
-            <div class="media-source-name">Платформа пам'яті Меморіал</div>
+            <div class="media-source-name" data-i18n="recog_card_7_source">Платформа памʼяті Меморіал</div>
           </div>
-          <h3 class="media-card-title">Історія життя</h3>
-          <p class="media-excerpt">Солдат Ігор Утюж на псевдо Слон загинув 7 грудня 2023 року поблизу села Вербове Запорізької області. Під час бою він прикрив собою побратимів від ворожого дрона. Воїну назавжди залишилося 27 років.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_7_title">Історія життя</h3>
+          <p class="media-excerpt" data-i18n="recog_card_7_excerpt">Солдат Ігор Утюж на псевдо Слон загинув 7 грудня 2023 року поблизу села Вербове Запорізької області. Під час бою він прикрив собою побратимів від ворожого дрона. Воїну назавжди залишилося 27 років.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2024-05-17">17 травня 2024</time>
+                <time datetime="2024-05-17" data-i18n="recog_card_7_date">17 травня 2024</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                2 хв
+                <span data-i18n="recog_card_7_time">2 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -378,23 +450,23 @@
               <img src="https://www.google.com/s2/favicons?domain=rubryka.com&sz=64"
                    alt="Рубрика" loading="lazy">
             </div>
-            <div class="media-source-name">Рубрика</div>
+            <div class="media-source-name" data-i18n="recog_card_8_source">Рубрика</div>
           </div>
-          <h3 class="media-card-title">Пам’яті Ігоря Утюжа</h3>
-          <p class="media-excerpt">Текст-спогад пам'яті військового Ігоря Утюжа, який загинув 7-го грудня 2023 року. Матеріал написано на основі розповіді із родиною Ігоря: батьків — Олега й Ніни Утюж, а також нареченої — Євгенії Шклярук.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_8_title">Памʼяті Ігоря Утюжа</h3>
+          <p class="media-excerpt" data-i18n="recog_card_8_excerpt">Текст-спогад памʼяті військового Ігоря Утюжа, який загинув 7-го грудня 2023 року. Матеріал написано на основі розповіді із родиною Ігоря: батьків — Олега й Ніни Утюж, а також нареченої — Євгенії Шклярук.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2024-04-22">22 квітня 2024</time>
+                <time datetime="2024-04-22" data-i18n="recog_card_8_date">22 квітня 2024</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                6 хв
+                <span data-i18n="recog_card_8_time">6 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -406,23 +478,23 @@
               <img src="https://www.google.com/s2/favicons?domain=rada.gov.ua&sz=64"
                    alt="Рада" loading="lazy">
             </div>
-            <div class="media-source-name">Рада</div>
+            <div class="media-source-name" data-i18n="recog_card_9_source">Верховна Рада</div>
           </div>
-          <h3 class="media-card-title">Виступ Віцеспікерки Верховної Ради України Олени Кондратюк до десятих роковин розстрілів на Майдані та початку російсько-української війни.</h3>
-          <p class="media-excerpt">Десять років тому, тут, у центрі Києва, на Майдані Незалежності, звичайні люди, молоді й дорослі, із різних куточків України, різних професій і покликань — здійснили надзвичайний подвиг.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_9_title">Виступ Віцеспікерки Верховної Ради України Олени Кондратюк до десятих роковин розстрілів на Майдані та початку російсько-української війни.</h3>
+          <p class="media-excerpt" data-i18n="recog_card_9_excerpt">Десять років тому, тут, у центрі Києва, на Майдані Незалежності, звичайні люди, молоді й дорослі, із різних куточків України, різних професій і покликань — здійснили надзвичайний подвиг.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2024-02-22">22 лютого 2024</time>
+                <time datetime="2024-02-22" data-i18n="recog_card_9_date">22 лютого 2024</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                6 хв
+                <span data-i18n="recog_card_9_time">6 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
@@ -432,21 +504,19 @@
             <line x1="12" y1="19" x2="12" y2="5"/>
             <polyline points="5 12 12 5 19 12"/>
           </svg>
-          <span>До переліку років</span>
+          <span data-i18n="recog_back_to_years">До переліку років</span>
         </a>
 
-
-
-        
         <!-- ──── РІК 2023 ──── -->
         <div class="year-divider" id="year-2023">
           <span class="year-divider-number">2023</span>
           <div class="year-divider-meta">
-            <span class="year-divider-count">1 публікація · Перші повідомлення</span>
+            <span class="year-divider-count" data-i18n="recog_year_2023_count">1 публікація · Перші повідомлення</span>
             <span class="year-divider-line"></span>
           </div>
         </div>
-<!-- Картка 8 -->
+
+        <!-- Картка 10 -->
         <a href="https://bukvy.org/na-fronti-zagynuv-dobrovolecz-24-sotni-majdanu-igor-utyuzh/" class="media-card" data-year="2023" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
@@ -454,46 +524,45 @@
               <img src="https://www.google.com/s2/favicons?domain=bukvy.org&sz=64"
                    alt="Букви" loading="lazy">
             </div>
-            <div class="media-source-name">Букви</div>
+            <div class="media-source-name" data-i18n="recog_card_10_source">Букви</div>
           </div>
-          <h3 class="media-card-title">На фронті загинув доброволець 24 сотні Майдану Ігор Утюж</h3>
-          <p class="media-excerpt">27-річний Ігор Утюж, доброволець 24 сотні Майдану загинув на фронті.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_10_title">На фронті загинув доброволець 24 сотні Майдану Ігор Утюж</h3>
+          <p class="media-excerpt" data-i18n="recog_card_10_excerpt">27-річний Ігор Утюж, доброволець 24 сотні Майдану загинув на фронті.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2023-08-08">14 грудня 2023</time>
+                <time datetime="2023-12-14" data-i18n="recog_card_10_date">14 грудня 2023</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                2 хв
+                <span data-i18n="recog_card_10_time">2 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
+
         <!-- Повернення до переліку років -->
         <a href="#media" class="year-back-to-top" data-year-back="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="19" x2="12" y2="5"/>
             <polyline points="5 12 12 5 19 12"/>
           </svg>
-          <span>До переліку років</span>
+          <span data-i18n="recog_back_to_years">До переліку років</span>
         </a>
 
-
-
-        
         <!-- ──── РІК 2014 ──── -->
         <div class="year-divider" id="year-2014">
           <span class="year-divider-number">2014</span>
           <div class="year-divider-meta">
-            <span class="year-divider-count">3 публікації · Майдан · Свідчення часу</span>
+            <span class="year-divider-count" data-i18n="recog_year_2014_count">3 публікації · Майдан · Свідчення часу</span>
             <span class="year-divider-line"></span>
           </div>
         </div>
-<!-- Картка 9 -->
+
+        <!-- Картка 11 -->
         <a href="https://www.pravda.com.ua/news/2014/01/25/7011283/" class="media-card" data-year="2014" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
@@ -501,55 +570,55 @@
               <img src="https://www.google.com/s2/favicons?domain=pravda.com.ua&sz=64"
                    alt="Українська правда" loading="lazy">
             </div>
-            <div class="media-source-name">Українська правда</div>
+            <div class="media-source-name" data-i18n="recog_card_11_source">Українська правда</div>
           </div>
-          <h3 class="media-card-title">Обстріли на Грушевського припинилися. Знову переговори</h3>
-          <p class="media-excerpt">Сторони протистояння із світанком припинили обстріл один одного, один з мітингувальників з власної ініціативи взяв державний прапор і пішов на переговори до силовиків.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_11_title">Обстріли на Грушевського припинилися. Знову переговори</h3>
+          <p class="media-excerpt" data-i18n="recog_card_11_excerpt">Сторони протистояння із світанком припинили обстріл один одного, один з мітингувальників з власної ініціативи взяв державний прапор і пішов на переговори до силовиків.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2014-01-25">25 січня 2014</time>
+                <time datetime="2014-01-25" data-i18n="recog_card_11_date">25 січня 2014</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                2 хв
+                <span data-i18n="recog_card_11_time">2 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
-        <!-- Картка 10 -->
+        <!-- Картка 12 -->
         <a href="https://news.liga.net/politics/news/odin_iz_protestuyushchikh_poshel_na_peregovory_s_silovikami" class="media-card" data-year="2014" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
             <div class="media-logo">
               <img src="https://www.google.com/s2/favicons?domain=liga.net&sz=64"
-                   alt="Українська правда" loading="lazy">
+                   alt="Ліга.net" loading="lazy">
             </div>
-            <div class="media-source-name">Ліга.net</div>
+            <div class="media-source-name" data-i18n="recog_card_12_source">Ліга.net</div>
           </div>
-          <h3 class="media-card-title">На Грушевского перемирие, один из активистов пошел на переговоры</h3>
-          <p class="media-excerpt">По словам протестующих, парень отправился на переговоры с силовиками по собственной инициативе.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_12_title">На Грушевського перемирʼя, один з активістів пішов на переговори</h3>
+          <p class="media-excerpt" data-i18n="recog_card_12_excerpt">За словами протестувальників, хлопець вирушив на переговори із силовиками з власної ініціативи.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2014-01-25">25 січня 2014</time>
+                <time datetime="2014-01-25" data-i18n="recog_card_12_date">25 січня 2014</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                1 хв
+                <span data-i18n="recog_card_12_time">1 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
         </a>
 
-        <!-- Картка 10 -->
+        <!-- Картка 13 -->
         <a href="https://kyiv.tsn.ua/ru/kyiv/obstrely-na-grushevskogo-prekratilis-idut-peregovory-345538.html?utm_source=article&utm_medium=summary-block&utm_campaign=title-link" class="media-card" data-year="2014" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
@@ -557,26 +626,25 @@
               <img src="https://www.google.com/s2/favicons?domain=tsn.ua&sz=64"
                    alt="ТСН" loading="lazy">
             </div>
-            <div class="media-source-name">ТСН</div>
+            <div class="media-source-name" data-i18n="recog_card_13_source">ТСН</div>
           </div>
-          <h3 class="media-card-title">Обстрелы на Грушевского прекратились, идут переговоры</h3>
-          <p class="media-excerpt">Обстановка относительно спокойная.</p>
+          <h3 class="media-card-title" data-i18n="recog_card_13_title">Обстріли на Грушевського припинилися, тривають переговори</h3>
+          <p class="media-excerpt" data-i18n="recog_card_13_excerpt">Обстановка відносно спокійна.</p>
           <div class="media-card-footer">
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2014-01-25">25 січня 2014</time>
+                <time datetime="2014-01-25" data-i18n="recog_card_13_date">25 січня 2014</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                1 хв
+                <span data-i18n="recog_card_13_time">1 хв</span>
               </span>
             </div>
-            <span class="media-read">Читати</span>
+            <span class="media-read" data-i18n="recog_media_read">Читати</span>
           </div>
-        </a>        
-
+        </a>
 
         <!-- Повернення до переліку років (з кінця секції) -->
         <a href="#media" class="year-back-to-top year-back-to-top--final" data-year-back="true">
@@ -584,26 +652,138 @@
             <line x1="12" y1="19" x2="12" y2="5"/>
             <polyline points="5 12 12 5 19 12"/>
           </svg>
-          <span>До переліку років</span>
+          <span data-i18n="recog_back_to_years">До переліку років</span>
         </a>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       JS: Навігація (скрол) + Фільтр (приховування)
-       ============================================================ -->
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <!-- Символ слона -->
+      <div class="footer-symbol" aria-hidden="true">
+        <img src="img/elephant.svg" alt="" class="footer-symbol-img" />
+      </div>
+
+      <!-- Цитата -->
+      <blockquote class="footer-quote" data-i18n="footer_quote">
+        «Поки ми памʼятаємо — вони з нами»
+      </blockquote>
+
+      <!-- Дати життя з декоративними лініями -->
+      <div class="footer-years" aria-label="Роки життя">
+        <span class="footer-years-line" aria-hidden="true"></span>
+        <span class="footer-years-text">18.04.1996 — 07.12.2023</span>
+        <span class="footer-years-line" aria-hidden="true"></span>
+      </div>
+
+      <!-- Соціальні мережі -->
+      <div class="footer-social" role="group" aria-label="Соціальні мережі">
+        <a href="mailto:anin2k@ukr.net" class="footer-social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+        <span class="footer-social-link is-disabled" aria-label="Telegram (недоступно)" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 4L3 11l6 2 2 6 4-4 5 4z"/>
+            <path d="M9 13l6-4"/>
+          </svg>
+        </span>
+        <span class="footer-social-link is-disabled" aria-label="Instagram (недоступно)" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="footer-social-link is-disabled" aria-label="Facebook (недоступно)" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 8h-2a1 1 0 0 0-1 1v3h3l-.5 3H12v7h-3v-7H7v-3h2V9a4 4 0 0 1 4-4h2z"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Текст про сайт -->
+      <div class="footer-meta">
+        <div data-i18n="footer_left_text_1">Сайт-памʼять про Ігоря «Слона» Утюжа.</div>
+        <div data-i18n="footer_left_text_2">Створено родиною та друзями. 2024 — <span id="year"></span>.</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===== НИЖНЯ МОБІЛЬНА НАВІГАЦІЯ ===== -->
+  <nav class="bottom-nav" aria-label="Мобільна навігація">
+    <a href="index.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 11c0-3.3 2.7-6 6-6h3c3.3 0 6 2.7 6 6v4"/>
+        <path d="M4 11v6"/>
+        <path d="M7 17v3"/>
+        <path d="M19 15v5"/>
+        <path d="M16 17v3"/>
+        <path d="M10 11c0 1.5 1 2.5 2 3v4"/>
+        <path d="M12 18l-1 1"/>
+        <circle cx="8" cy="9" r="0.5" fill="currentColor"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_home">Головна</span>
+    </a>
+
+    <a href="memories.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_memories">Спогади</span>
+    </a>
+
+    <a href="stories.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2 6c2-1 5-1.5 8 0v13c-3-1.5-6-1-8 0z"/>
+        <path d="M22 6c-2-1-5-1.5-8 0v13c3-1.5 6-1 8 0z"/>
+        <path d="M10 6v13"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_stories">Історії</span>
+    </a>
+
+    <a href="biography.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/>
+        <path d="M4 17a3 3 0 0 1 3-3h12"/>
+        <path d="M9 8h6M9 12h4"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
+    </a>
+
+    <a href="recognition.html" class="bottom-nav-item is-active" aria-current="page">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="9" r="5"/>
+        <path d="M8.5 13l-1.5 8 5-3 5 3-1.5-8"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_recognition">Вшанування</span>
+    </a>
+  </nav>
+
+  <!-- ===== СКРИПТИ САЙТУ ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js" defer></script>
+  <script src="/js/min/supabase-config.min.js" defer></script>
+  <script src="/js/min/lang.min.js"></script>
+  <script src="/js/min/bottom_menu.min.js"></script>
+  <script src="/js/min/menu.min.js"></script>
+
+  <!-- ===== JS: Навігація (скрол) по роках ===== -->
   <script>
     (function() {
       const yearNav = document.querySelector('.year-nav');
-      const yearFilter = document.querySelector('.year-filter');
       const grid = document.querySelector('.media-grid');
       if (!grid) return;
 
-      // ============================================================
-      // ЧАСТИНА 1: Навігація — плавний скрол до року
-      // ============================================================
+      // Плавний скрол до року
       if (yearNav) {
         yearNav.querySelectorAll('a[href^="#year-"]').forEach(link => {
           link.addEventListener('click', (e) => {
@@ -622,12 +802,6 @@
         const navLinks = yearNav.querySelectorAll('a[data-year-jump]');
 
         function highlightCurrentYear() {
-          // Підсвічуємо тільки якщо фільтр на "Всі" — інакше це збиває з пантелику
-          const activeFilter = document.querySelector('.year-filter-btn.is-active');
-          if (activeFilter && activeFilter.dataset.filter !== 'all') {
-            navLinks.forEach(l => l.classList.remove('is-current'));
-            return;
-          }
           let currentYear = null;
           const fromTop = window.scrollY + 120;
           dividers.forEach(div => {
@@ -653,56 +827,7 @@
         highlightCurrentYear();
       }
 
-      // ============================================================
-      // ЧАСТИНА 2: Фільтр — приховування карток та розділювачів
-      // ============================================================
-      if (yearFilter) {
-        const filterBtns = yearFilter.querySelectorAll('.year-filter-btn');
-        const cards = grid.querySelectorAll('.media-card[data-year]');
-        const dividers = grid.querySelectorAll('.year-divider[id^="year-"]');
-
-        function applyFilter(year) {
-          // Картки
-          cards.forEach(card => {
-            const show = (year === 'all' || card.dataset.year === year);
-            card.classList.toggle('is-filtered-out', !show);
-          });
-
-          // Розділювачі: при фільтрі за роком ховаємо ВСІ розділювачі,
-          // бо непотрібно дублювати рік, який вже є в кнопці фільтра.
-          // При "Всі" — показуємо всі розділювачі.
-          dividers.forEach(div => {
-            const divYear = div.id.replace('year-', '');
-            const show = (year === 'all');
-            div.classList.toggle('is-filtered-out', !show);
-          });
-
-          // Активна кнопка
-          filterBtns.forEach(btn => {
-            const isActive = btn.dataset.filter === year;
-            btn.classList.toggle('is-active', isActive);
-            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          });
-
-          // Стан навігації-скрол: при фільтрі за конкретним роком — приглушуємо
-          // інші роки в .year-nav (бо до них не можна доскролити)
-          if (yearNav) {
-            yearNav.querySelectorAll('a[data-year-jump]').forEach(link => {
-              const isAvailable = (year === 'all' || link.dataset.yearJump === year);
-              link.classList.toggle('is-dimmed', !isAvailable);
-            });
-          }
-        }
-
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            applyFilter(btn.dataset.filter);
-          });
-        });
-      }
-      // ============================================================
-      // ЧАСТИНА 3: Повернення до переліку років
-      // ============================================================
+      // Повернення до переліку років
       const backToTopLinks = document.querySelectorAll('.year-back-to-top');
       if (backToTopLinks.length && yearNav) {
         backToTopLinks.forEach(link => {
@@ -715,6 +840,33 @@
         });
       }
     })();
+  </script>
+
+  <!-- ===== JS: Анімація появи + рік у футері ===== -->
+  <script>
+    (() => {
+      const items = document.querySelectorAll('.section, .award-card, .media-card, .year-divider');
+      items.forEach((el) => el.classList.add('reveal-on-scroll'));
+
+      if (!('IntersectionObserver' in window)) {
+        items.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      items.forEach((el) => observer.observe(el));
+    })();
+  </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
