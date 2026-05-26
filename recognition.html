@@ -89,7 +89,7 @@
         <!-- Медаль "За жертовність і любов до України" -->
         <article class="award-card">
           <div class="award-card-glow"></div>
-          <div class="award-photo">
+          <div class="award-photo award-photo--compact">
             <img src="img/awards/medal-sacrifice.png" alt="Медаль «За жертовність і любов до України»" loading="lazy">
           </div>
           <div class="award-content">
@@ -129,17 +129,66 @@
         <p class="section-subtitle">Публікації, репортажі та матеріали українських медіа, в яких розповідається про Ігоря, його службу та шлях.</p>
       </div>
 
+      <!-- Інструменти року: навігація (скрол) + фільтр (приховування) -->
+      <div class="year-tools">
+
+        <!-- Швидка навігація по роках -->
+        <nav class="year-nav" aria-label="Перейти до року">
+          <span class="year-nav-label">Перейти до</span>
+          <a href="#year-2025" class="year-nav-link" data-year-jump="2025">2025<sup>6</sup></a>
+          <a href="#year-2024" class="year-nav-link" data-year-jump="2024">2024<sup>3</sup></a>
+          <a href="#year-2023" class="year-nav-link" data-year-jump="2023">2023<sup>1</sup></a>
+          <a href="#year-2014" class="year-nav-link" data-year-jump="2014">2014<sup>3</sup></a>
+        </nav>
+
+      </div>
+
       <div class="media-grid">
 
+        <!-- ──── РІК 2025 ──── -->
+        <div class="year-divider" id="year-2025">
+          <span class="year-divider-number">2025</span>
+          <div class="year-divider-meta">
+            <span class="year-divider-count">6 публікацій · Вшанування пам'яті</span>
+            <span class="year-divider-line"></span>
+          </div>
+        </div>
+
         <!-- Картка 1 -->
-        <a href="https://memorial.ua/articles/memory-video/spravzhnii-kozak-vysokyi-shyrokoplechyi-krasyvyi-vpevnenyi-spravedlyvyi-pam-iati-ihoria-utiuzha" class="media-card" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/photo/?fbid=776297765292041&set=a.102016682720156" class="media-card" data-year="2025" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
             <div class="media-logo">
-<!--               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="6" fill="#d6a85f"/>
-                <text x="16" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1b2433">М</text>
-              </svg> -->
+              <img src="img/media/kyiv-military-admin.svg"
+                   alt="Київська міська військова адміністрація" loading="lazy">
+            </div>
+            <div class="media-source-name">Київська міська військова адміністрація</div>
+          </div>
+          <h3 class="media-card-title">Київ пам'ятає | Ігор Утюж</h3>
+          <p class="media-excerpt">Київська міська військова адміністрація спільно з Платформою Пам’яті Меморіал вшановують пам’ять полеглих захисників родом із Києва.</p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2025-09-24">24 вересня 2025</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                5 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>
+
+        <!-- Картка 2 -->
+        <a href="https://memorial.ua/articles/memory-video/spravzhnii-kozak-vysokyi-shyrokoplechyi-krasyvyi-vpevnenyi-spravedlyvyi-pam-iati-ihoria-utiuzha" class="media-card" data-year="2025" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
+                   alt="Платформа пам'яті Меморіал" loading="lazy">
             </div>
             <div class="media-source-name">Платформа пам'яті Меморіал</div>
           </div>
@@ -161,11 +210,14 @@
           </div>
         </a>
 
-        <!-- Картка 2 -->
-        <a href="https://chopovycka-gromada.gov.ua/news/1744114549/" class="media-card" target="_blank" rel="noopener">
+        <!-- Картка 3 -->
+        <a href="https://chopovycka-gromada.gov.ua/news/1744114549/" class="media-card" data-year="2025" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
-            <div class="media-logo" data-letter="ЧГ"></div>
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=chopovycka-gromada.gov.ua&sz=64"
+                   alt="Чоповицька громада" loading="lazy">
+            </div>
             <div class="media-source-name">Чоповицька громада</div>
           </div>
           <h3 class="media-card-title">Утюж Ігор Олегович</h3>
@@ -174,7 +226,7 @@
             <div class="media-meta">
               <span class="media-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <time datetime="2025-04-09">09 вересня 2025</time>
+                <time datetime="2025-09-09">09 вересня 2025</time>
               </span>
               <span class="media-meta-dot"></span>
               <span class="media-meta-item">
@@ -186,15 +238,41 @@
           </div>
         </a>
 
-        <!-- Картка 3 -->
-        <a href="https://www.ukrinform.ua/rubric-ato/3943623-pamati-soldata-operatora-bpla-igora-utuza-pozivnij-slon.html" class="media-card" target="_blank" rel="noopener">
+        <!-- Картка 4 -->
+        <a href="https://memorial.ua/articles/your-favorite-dish/mriyav-zakhyshchaty-sloniv-v-afrytsi-zahynuv-na-viyni" class="media-card" data-year="2025" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
             <div class="media-logo">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="6" fill="#ffffff"/>
-                <text x="16" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#000">УІ</text>
-              </svg>
+              <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
+                   alt="Платформа пам'яті Меморіал" loading="lazy">
+            </div>
+            <div class="media-source-name">Платформа пам'яті Меморіал</div>
+          </div>
+          <h3 class="media-card-title">Мріяв захищати слонів в Африці. Загинув на війні</h3>
+          <p class="media-excerpt">Ніна Утюж – мама загиблого захисника-добровольця Ігоря «Слона» Утюжа. Вона приготувала його улюблену страву – лазанью. Після загибелі сина у грудні 2023 року на Запорізькому напрямку, ця страва стала пам’ятною для родини. </p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2025-01-03">03 січня 2025</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                5 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>        
+
+        <!-- Картка 5 -->
+        <a href="https://www.ukrinform.ua/rubric-ato/3943623-pamati-soldata-operatora-bpla-igora-utuza-pozivnij-slon.html" class="media-card" data-year="2025" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=ukrinform.ua&sz=64"
+                   alt="Укрінформ" loading="lazy">
             </div>
             <div class="media-source-name">Укрінформ</div>
           </div>
@@ -216,15 +294,13 @@
           </div>
         </a>
 
-        <!-- Картка 3 -->
-        <a href="https://bukovyna.online/2025/01/03/pamyati-soldata-operatora/" class="media-card" target="_blank" rel="noopener">
+        <!-- Картка 6 -->
+        <a href="https://bukovyna.online/2025/01/03/pamyati-soldata-operatora/" class="media-card" data-year="2025" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
             <div class="media-logo">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="6" fill="#ffffff"/>
-                <text x="16" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#000">БО</text>
-              </svg>
+              <img src="https://www.google.com/s2/favicons?domain=bukovyna.online&sz=64"
+                   alt="Буковина Онлайн" loading="lazy">
             </div>
             <div class="media-source-name">Буковина Онлайн</div>
           </div>
@@ -245,12 +321,35 @@
             <span class="media-read">Читати</span>
           </div>
         </a>
+        <!-- Повернення до переліку років -->
+        <a href="#media" class="year-back-to-top" data-year-back="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+          </svg>
+          <span>До переліку років</span>
+        </a>
 
-        <!-- Картка 4 -->
-        <a href="https://memorial.ua/obituaries/militaries/utiuzh-ihor-7671" class="media-card" target="_blank" rel="noopener">
+
+
+        
+        <!-- ──── РІК 2024 ──── -->
+        <div class="year-divider" id="year-2024">
+          <span class="year-divider-number">2024</span>
+          <div class="year-divider-meta">
+            <span class="year-divider-count">3 публікації · Спогади та річниця</span>
+            <span class="year-divider-line"></span>
+          </div>
+        </div>
+
+        <!-- Картка 7 -->
+        <a href="https://memorial.ua/obituaries/militaries/utiuzh-ihor-7671" class="media-card" data-year="2024" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
-            <div class="media-logo" data-letter="М"></div>
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=memorial.ua&sz=64"
+                   alt="Платформа пам'яті Меморіал" loading="lazy">
+            </div>
             <div class="media-source-name">Платформа пам'яті Меморіал</div>
           </div>
           <h3 class="media-card-title">Історія життя</h3>
@@ -271,11 +370,14 @@
           </div>
         </a>
 
-        <!-- Картка 5 -->
-        <a href="https://rubryka.com/blog/pam-yati-igorya-utyuzha/" class="media-card" target="_blank" rel="noopener">
+        <!-- Картка 8 -->
+        <a href="https://rubryka.com/blog/pam-yati-igorya-utyuzha/" class="media-card" data-year="2024" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
-            <div class="media-logo" data-letter="Р"></div>
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=rubryka.com&sz=64"
+                   alt="Рубрика" loading="lazy">
+            </div>
             <div class="media-source-name">Рубрика</div>
           </div>
           <h3 class="media-card-title">Пам’яті Ігоря Утюжа</h3>
@@ -296,15 +398,61 @@
           </div>
         </a>
 
-        <!-- Картка 6 -->
-        <a href="https://bukvy.org/na-fronti-zagynuv-dobrovolecz-24-sotni-majdanu-igor-utyuzh/" class="media-card" target="_blank" rel="noopener">
+        <!-- Картка 9 -->
+        <a href="https://www.rada.gov.ua/print/246849.html" class="media-card" data-year="2024" target="_blank" rel="noopener">
           <div class="media-card-glow"></div>
           <div class="media-source">
             <div class="media-logo">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="6" fill="#003e7e"/>
-                <text x="16" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ffd200">Б</text>
-              </svg>
+              <img src="https://www.google.com/s2/favicons?domain=rada.gov.ua&sz=64"
+                   alt="Рада" loading="lazy">
+            </div>
+            <div class="media-source-name">Рада</div>
+          </div>
+          <h3 class="media-card-title">Виступ Віцеспікерки Верховної Ради України Олени Кондратюк до десятих роковин розстрілів на Майдані та початку російсько-української війни.</h3>
+          <p class="media-excerpt">Десять років тому, тут, у центрі Києва, на Майдані Незалежності, звичайні люди, молоді й дорослі, із різних куточків України, різних професій і покликань — здійснили надзвичайний подвиг.</p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2024-02-22">22 лютого 2024</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                6 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>
+
+        <!-- Повернення до переліку років -->
+        <a href="#media" class="year-back-to-top" data-year-back="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+          </svg>
+          <span>До переліку років</span>
+        </a>
+
+
+
+        
+        <!-- ──── РІК 2023 ──── -->
+        <div class="year-divider" id="year-2023">
+          <span class="year-divider-number">2023</span>
+          <div class="year-divider-meta">
+            <span class="year-divider-count">1 публікація · Перші повідомлення</span>
+            <span class="year-divider-line"></span>
+          </div>
+        </div>
+<!-- Картка 8 -->
+        <a href="https://bukvy.org/na-fronti-zagynuv-dobrovolecz-24-sotni-majdanu-igor-utyuzh/" class="media-card" data-year="2023" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=bukvy.org&sz=64"
+                   alt="Букви" loading="lazy">
             </div>
             <div class="media-source-name">Букви</div>
           </div>
@@ -325,10 +473,249 @@
             <span class="media-read">Читати</span>
           </div>
         </a>
+        <!-- Повернення до переліку років -->
+        <a href="#media" class="year-back-to-top" data-year-back="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+          </svg>
+          <span>До переліку років</span>
+        </a>
+
+
+
+        
+        <!-- ──── РІК 2014 ──── -->
+        <div class="year-divider" id="year-2014">
+          <span class="year-divider-number">2014</span>
+          <div class="year-divider-meta">
+            <span class="year-divider-count">3 публікації · Майдан · Свідчення часу</span>
+            <span class="year-divider-line"></span>
+          </div>
+        </div>
+<!-- Картка 9 -->
+        <a href="https://www.pravda.com.ua/news/2014/01/25/7011283/" class="media-card" data-year="2014" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=pravda.com.ua&sz=64"
+                   alt="Українська правда" loading="lazy">
+            </div>
+            <div class="media-source-name">Українська правда</div>
+          </div>
+          <h3 class="media-card-title">Обстріли на Грушевського припинилися. Знову переговори</h3>
+          <p class="media-excerpt">Сторони протистояння із світанком припинили обстріл один одного, один з мітингувальників з власної ініціативи взяв державний прапор і пішов на переговори до силовиків.</p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2014-01-25">25 січня 2014</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                2 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>
+
+        <!-- Картка 10 -->
+        <a href="https://news.liga.net/politics/news/odin_iz_protestuyushchikh_poshel_na_peregovory_s_silovikami" class="media-card" data-year="2014" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=liga.net&sz=64"
+                   alt="Українська правда" loading="lazy">
+            </div>
+            <div class="media-source-name">Ліга.net</div>
+          </div>
+          <h3 class="media-card-title">На Грушевского перемирие, один из активистов пошел на переговоры</h3>
+          <p class="media-excerpt">По словам протестующих, парень отправился на переговоры с силовиками по собственной инициативе.</p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2014-01-25">25 січня 2014</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>
+
+        <!-- Картка 10 -->
+        <a href="https://kyiv.tsn.ua/ru/kyiv/obstrely-na-grushevskogo-prekratilis-idut-peregovory-345538.html?utm_source=article&utm_medium=summary-block&utm_campaign=title-link" class="media-card" data-year="2014" target="_blank" rel="noopener">
+          <div class="media-card-glow"></div>
+          <div class="media-source">
+            <div class="media-logo">
+              <img src="https://www.google.com/s2/favicons?domain=tsn.ua&sz=64"
+                   alt="ТСН" loading="lazy">
+            </div>
+            <div class="media-source-name">ТСН</div>
+          </div>
+          <h3 class="media-card-title">Обстрелы на Грушевского прекратились, идут переговоры</h3>
+          <p class="media-excerpt">Обстановка относительно спокойная.</p>
+          <div class="media-card-footer">
+            <div class="media-meta">
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <time datetime="2014-01-25">25 січня 2014</time>
+              </span>
+              <span class="media-meta-dot"></span>
+              <span class="media-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                1 хв
+              </span>
+            </div>
+            <span class="media-read">Читати</span>
+          </div>
+        </a>        
+
+
+        <!-- Повернення до переліку років (з кінця секції) -->
+        <a href="#media" class="year-back-to-top year-back-to-top--final" data-year-back="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+          </svg>
+          <span>До переліку років</span>
+        </a>
 
       </div>
     </div>
   </section>
+
+  <!-- ============================================================
+       JS: Навігація (скрол) + Фільтр (приховування)
+       ============================================================ -->
+  <script>
+    (function() {
+      const yearNav = document.querySelector('.year-nav');
+      const yearFilter = document.querySelector('.year-filter');
+      const grid = document.querySelector('.media-grid');
+      if (!grid) return;
+
+      // ============================================================
+      // ЧАСТИНА 1: Навігація — плавний скрол до року
+      // ============================================================
+      if (yearNav) {
+        yearNav.querySelectorAll('a[href^="#year-"]').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = link.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          });
+        });
+
+        // Підсвічування активного року під час скролу
+        const dividers = document.querySelectorAll('.year-divider[id^="year-"]');
+        const navLinks = yearNav.querySelectorAll('a[data-year-jump]');
+
+        function highlightCurrentYear() {
+          // Підсвічуємо тільки якщо фільтр на "Всі" — інакше це збиває з пантелику
+          const activeFilter = document.querySelector('.year-filter-btn.is-active');
+          if (activeFilter && activeFilter.dataset.filter !== 'all') {
+            navLinks.forEach(l => l.classList.remove('is-current'));
+            return;
+          }
+          let currentYear = null;
+          const fromTop = window.scrollY + 120;
+          dividers.forEach(div => {
+            if (div.offsetTop <= fromTop && div.offsetParent !== null) {
+              currentYear = div.id.replace('year-', '');
+            }
+          });
+          navLinks.forEach(link => {
+            link.classList.toggle('is-current', link.dataset.yearJump === currentYear);
+          });
+        }
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              highlightCurrentYear();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+        highlightCurrentYear();
+      }
+
+      // ============================================================
+      // ЧАСТИНА 2: Фільтр — приховування карток та розділювачів
+      // ============================================================
+      if (yearFilter) {
+        const filterBtns = yearFilter.querySelectorAll('.year-filter-btn');
+        const cards = grid.querySelectorAll('.media-card[data-year]');
+        const dividers = grid.querySelectorAll('.year-divider[id^="year-"]');
+
+        function applyFilter(year) {
+          // Картки
+          cards.forEach(card => {
+            const show = (year === 'all' || card.dataset.year === year);
+            card.classList.toggle('is-filtered-out', !show);
+          });
+
+          // Розділювачі: при фільтрі за роком ховаємо ВСІ розділювачі,
+          // бо непотрібно дублювати рік, який вже є в кнопці фільтра.
+          // При "Всі" — показуємо всі розділювачі.
+          dividers.forEach(div => {
+            const divYear = div.id.replace('year-', '');
+            const show = (year === 'all');
+            div.classList.toggle('is-filtered-out', !show);
+          });
+
+          // Активна кнопка
+          filterBtns.forEach(btn => {
+            const isActive = btn.dataset.filter === year;
+            btn.classList.toggle('is-active', isActive);
+            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+
+          // Стан навігації-скрол: при фільтрі за конкретним роком — приглушуємо
+          // інші роки в .year-nav (бо до них не можна доскролити)
+          if (yearNav) {
+            yearNav.querySelectorAll('a[data-year-jump]').forEach(link => {
+              const isAvailable = (year === 'all' || link.dataset.yearJump === year);
+              link.classList.toggle('is-dimmed', !isAvailable);
+            });
+          }
+        }
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            applyFilter(btn.dataset.filter);
+          });
+        });
+      }
+      // ============================================================
+      // ЧАСТИНА 3: Повернення до переліку років
+      // ============================================================
+      const backToTopLinks = document.querySelectorAll('.year-back-to-top');
+      if (backToTopLinks.length && yearNav) {
+        backToTopLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const offset = 80;
+            const top = yearNav.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          });
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
