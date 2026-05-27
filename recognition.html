@@ -107,7 +107,7 @@
         <article class="award-card">
           <div class="award-card-glow"></div>
           <div class="award-photo award-photo--compact">
-            <img src="img/awards/order-courage-3.webp" alt="Орден «За мужність» ІІІ ступеня" loading="lazy">
+            <img src="img/awards/order-courage-3.webp" alt="Орден «За мужність» ІІІ ступеня" fetchpriority="high">
           </div>
           <div class="award-content">
             <div class="award-meta">
@@ -678,7 +678,7 @@
       <!-- Дати життя з декоративними лініями -->
       <div class="footer-years" aria-label="Роки життя">
         <span class="footer-years-line" aria-hidden="true"></span>
-        <span class="footer-years-text">18.04.1996 — 07.12.2023</span>
+        <span class="footer-years-text">18 квітня 1996 — 07 грудня 2023</span>
         <span class="footer-years-line" aria-hidden="true"></span>
       </div>
 
@@ -798,17 +798,38 @@
         });
 
         // Підсвічування активного року під час скролу
-        const dividers = document.querySelectorAll('.year-divider[id^="year-"]');
+        const dividers = Array.from(document.querySelectorAll('.year-divider[id^="year-"]'));
         const navLinks = yearNav.querySelectorAll('a[data-year-jump]');
 
+        // Поріг від верху viewport, нижче якого вважаємо рік "активним".
+        // 140px = трохи нижче за header, щоб рік ставав активним, коли його
+        // дивайдер реально опускається в зону читання.
+        const ACTIVATE_OFFSET = 140;
+
         function highlightCurrentYear() {
+          // Беремо НАЙНИЖЧИЙ дивайдер, верх якого вже перетнув поріг ACTIVATE_OFFSET
+          // (тобто вже видимий або трохи вище екрана). Використовуємо
+          // getBoundingClientRect — координати відносно viewport, тож вкладеність
+          // у .media-grid / .media-inner не впливає.
           let currentYear = null;
-          const fromTop = window.scrollY + 120;
-          dividers.forEach(div => {
-            if (div.offsetTop <= fromTop && div.offsetParent !== null) {
+          for (const div of dividers) {
+            const top = div.getBoundingClientRect().top;
+            if (top <= ACTIVATE_OFFSET) {
               currentYear = div.id.replace('year-', '');
+            } else {
+              break; // дивайдери йдуть у DOM-порядку зверху вниз
             }
-          });
+          }
+
+          // Якщо жоден ще не перетнув поріг (ми вище за перший рік) —
+          // підсвічуємо найперший, але тільки коли секція .media вже у viewport.
+          if (!currentYear) {
+            const mediaSection = document.getElementById('media');
+            if (mediaSection && mediaSection.getBoundingClientRect().top <= ACTIVATE_OFFSET) {
+              currentYear = dividers[0]?.id.replace('year-', '');
+            }
+          }
+
           navLinks.forEach(link => {
             link.classList.toggle('is-current', link.dataset.yearJump === currentYear);
           });
