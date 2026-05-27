@@ -135,6 +135,7 @@ JS_FILES=(
     "memory-new"
     "menu"
     "priority-1"
+    "recognition"
     "quotes-counter"
     "reveal"
     "share"
