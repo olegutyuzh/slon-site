@@ -10,7 +10,7 @@
     const success = document.getElementById("contactSuccess");
     const errorEl = document.getElementById("formError");
 
-    function t(key, fallback) {
+    function tr(key, fallback) {
       try {
         const lang = document.documentElement.getAttribute("lang") || "uk";
         const dict = (window.translationsCache && window.translationsCache[lang]) || {};
@@ -88,7 +88,7 @@
         const originalText = submitBtn.textContent;
 
         submitBtn.disabled    = true;
-        submitBtn.textContent = t("contact_sending", "Надсилаємо...");
+        submitBtn.textContent = tr("contact_sending", "Надсилаємо...");
         errorEl.textContent   = "";
         errorEl.classList.remove("is-visible");
 
@@ -140,7 +140,7 @@
           success.classList.add("is-visible");
           success.scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
-          errorEl.textContent = t(
+          errorEl.textContent = tr(
             "contact_error",
             "Не вдалося надіслати повідомлення. Перевірте з'єднання та спробуйте ще раз."
           );

@@ -2,30 +2,49 @@
 const SUPPORTED_LANGS = ["uk", "en"];
 const DEFAULT_LANG = "uk";
 
-// Нормалізація: "ua" -> "uk", невідомі коди -> DEFAULT_LANG
 function normalizeLang(lang) {
-    if (lang === "ua") return "uk";
-    if (SUPPORTED_LANGS.includes(lang)) return lang;
-    return DEFAULT_LANG;
+  if (!lang) return DEFAULT_LANG;
+
+  const short = lang.toLowerCase().split("-")[0];
+
+  if (short === "ua") return "uk";
+  if (SUPPORTED_LANGS.includes(short)) return short;
+
+  return DEFAULT_LANG;
 }
 
-let currentLang = normalizeLang(localStorage.getItem("lang"));
-let translationsCache = null;
+function getDeviceLang() {
+  const langs = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
 
-function setLanguage(lang) {
-    currentLang = normalizeLang(lang);
-    localStorage.setItem("lang", currentLang);
-    applyTranslations();
-    updateActiveButtons();
+  const matched = langs
+    .map(normalizeLang)
+    .find(lang => SUPPORTED_LANGS.includes(lang));
+
+  return matched || DEFAULT_LANG;
 }
-
 
 const urlLang = new URLSearchParams(location.search).get("lang");
+const savedLang = localStorage.getItem("lang");
+
+let currentLang = urlLang
+  ? normalizeLang(urlLang)
+  : savedLang
+    ? normalizeLang(savedLang)
+    : getDeviceLang();
+
+let translationsCache = null;
+
 if (urlLang) {
-  currentLang = normalizeLang(urlLang);
   localStorage.setItem("lang", currentLang);
-} else {
-  currentLang = normalizeLang(localStorage.getItem("lang"));
+}
+
+function setLanguage(lang) {
+  currentLang = normalizeLang(lang);
+  localStorage.setItem("lang", currentLang);
+  applyTranslations();
+  updateActiveButtons();
 }
 
 function updateActiveButtons() {
