@@ -39,12 +39,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://slon.life/sitemap.xml
-
-# LLM-oriented resources (see https://llmstxt.org)
-# Ukrainian (primary)
-LLMS: https://slon.life/llms.txt; type=summary; locale=uk
-LLMS: https://slon.life/llms-full.txt; type=full; locale=uk
-
-# English (translation)
-LLMS: https://slon.life/llms.en.txt; type=summary; locale=en
-LLMS: https://slon.life/llms-full.en.txt; type=full; locale=en
