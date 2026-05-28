@@ -162,27 +162,27 @@
       </p>
 
       <div class="memory-buttons">
-        <button id="lightCandleBtn" class="memory-btn">
-          <span class="memory-btn-icon">
-            <img class="slon-svg" src="/img/candle.svg" alt="">
-          </span>
-          <span data-i18n="light_candle">Запалити свічку</span>
-        </button>
-
         <a class="memory-btn" href="/memory-new.html">
           <span class="memory-btn-icon">
-            <img class="slon-svg" src="/img/message.svg" alt="">
+            <img src="img/message.svg" alt aria-hidden="true" class="slon-svg">
           </span>
           <span data-i18n="leave_message">Залишити слова</span>
         </a>
+
+        <button id="lightCandleBtn" type="button" class="memory-btn">
+          <span class="memory-btn-icon">
+            <img src="img/candle.svg" alt aria-hidden="true" class="slon-svg">
+          </span>
+          <span data-i18n="light_candle">Запалити свічку</span>
+        </button>
       </div>
 
       <div class="candle-counter-line">
-        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories1">Уже звучить 0 голосів і горить</span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories1">Уже звучить</span>
+        <span id="memoriesCount" class="candle-counter-line-number"></span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories2">голосів і горить</span>
         <span id="candlesCount" class="candle-counter-line-number"></span>
-        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories2">
-          свічок
-        </span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories3">свічок</span>
       </div>
 
       <!-- ===== Картка свічки — зʼявляється після кліку ===== -->
@@ -344,6 +344,7 @@
   <script src="/js/min/reveal.min.js"></script>  
   <script src="/js/min/candle.min.js"></script>
   <script src="/js/min/candle_counter.min.js"></script>  
-  <script src="/js/min/service-worker.min.js"></script>   
+  <script src="/js/min/service-worker.min.js"></script> 
+  <script src="/js/min/memories_counter.min.js"></script>   
 </body>
 </html>

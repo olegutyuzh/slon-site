@@ -81,15 +81,35 @@
     "contact_success_title": "Дякуємо. Ваші слова з нами.",
     "contact_success_text": "Ми прочитаємо їх уважно. Найближчим часом вони зʼявляться на сторінці спогадів — поруч зі словами рідних, побратимів і друзів. Це багато для нас означає.",
     "back_to_home": "Повернутися на головну",
+    
     "memory_title_home": "Залишити свій слід у памʼяті",
     "memory_subtitle_home": "Якщо ця історія вас зачепила — поставте свічку або скажіть кілька слів. Цього достатньо.",
     "candle_counter_line_home":"До світла приєдналися 15 людей",
+
     "memory_title_memories": "Додайте свій голос",
     "memory_subtitle_memories": "Кожен спогад — окремий, і всі вони разом тримають Ігоря живим.",
-    "candle_counter_line_memories":"Уже звучить 0 голосів і горить 15 свічок",    
-    "memory_title_stories": "Якщо щось відгукнулось Можна не пояснювати, що саме.",
-    "memory_subtitle_stories": "Достатньо запалити свічку або написати одне речення.",
-    "candle_counter_line_stories":"свічок від тих, кому теж відгукнулось",        
+    "candle_counter_line_memories1": "Уже звучить",  
+    "candle_counter_line_memories2": "голосів і горить",
+    "candle_counter_line_memories3": "свічок",
+
+    "memory_title_stories": "Якщо щось відгукнулось",
+    "memory_subtitle_stories": "Можна не пояснювати, що саме. Достатньо запалити свічку або написати одне речення.",
+    "candle_counter_line_stories":"свічок від тих, кому теж відгукнулось",
+
+    "memory_title_bio": "Хвилина тиші — або слово",
+    "memory_subtitle_bio": "Якщо після прочитаного хочеться зупинитися — зупиніться тут.",
+    "candle_counter_line_bio1":"Поряд із цією історією вже горить",    
+    "candle_counter_line_bio2":"свічок",      
+
+    "memory_title_recognition": "Найважливіша відзнака — памʼять людей",
+    "memory_subtitle_recognition": "Нагороди й публікації — це визнання держави. А ваша свічка чи слово — визнання людське. Воно тут не менш важливе.",
+    "candle_counter_line_recognition1":"До державних відзнак додалося",    
+    "candle_counter_line_recognition2":"особистих свічок памʼяті",    
+    
+    "memory_title_fragments": "Він умів любити прості речі - гори, футбол, своїх людей.",
+    "memory_subtitle_fragments": "Якщо ці кадри вас зігріли — залиште і своє тепло поряд.",
+    "candle_counter_line_fragments":"теплих вогників уже горить",
+
     "light_candle": "Запалити свічку",
     "leave_message": "Залишити слова",
     "candle_text": "Світло памʼяті горить",
@@ -512,6 +532,34 @@
     "contact_success_title": "Thank you. Your words are with us.",
     "contact_success_text": "We will read them carefully. They will appear on the memories page soon — alongside the words of family, brothers-in-arms, and friends. It means a great deal to us.",
     "back_to_home": "Back to home",
+    "memory_title_home": "Leave Your Mark in Memory",
+    "memory_subtitle_home": "If this story touched you — light a candle or say a few words. That is enough.",
+    "candle_counter_line_home": "15 people have joined the light",
+
+    "memory_title_memories": "Add Your Voice",
+    "memory_subtitle_memories": "Every memory is its own — and together they keep Ihor alive.",
+    "candle_counter_line_memories1": "Already heard",
+    "candle_counter_line_memories2": "voices and lit",
+    "candle_counter_line_memories3": "candles of remembrance",
+
+    "memory_title_stories": "If something resonated",
+    "memory_subtitle_stories": "You don’t need to explain what exactly. It’s enough to light a candle or write a single sentence.",
+    "candle_counter_line_stories": "candles from those who also felt this resonance",
+
+    "memory_title_bio": "A Minute of Silence — or a Word",
+    "memory_subtitle_bio": "If you feel the need to pause after reading — pause here.",
+    "candle_counter_line_bio1": "Beside this story, there are already",
+    "candle_counter_line_bio2": "candles burning",
+     
+    "memory_title_recognition": "The Most Important Recognition Is the Memory of People",
+    "memory_subtitle_recognition": "Awards and publications are the state’s acknowledgment. But your candle or your word is human recognition — and here, it matters just as much.",
+    "candle_counter_line_recognition1": "Added to the state honors are",
+    "candle_counter_line_recognition2": "personal candles of remembrance",
+
+    "memory_title_fragments": "He Knew How to Love Simple Things — The mountains, football, his people.",
+    "memory_subtitle_fragments": "If these moments warmed you — leave a bit of your warmth beside them.",
+    "candle_counter_line_fragments": "warm lights are already burning", 
+
     "memory_title": "Honor the memory",
     "memory_subtitle": "If you knew Ihor — or simply want to leave a word — this is the place.",
     "light_candle": "Light a candle",

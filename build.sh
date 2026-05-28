@@ -134,6 +134,7 @@ JS_FILES=(
     "lang"
     "memories-skeleton"
     "memories"
+    "memories_counter"
     "memory-new"
     "menu"
     "priority-1"
