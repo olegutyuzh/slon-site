@@ -1,0 +1,9 @@
+# Netlify конфігурація для slon.life
+# Запускає мініфікацію + вбудовування критичного CSS під час кожного деплою.
+
+[build]
+  command = "npm run build"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"

@@ -70,7 +70,7 @@ for name in "${CSS_FILES[@]}"; do
     DEST="css/min/${name}.min.css"
 
     if [ -f "$SRC" ]; then
-        cleancss -o "$DEST" "$SRC"
+        npx cleancss -o "$DEST" "$SRC"
         BEFORE=$(get_size "$SRC")
         AFTER=$(get_size "$DEST")
         CSS_TOTAL_BEFORE=$(add "$CSS_TOTAL_BEFORE" "$BEFORE")
@@ -88,7 +88,7 @@ echo ""
 # ============================================================
 echo -e "${YELLOW}📦 Створення CSS bundle (спільні стилі)...${NC}"
 
-cleancss -o css/min/common.bundle.min.css \
+npx cleancss -o css/min/common.bundle.min.css \
     css/style.css \
     css/menu.css \
     css/sub_menu.css \
@@ -106,7 +106,7 @@ echo ""
 # ============================================================
 echo -e "${YELLOW}📦 Створення CSS bundle (спільні стилі)...${NC}"
 
-cleancss -o css/min/index.bundle.min.css \
+npx cleancss -o css/min/index.bundle.min.css \
     css/style.css \
     css/menu.css \
     css/sub_menu.css \
@@ -153,7 +153,7 @@ for name in "${JS_FILES[@]}"; do
     DEST="js/min/${name}.min.js"
 
     if [ -f "$SRC" ]; then
-        terser "$SRC" -o "$DEST" -c -m
+        npx terser "$SRC" -o "$DEST" -c -m
         BEFORE=$(get_size "$SRC")
         AFTER=$(get_size "$DEST")
         JS_TOTAL_BEFORE=$(add "$JS_TOTAL_BEFORE" "$BEFORE")
@@ -171,7 +171,7 @@ echo ""
 # ============================================================
 echo -e "${YELLOW}📦 Створення JS bundle (спільні скрипти)...${NC}"
 
-terser \
+npx terser \
     js/supabase-config.js \
     js/lang.js \
     js/menu.js \
@@ -193,3 +193,18 @@ echo -e "CSS: ${CSS_TOTAL_BEFORE} KB → ${CSS_TOTAL_AFTER} KB"
 echo -e "JS:  ${JS_TOTAL_BEFORE} KB → ${JS_TOTAL_AFTER} KB"
 echo ""
 echo -e "${GREEN}✅ Готово! Мініфіковані файли в css/min/ та js/min/${NC}"
+
+# ============================================================
+# Вбудовування критичного CSS (усунення render-blocking)
+# ============================================================
+echo -e "${YELLOW}🎨 Вбудовування критичного CSS...${NC}"
+
+if [ -d node_modules/beasties ]; then
+    node inline-critical.js
+    echo -e "  ${GREEN}✓${NC} Критичний CSS вбудовано, шрифти відкладено"
+else
+    echo -e "  ${RED}✗${NC} beasties не встановлено — запустіть 'npm install'"
+fi
+
+echo ""
+echo -e "${GREEN}✅ Білд завершено повністю${NC}"
