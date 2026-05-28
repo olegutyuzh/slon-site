@@ -47,6 +47,7 @@ CSS_FILES=(
     "biography"
     "bottom_menu"
     "candle"
+    "contact"
     "football"
     "fragments"
     "life-hero-styles"
@@ -128,6 +129,7 @@ JS_FILES=(
     "bottom_menu"
     "candle_counter"
     "candle"
+    "contact"
     "fragments"
     "lang"
     "memories-skeleton"
@@ -139,6 +141,7 @@ JS_FILES=(
     "quotes-counter"
     "reveal"
     "share"
+    "service-worker"
     "supabase-config"
 )
 

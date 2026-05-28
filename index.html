@@ -4,10 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="manifest" href="/webmanifest.json">
+  <meta name="theme-color" content="#1a1a1a">  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/img/candle.svg" fetchpriority="high">
-  <link rel="preload" as="image" href="/img/hero-portrait.jpg" fetchpriority="high">  
+  <link rel="preload" as="image" href="/img/hero-portrait.jpg" fetchpriority="high"> 
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
 
 <!--   <link rel="stylesheet" href="/css/min/style.min.css" />
   <link rel="stylesheet" href="/css/min/candle.min.css" />
@@ -419,9 +424,9 @@
 
     <div class="memory-inner">
 
-      <h2 class="memory-title" data-i18n="memory_title">Вшанувати памʼять</h2>
+      <h2 class="memory-title" data-i18n="memory_title_home">Залишити свій слід у памʼяті</h2>
 
-      <p class="memory-subtitle" data-i18n="memory_subtitle">Якщо ви знали Ігоря або хочете залишити слова — зробіть це тут.</p>
+      <p class="memory-subtitle" data-i18n="memory_subtitle_home">Якщо ця історія вас зачепила — поставте свічку або скажіть кілька слів. Цього достатньо.</p>
 
       <!-- ===== Дві кнопки (як було) ===== -->
       <div class="memory-buttons">
@@ -445,7 +450,7 @@
       <!-- ===== Маленький лічильник прямо під кнопками ===== -->
       <div class="candle-counter-line">
         <span class="candle-counter-line-number" id="candlesCount">—</span>
-        <span class="candle-counter-line-text" data-i18n="candle_counter_line">
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_home">
           свічок памʼяті вже горить
         </span>
       </div>
@@ -661,6 +666,7 @@
   <script src="/js/min/candle_counter.min.js" defer></script>
   <script src="/js/min/bottom_menu.min.js"></script>
   <script src="/js/min/menu.min.js"></script>  
+  <script src="/js/min/service-worker.min.js"></script>  
 
   <script>
     (() => {
