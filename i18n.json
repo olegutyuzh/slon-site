@@ -448,7 +448,12 @@
     "recog_card_19_date": "24 травня 2024",
     "recog_card_19_time": "4 хв",
     "recog_page_title": "Вшанування памʼяті — Ігор «Слон» Утюж",
-    "footer_quote": "«Поки ми памʼятаємо — вони з нами»"
+    "footer_quote": "«Поки ми памʼятаємо — вони з нами»",
+
+    "404_title": "Цієї сторінки знайти не вдалося",
+    "404_description": "«Слон» — той, хто йде вперед, коли інші зупиняються. Повернімося на правильний шлях.",
+    "404_button_home": "На головну",
+    "404_button_warrior_path": "Шлях воїна"
   },
   "en": {
     "hero_kicker": "Soldier, friend, son",
@@ -900,6 +905,11 @@
     "recog_card_19_date": "24 May 2024",
     "recog_card_19_time": "4 min",         
     "recog_page_title": "Recognition — Ihor «Slon» Utyuzh",
-    "footer_quote": "«As long as we remember — they are with us»"
+    "footer_quote": "«As long as we remember — they are with us»",
+
+    "404_title": "This page could not be found",
+    "404_description": "“Slon” is the one who moves forward when others stop. Let us return to the right path.",
+    "404_button_home": "Home",
+    "404_button_warrior_path": "The warrior’s path"    
   }
 }

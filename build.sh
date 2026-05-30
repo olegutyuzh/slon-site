@@ -44,6 +44,7 @@ add() {
 echo -e "${YELLOW}📄 Мініфікація CSS файлів...${NC}"
 
 CSS_FILES=(
+    "404"
     "biography"
     "bottom_menu"
     "candle"
